@@ -1,0 +1,5 @@
+file,format,width_mm,height_mm,dpi,editable_text,base_family,plotted_rows,bytes,md5
+approximate_input_depth.svg,SVG,60,52,,TRUE,Nimbus Sans,9,7533,9421b467ccc3a73cdf925a2a08e9e38e
+approximate_input_depth.pdf,PDF,60,52,,TRUE,Nimbus Sans,9,12798,338f864f7f7a7651c32d129301e4713e
+approximate_input_depth.tiff,TIFF,60,52,600,FALSE,Nimbus Sans,9,62684,bffa2613ca76f6df618390539200e4fb
+approximate_input_depth.png,PNG,60,52,320,FALSE,Nimbus Sans,9,34073,078825eee027040c4c31d71d4efe8428

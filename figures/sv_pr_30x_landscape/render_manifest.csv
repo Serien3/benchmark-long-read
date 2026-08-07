@@ -1,0 +1,3 @@
+benchmark,truth_set,depth,plotted_points,x_metric,y_metric,x_min,x_max,y_min,y_max,symmetric_within_panel,f1_contours,depth_alpha_used,jitter_used,aggregation_used,legend_shown,output_stem
+T2TQ100,T2T-Q100 v1.1,30x,24,recall,precision,0.6391624,1.0057762,0.6391624,1.0057762,TRUE,0.7;0.8;0.9,FALSE,FALSE,FALSE,FALSE,sv_pr_30x_T2TQ100
+CMRG,GIAB CMRG,30x,24,recall,precision,0.22386799999999998,1.014644,0.22386799999999998,1.014644,TRUE,0.3;0.5;0.7;0.9,FALSE,FALSE,FALSE,FALSE,sv_pr_30x_CMRG

@@ -1,0 +1,4 @@
+platform,n_conditions,minimum_primary_mapped_pct,maximum_primary_mapped_pct,primary_mapped_range_pp
+BGI,4,99.02,99.69,0.67
+ONT,4,97.94,98.34,0.4
+HiFi,4,99.92,100,0.08

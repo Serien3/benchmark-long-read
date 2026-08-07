@@ -1,0 +1,4 @@
+source_dataset,platform,depth,reads,total_bases,total_yield_gb,approximate_input_depth_x,mean_length_kb,median_length_kb,read_n50_kb,mean_reported_q,median_reported_q,q20_read_fraction,q20_read_fraction_pct,q20_read_yield_gb,q20_read_base_share_pct,status
+BGI_latest,BGI,30x,5958447,96485205146,96.49,29.989,16.193,12.557,25.954,16.8,19.2,0.336,33.6,38.92,40.3358,OK
+ONT_latest,ONT,30x,5241466,96535332324,96.54,30.005,18.4176,17.36,29.397,16.5,25.5,0.783,78.3,80.13,83.0019,OK
+HiFi_latest,HiFi,30x,6886760,96528964258,96.53,30.003,14.0166,14.6,16.771,25.8,30.9,0.932,93.2,88.53,91.7124,OK

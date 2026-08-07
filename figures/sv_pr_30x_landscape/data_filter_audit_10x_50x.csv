@@ -1,0 +1,5 @@
+benchmark,truth_set,depth,source_file,source_rows,grch38_rows,core_rows_all_depths,plotted_rows,excluded_non_grch38,excluded_noncore_rows,excluded_other_depths,filter_rule
+T2TQ100,T2T-Q100 v1.1,10x,sv_benchmark_T2TQ100.csv,108,108,72,24,0,36,48,reference=GRCh38; callers=cuteSV|Sniffles2|sawfish|SVDSS; platforms=BGI|ONT|HiFi; aligners=minimap2|winnowmap; depth=10x; metrics=raw precision|recall|F1
+CMRG,GIAB CMRG,10x,sv_benchmark_CMRG.csv,72,72,72,24,0,0,48,reference=GRCh38; callers=cuteSV|Sniffles2|sawfish|SVDSS; platforms=BGI|ONT|HiFi; aligners=minimap2|winnowmap; depth=10x; metrics=raw precision|recall|F1
+T2TQ100,T2T-Q100 v1.1,50x,sv_benchmark_T2TQ100.csv,108,108,72,24,0,36,48,reference=GRCh38; callers=cuteSV|Sniffles2|sawfish|SVDSS; platforms=BGI|ONT|HiFi; aligners=minimap2|winnowmap; depth=50x; metrics=raw precision|recall|F1
+CMRG,GIAB CMRG,50x,sv_benchmark_CMRG.csv,72,72,72,24,0,0,48,reference=GRCh38; callers=cuteSV|Sniffles2|sawfish|SVDSS; platforms=BGI|ONT|HiFi; aligners=minimap2|winnowmap; depth=50x; metrics=raw precision|recall|F1

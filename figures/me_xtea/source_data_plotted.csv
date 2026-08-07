@@ -1,0 +1,25 @@
+dataset,platform,aligner,depth,reference,tool,family,count,total_merged_me,combined_only_lines,status,result_basis,notes
+BGI_latest,BGI,minimap2,30x,GRCh38,xTEA-long,ALU,1639,2001,79,completed; old .failed flag,merged_* final,Slurm and xTea exit code 0; .failed marker is inconsistent with output.
+BGI_latest,BGI,minimap2,30x,GRCh38,xTEA-long,LINE1,226,2001,79,completed; old .failed flag,merged_* final,Slurm and xTea exit code 0; .failed marker is inconsistent with output.
+BGI_latest,BGI,minimap2,30x,GRCh38,xTEA-long,SVA,128,2001,79,completed; old .failed flag,merged_* final,Slurm and xTea exit code 0; .failed marker is inconsistent with output.
+BGI_latest,BGI,minimap2,30x,GRCh38,xTEA-long,HERV,8,2001,79,completed; old .failed flag,merged_* final,Slurm and xTea exit code 0; .failed marker is inconsistent with output.
+BGI_latest,BGI,winnowmap,30x,GRCh38,xTEA-long,ALU,1664,2011,83,completed,merged_* final,"Use classified_results.txt.merged_{ALU,LINE1,SVA,HERV}.txt."
+BGI_latest,BGI,winnowmap,30x,GRCh38,xTEA-long,LINE1,208,2011,83,completed,merged_* final,"Use classified_results.txt.merged_{ALU,LINE1,SVA,HERV}.txt."
+BGI_latest,BGI,winnowmap,30x,GRCh38,xTEA-long,SVA,132,2011,83,completed,merged_* final,"Use classified_results.txt.merged_{ALU,LINE1,SVA,HERV}.txt."
+BGI_latest,BGI,winnowmap,30x,GRCh38,xTEA-long,HERV,7,2011,83,completed,merged_* final,"Use classified_results.txt.merged_{ALU,LINE1,SVA,HERV}.txt."
+ONT_latest,ONT,minimap2,30x,GRCh38,xTEA-long,ALU,1635,2005,102,completed; old .failed flag,merged_* final,Slurm and xTea exit code 0; .failed marker is inconsistent with output.
+ONT_latest,ONT,minimap2,30x,GRCh38,xTEA-long,LINE1,220,2005,102,completed; old .failed flag,merged_* final,Slurm and xTea exit code 0; .failed marker is inconsistent with output.
+ONT_latest,ONT,minimap2,30x,GRCh38,xTEA-long,SVA,142,2005,102,completed; old .failed flag,merged_* final,Slurm and xTea exit code 0; .failed marker is inconsistent with output.
+ONT_latest,ONT,minimap2,30x,GRCh38,xTEA-long,HERV,8,2005,102,completed; old .failed flag,merged_* final,Slurm and xTea exit code 0; .failed marker is inconsistent with output.
+ONT_latest,ONT,winnowmap,30x,GRCh38,xTEA-long,ALU,1662,2011,83,completed,merged_* final,"Use classified_results.txt.merged_{ALU,LINE1,SVA,HERV}.txt."
+ONT_latest,ONT,winnowmap,30x,GRCh38,xTEA-long,LINE1,214,2011,83,completed,merged_* final,"Use classified_results.txt.merged_{ALU,LINE1,SVA,HERV}.txt."
+ONT_latest,ONT,winnowmap,30x,GRCh38,xTEA-long,SVA,128,2011,83,completed,merged_* final,"Use classified_results.txt.merged_{ALU,LINE1,SVA,HERV}.txt."
+ONT_latest,ONT,winnowmap,30x,GRCh38,xTEA-long,HERV,7,2011,83,completed,merged_* final,"Use classified_results.txt.merged_{ALU,LINE1,SVA,HERV}.txt."
+HiFi_latest,HiFi,minimap2,30x,GRCh38,xTEA-long,ALU,1609,1962,90,completed; old .failed flag,merged_* final,Slurm and xTea exit code 0; .failed marker is inconsistent with output.
+HiFi_latest,HiFi,minimap2,30x,GRCh38,xTEA-long,LINE1,216,1962,90,completed; old .failed flag,merged_* final,Slurm and xTea exit code 0; .failed marker is inconsistent with output.
+HiFi_latest,HiFi,minimap2,30x,GRCh38,xTEA-long,SVA,130,1962,90,completed; old .failed flag,merged_* final,Slurm and xTea exit code 0; .failed marker is inconsistent with output.
+HiFi_latest,HiFi,minimap2,30x,GRCh38,xTEA-long,HERV,7,1962,90,completed; old .failed flag,merged_* final,Slurm and xTea exit code 0; .failed marker is inconsistent with output.
+HiFi_latest,HiFi,winnowmap,30x,GRCh38,xTEA-long,ALU,1634,1979,91,completed,merged_* final,"Use classified_results.txt.merged_{ALU,LINE1,SVA,HERV}.txt."
+HiFi_latest,HiFi,winnowmap,30x,GRCh38,xTEA-long,LINE1,207,1979,91,completed,merged_* final,"Use classified_results.txt.merged_{ALU,LINE1,SVA,HERV}.txt."
+HiFi_latest,HiFi,winnowmap,30x,GRCh38,xTEA-long,SVA,132,1979,91,completed,merged_* final,"Use classified_results.txt.merged_{ALU,LINE1,SVA,HERV}.txt."
+HiFi_latest,HiFi,winnowmap,30x,GRCh38,xTEA-long,HERV,6,1979,91,completed,merged_* final,"Use classified_results.txt.merged_{ALU,LINE1,SVA,HERV}.txt."

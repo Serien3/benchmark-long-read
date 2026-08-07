@@ -1,0 +1,3 @@
+benchmark,source_rows,grch38_rows,plotted_rows,excluded_non_grch38,excluded_nonshared_callers
+GIAB5,120,108,72,12,36
+CMRG,72,72,72,0,0

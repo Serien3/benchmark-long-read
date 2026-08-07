@@ -1,0 +1,9 @@
+reference,aligner,platform,platform_bam_size_gib,hifi_bam_size_gib,platform_to_hifi_ratio
+GRCh38,minimap2,BGI,109.3,41.01,2.665204
+GRCh38,winnowmap,BGI,97.34,37.42,2.601283
+GRCh38,minimap2,ONT,102.88,41.01,2.508656
+GRCh38,winnowmap,ONT,96.05,37.42,2.566809
+T2T-CHM13,minimap2,BGI,101.55,37.35,2.718876
+T2T-CHM13,winnowmap,BGI,90.51,34.45,2.627286
+T2T-CHM13,minimap2,ONT,91.9,37.35,2.460509
+T2T-CHM13,winnowmap,ONT,81.35,34.45,2.361393

@@ -1,0 +1,2 @@
+source_file,source_rows,selected_depth,selected_input_rows,excluded_non_30x_rows,plotted_marks,expected_plotted_marks,transform_platform,transform_length,transform_q20_read_fraction,transform_q20_base_share,filter_rule,replicate_statement
+reads_qc_nanoplot_q20.csv,9,30x,3,6,21,21,remove terminal _latest suffix,source bp / 1000,source fraction x 100,100 x Q20-read yield (Gb) / total yield (Gb),Depth == 30x; one observation retained per platform,one HG002 30x technical subset per platform; no biological replicates

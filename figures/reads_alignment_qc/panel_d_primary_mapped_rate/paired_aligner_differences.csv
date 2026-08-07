@@ -1,0 +1,7 @@
+reference,platform,minimap2_primary_mapped_pct,winnowmap_primary_mapped_pct,winnowmap_minus_minimap2_pp,absolute_aligner_difference_pp
+GRCh38,BGI,99.69,99.33,-0.36,0.36
+GRCh38,ONT,98.34,98.32,-0.02,0.02
+GRCh38,HiFi,100,100,0,0
+T2T-CHM13,BGI,99.36,99.02,-0.34,0.34
+T2T-CHM13,ONT,98.16,97.94,-0.22,0.22
+T2T-CHM13,HiFi,99.92,99.93,0.01,0.01

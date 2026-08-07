@@ -1,0 +1,22 @@
+source_dataset,depth,platform,facet,statistic,value,unit,source_field,transformation,total_yield_gb,q20_read_yield_gb
+BGI_latest,30x,BGI,Read length (kb),Mean,16.193,kb,Mean length,source bp / 1000,96.49,38.92
+BGI_latest,30x,BGI,Read length (kb),Median,12.557,kb,Median length,source bp / 1000,96.49,38.92
+BGI_latest,30x,BGI,Read length (kb),N50,25.954,kb,Read N50,source bp / 1000,96.49,38.92
+ONT_latest,30x,ONT,Read length (kb),Mean,18.4176,kb,Mean length,source bp / 1000,96.54,80.13
+ONT_latest,30x,ONT,Read length (kb),Median,17.36,kb,Median length,source bp / 1000,96.54,80.13
+ONT_latest,30x,ONT,Read length (kb),N50,29.397,kb,Read N50,source bp / 1000,96.54,80.13
+HiFi_latest,30x,HiFi,Read length (kb),Mean,14.0166,kb,Mean length,source bp / 1000,96.53,88.53
+HiFi_latest,30x,HiFi,Read length (kb),Median,14.6,kb,Median length,source bp / 1000,96.53,88.53
+HiFi_latest,30x,HiFi,Read length (kb),N50,16.771,kb,Read N50,source bp / 1000,96.53,88.53
+BGI_latest,30x,BGI,Reported read Q,Mean,16.8,Q score,Mean Q,identity,96.49,38.92
+BGI_latest,30x,BGI,Reported read Q,Median,19.2,Q score,Median Q,identity,96.49,38.92
+ONT_latest,30x,ONT,Reported read Q,Mean,16.5,Q score,Mean Q,identity,96.54,80.13
+ONT_latest,30x,ONT,Reported read Q,Median,25.5,Q score,Median Q,identity,96.54,80.13
+HiFi_latest,30x,HiFi,Reported read Q,Mean,25.8,Q score,Mean Q,identity,96.53,88.53
+HiFi_latest,30x,HiFi,Reported read Q,Median,30.9,Q score,Median Q,identity,96.53,88.53
+BGI_latest,30x,BGI,Mean-Q>20 composition (%),Read fraction,33.6,%,Reads with mean Q>20 (%) (NanoPlot),source fraction x 100,96.49,38.92
+BGI_latest,30x,BGI,Mean-Q>20 composition (%),Base share,40.3358,%,Mean-Q>20 read yield (Gb) / Yield (Gb),100 x Q20-read yield / total yield,96.49,38.92
+ONT_latest,30x,ONT,Mean-Q>20 composition (%),Read fraction,78.3,%,Reads with mean Q>20 (%) (NanoPlot),source fraction x 100,96.54,80.13
+ONT_latest,30x,ONT,Mean-Q>20 composition (%),Base share,83.0019,%,Mean-Q>20 read yield (Gb) / Yield (Gb),100 x Q20-read yield / total yield,96.54,80.13
+HiFi_latest,30x,HiFi,Mean-Q>20 composition (%),Read fraction,93.2,%,Reads with mean Q>20 (%) (NanoPlot),source fraction x 100,96.53,88.53
+HiFi_latest,30x,HiFi,Mean-Q>20 composition (%),Base share,91.7124,%,Mean-Q>20 read yield (Gb) / Yield (Gb),100 x Q20-read yield / total yield,96.53,88.53

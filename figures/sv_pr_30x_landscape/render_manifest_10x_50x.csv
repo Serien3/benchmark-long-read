@@ -1,0 +1,5 @@
+benchmark,truth_set,depth,plotted_points,x_metric,y_metric,x_min,x_max,y_min,y_max,symmetric_within_panel,f1_contours,depth_alpha_used,jitter_used,aggregation_used,inset_used,legend_shown,output_stem
+T2TQ100,T2T-Q100 v1.1,10x,24,recall,precision,0.55504832,1.00750456,0.55504832,1.00750456,TRUE,0.6;0.7;0.8;0.9,FALSE,FALSE,FALSE,FALSE,FALSE,sv_pr_10x_T2TQ100
+CMRG,GIAB CMRG,10x,24,recall,precision,0.5261800000000001,1.00894,0.5261800000000001,1.00894,TRUE,0.6;0.7;0.8;0.9,FALSE,FALSE,FALSE,FALSE,FALSE,sv_pr_10x_CMRG
+T2TQ100,T2T-Q100 v1.1,50x,24,recall,precision,0.695148,1.005,0.695148,1.005,TRUE,0.7;0.8;0.9,FALSE,FALSE,FALSE,FALSE,FALSE,sv_pr_50x_T2TQ100
+CMRG,GIAB CMRG,50x,24,recall,precision,0.10716200000000001,1.016746,0.10716200000000001,1.016746,TRUE,0.3;0.5;0.7;0.9,FALSE,FALSE,FALSE,FALSE,FALSE,sv_pr_50x_CMRG

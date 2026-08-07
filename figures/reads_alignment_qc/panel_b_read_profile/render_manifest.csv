@@ -1,0 +1,5 @@
+file,format,width_mm,height_mm,dpi,editable_text,base_family,selected_input_rows,plotted_marks,bytes,md5
+integrated_read_profile_30x.svg,SVG,120,52,,TRUE,Nimbus Sans,3,21,12400,c91a4a83730759a673be226a5c8e205c
+integrated_read_profile_30x.pdf,PDF,120,52,,TRUE,Nimbus Sans,3,21,22741,165d7afe56b13b4e06f94a67ac2daa27
+integrated_read_profile_30x.tiff,TIFF,120,52,600,FALSE,Nimbus Sans,3,21,87660,c5e86c390d55bf181b8b230c427d47bf
+integrated_read_profile_30x.png,PNG,120,52,320,FALSE,Nimbus Sans,3,21,39232,1e223a1afb63113053cd4a7dd1d35b73

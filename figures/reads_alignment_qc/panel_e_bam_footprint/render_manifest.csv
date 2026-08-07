@@ -1,0 +1,5 @@
+file,format,width_mm,height_mm,dpi,editable_text,base_family,selected_rows,matched_pairs,bytes,md5
+bam_output_footprint_30x.svg,SVG,183,38,,TRUE,Nimbus Sans,12,6,11696,33ab204eb425b4c7972dec3878f27258
+bam_output_footprint_30x.pdf,PDF,183,38,,TRUE,Nimbus Sans,12,6,22436,10164351ba0e631b15274a3225344b34
+bam_output_footprint_30x.tiff,TIFF,183,38,600,FALSE,Nimbus Sans,12,6,106304,e002831186ed9653a0cdf25488bbe590
+bam_output_footprint_30x.png,PNG,183,38,320,FALSE,Nimbus Sans,12,6,39401,38c25acbba0a06b5c9d77289870de6f6

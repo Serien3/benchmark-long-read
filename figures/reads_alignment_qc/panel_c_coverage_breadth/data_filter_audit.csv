@@ -1,0 +1,2 @@
+source_file,source_rows,plotted_rows,excluded_rows,expected_unique_keys,observed_unique_keys,transform_platform,transform_depth,transform_coverage,filter_rule,replicate_statement
+alignment_qc.csv,36,36,0,36,36,remove terminal _latest suffix,remove terminal x suffix and parse numeric,100 x Coverage rate fraction,none; all 36 alignment-QC conditions plotted,nested technical depth subsets from one HG002 dataset per platform; conditions are not biological replicates

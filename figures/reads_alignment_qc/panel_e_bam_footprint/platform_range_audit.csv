@@ -1,0 +1,4 @@
+platform,n_conditions,minimum_gib,maximum_gib,range_gib
+BGI,4,90.51,109.3,18.79
+ONT,4,81.35,102.88,21.53
+HiFi,4,34.45,41.01,6.56

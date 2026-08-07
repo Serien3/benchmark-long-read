@@ -1,0 +1,7 @@
+reference,platform,minimap2_bam_size_gib,winnowmap_bam_size_gib,winnowmap_minus_minimap2_gib,winnowmap_relative_change_pct,winnowmap_reduction_pct
+GRCh38,BGI,109.3,97.34,-11.96,-10.94236,10.94236
+GRCh38,ONT,102.88,96.05,-6.83,-6.638802,6.638802
+GRCh38,HiFi,41.01,37.42,-3.59,-8.753962,8.753962
+T2T-CHM13,BGI,101.55,90.51,-11.04,-10.871492,10.871492
+T2T-CHM13,ONT,91.9,81.35,-10.55,-11.479869,11.479869
+T2T-CHM13,HiFi,37.35,34.45,-2.9,-7.764391,7.764391

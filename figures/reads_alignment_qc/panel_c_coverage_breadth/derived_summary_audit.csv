@@ -1,0 +1,16 @@
+metric,scope,n_conditions,value,unit
+minimum coverage breadth,"GRCh38, 30x",6,92.94,%
+minimum coverage breadth,"T2T-CHM13, 30x",6,98.31,%
+maximum coverage breadth,"GRCh38, 30x",6,93.33,%
+maximum coverage breadth,"T2T-CHM13, 30x",6,99.43,%
+platform-aligner range,"GRCh38, 30x",6,0.39,percentage points
+platform-aligner range,"T2T-CHM13, 30x",6,1.12,percentage points
+signed median: winnowmap - minimap2,all matched platform x depth x reference conditions,18,-0.025,percentage points
+median absolute aligner difference,all matched platform x depth x reference conditions,18,0.05,percentage points
+maximum absolute aligner difference,all matched platform x depth x reference conditions,18,0.21,percentage points
+minimum depth gain,10x to 30x,12,0.51,percentage points
+median depth gain,10x to 30x,12,0.65,percentage points
+maximum depth gain,10x to 30x,12,0.83,percentage points
+minimum depth gain,30x to 50x,12,0.12,percentage points
+median depth gain,30x to 50x,12,0.185,percentage points
+maximum depth gain,30x to 50x,12,0.22,percentage points

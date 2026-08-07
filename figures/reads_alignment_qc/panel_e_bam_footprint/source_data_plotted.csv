@@ -1,0 +1,13 @@
+reference,aligner,source_dataset,platform,depth_label,nominal_depth_x,bam_size_gib
+GRCh38,minimap2,BGI_latest,BGI,30x,30,109.3
+GRCh38,winnowmap,BGI_latest,BGI,30x,30,97.34
+GRCh38,minimap2,ONT_latest,ONT,30x,30,102.88
+GRCh38,winnowmap,ONT_latest,ONT,30x,30,96.05
+GRCh38,minimap2,HiFi_latest,HiFi,30x,30,41.01
+GRCh38,winnowmap,HiFi_latest,HiFi,30x,30,37.42
+T2T-CHM13,minimap2,BGI_latest,BGI,30x,30,101.55
+T2T-CHM13,winnowmap,BGI_latest,BGI,30x,30,90.51
+T2T-CHM13,minimap2,ONT_latest,ONT,30x,30,91.9
+T2T-CHM13,winnowmap,ONT_latest,ONT,30x,30,81.35
+T2T-CHM13,minimap2,HiFi_latest,HiFi,30x,30,37.35
+T2T-CHM13,winnowmap,HiFi_latest,HiFi,30x,30,34.45

@@ -1,0 +1,4 @@
+output_stem,figure_width_mm,figure_height_mm,role,source_file,base_font_family,png_dpi,tiff_dpi
+mosaic_sv_type_radar_minimap2,89,93,SV-type composition under minimap2,mosaic_sv_pilot.csv,Nimbus Sans,320,600
+mosaic_sv_type_radar_winnowmap,89,93,SV-type composition under winnowmap,mosaic_sv_pilot.csv,Nimbus Sans,320,600
+mosaic_sv_vaf_stacked_counts,105,75,absolute candidate burden and VAF-bin composition,mosaic_sv_pilot.csv,Nimbus Sans,320,600

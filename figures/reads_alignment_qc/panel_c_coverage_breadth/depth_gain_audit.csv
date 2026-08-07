@@ -1,0 +1,13 @@
+reference,aligner,platform,coverage_10x_pct,coverage_30x_pct,coverage_50x_pct,gain_10x_to_30x_pp,gain_30x_to_50x_pp
+GRCh38,minimap2,BGI,92.65,93.33,93.55,0.68,0.22
+GRCh38,winnowmap,BGI,92.62,93.31,93.53,0.69,0.22
+GRCh38,minimap2,HiFi,92.5,93.12,93.3,0.62,0.18
+GRCh38,winnowmap,HiFi,92.29,92.94,93.14,0.65,0.2
+GRCh38,minimap2,ONT,92.5,93.15,93.33,0.65,0.18
+GRCh38,winnowmap,ONT,92.47,93.12,93.31,0.65,0.19
+T2T-CHM13,minimap2,BGI,98.56,99.33,99.53,0.77,0.2
+T2T-CHM13,winnowmap,BGI,98.55,99.38,99.58,0.83,0.2
+T2T-CHM13,minimap2,HiFi,97.85,98.38,98.54,0.53,0.16
+T2T-CHM13,winnowmap,HiFi,97.72,98.31,98.49,0.59,0.18
+T2T-CHM13,minimap2,ONT,98.84,99.35,99.47,0.51,0.12
+T2T-CHM13,winnowmap,ONT,98.84,99.43,99.58,0.59,0.15

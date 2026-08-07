@@ -1,0 +1,3 @@
+reference,n_conditions,minimum_primary_mapped_pct,maximum_primary_mapped_pct,primary_mapped_range_pp
+GRCh38,6,98.32,100,1.68
+T2T-CHM13,6,97.94,99.93,1.99

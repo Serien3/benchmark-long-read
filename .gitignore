@@ -1,0 +1,10 @@
+*.xlsx
+.agents/
+.claude/
+.venv/
+/example/
+AGENTS.md
+CLAUDE.md
+try/
+data/
+__pycache__/
