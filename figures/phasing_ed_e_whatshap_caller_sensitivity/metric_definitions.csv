@@ -1,0 +1,7 @@
+metric_key,metric_label,display_unit,transformation,axis_min,axis_max
+phased_snv_pct,"Phased heterozygous
+SNVs (%)",%,100 * source Phased SNVs fraction,55,101
+block_ng50_mb,"Phase-block
+NG50 (Mb)",Mb,none; source field is recorded in Mb and maps to genome-normalized NG50,0,4.4
+hamming_error_pct,"Blockwise Hamming
+error (%)",%,100 * Blockwise hamming / Covered variants,0,22

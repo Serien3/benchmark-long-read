@@ -1,0 +1,2 @@
+rows,minimum_h1_h2_ratio,maximum_h1_h2_ratio,minimum_h1_fraction_pct,maximum_h1_fraction_pct,minimum_h2_fraction_pct,maximum_h2_fraction_pct,maximum_abs_h1_h2_sum_residual,display_decision
+18,1.0033394496124095,1.0287358242169489,50.08334707363387,50.70821996323844,49.29178003676156,49.91665292636613,0,balance retained in Source Data and the haplotype-balance audit; no low-information 50/50 stacked chart

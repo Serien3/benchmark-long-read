@@ -1,0 +1,19 @@
+platform,mapper,reference,depth,depth_x,depth_index,source_whatshap_block_ng50_mb,plotted_phase_block_ng50_mb,het_snvs,phased_snvs,phased_snv_rate,phase_blocks,median_block_kb,mean_block_kb,max_block_mb,transformation
+BGI,minimap2,GRCh38,10x,10,1,0.915,0.915,5213428,5032436,0.9653,7624,123.5,341.3,6.507,none; source field is recorded in Mb
+BGI,minimap2,GRCh38,30x,30,2,2.503,2.503,5422732,5153058,0.9503,3242,221.8,841.8,12.843,none; source field is recorded in Mb
+BGI,minimap2,GRCh38,50x,50,3,3.868,3.868,5503980,5204406,0.9456,2714,153.8,1014.3,20.193,none; source field is recorded in Mb
+BGI,winnowmap,GRCh38,10x,10,1,0.948,0.948,5463110,5437572,0.9953,7861,112,333,5.997,none; source field is recorded in Mb
+BGI,winnowmap,GRCh38,30x,30,2,2.535,2.535,5486582,5459572,0.9951,3154,265.4,873.4,13.561,none; source field is recorded in Mb
+BGI,winnowmap,GRCh38,50x,50,3,3.829,3.829,5470906,5442210,0.9948,2439,246.1,1139.6,20.193,none; source field is recorded in Mb
+ONT,minimap2,GRCh38,10x,10,1,1.287,1.287,5623784,5408308,0.9617,5914,133.8,448.1,9.74,none; source field is recorded in Mb
+ONT,minimap2,GRCh38,30x,30,2,1.586,1.586,5524860,5226648,0.946,5108,143.5,518,10.852,none; source field is recorded in Mb
+ONT,minimap2,GRCh38,50x,50,3,2.018,2.018,5521468,5221184,0.9456,4756,97.8,554.8,10.969,none; source field is recorded in Mb
+ONT,winnowmap,GRCh38,10x,10,1,1.277,1.277,5985540,5952592,0.9945,5952,138.8,450.4,9.828,none; source field is recorded in Mb
+ONT,winnowmap,GRCh38,30x,30,2,1.561,1.561,5664516,5635276,0.9948,5020,152.9,531.5,10.852,none; source field is recorded in Mb
+ONT,winnowmap,GRCh38,50x,50,3,1.978,1.978,5572316,5545074,0.9951,4425,131.6,603.1,11.985,none; source field is recorded in Mb
+HiFi,minimap2,GRCh38,10x,10,1,0.363,0.363,4820242,4753008,0.9861,18281,34.5,118.2,2.879,none; source field is recorded in Mb
+HiFi,minimap2,GRCh38,30x,30,2,0.616,0.616,5018416,4889660,0.9743,11237,55.4,204.5,3.433,none; source field is recorded in Mb
+HiFi,minimap2,GRCh38,50x,50,3,0.713,0.713,5062062,4890484,0.9661,9655,67,242.1,4.603,none; source field is recorded in Mb
+HiFi,winnowmap,GRCh38,10x,10,1,0.364,0.364,5216410,5194168,0.9957,18551,34.5,117.9,2.879,none; source field is recorded in Mb
+HiFi,winnowmap,GRCh38,30x,30,2,0.615,0.615,5280060,5265944,0.9973,11559,54.5,201.6,3.433,none; source field is recorded in Mb
+HiFi,winnowmap,GRCh38,50x,50,3,0.709,0.709,5261770,5248150,0.9974,9913,66.3,239.2,4.603,none; source field is recorded in Mb

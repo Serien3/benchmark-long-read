@@ -1,0 +1,2 @@
+metric,numerator,denominator,plotted_unit,transformation,scale,interpretation,balance_note
+Taggable alignments,Alignments assigned to haplotype 1 or haplotype 2 (H1 + H2),Alignments processed by WhatsHap haplotag,%,100 * (H1 + H2) / Alignments processed,linear,Fraction of processed alignments receiving an H1/H2 haplotype assignment; not a unique-read rate and not a truth-set phasing-accuracy metric.,H1/H2 ratio is reported in Source Data; observed range 1.0033-1.0287

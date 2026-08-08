@@ -1,0 +1,19 @@
+platform,mapper,reference,depth,depth_x,depth_index,numerator_blockwise_hamming_errors,denominator_covered_variants,source_hamming_rate,plotted_hamming_error_pct,log10_display_coordinate,transformation
+BGI,minimap2,GRCh38,10x,10,1,72223,2017673,0.0358,3.5795195752730993,0.5538247417810473,100 * Blockwise Hamming / Covered variants
+BGI,minimap2,GRCh38,30x,30,2,75527,2095018,0.0361,3.6050764241643747,0.5569144757797377,100 * Blockwise Hamming / Covered variants
+BGI,minimap2,GRCh38,50x,50,3,60275,2097513,0.0287,2.8736413075866514,0.45843255786304715,100 * Blockwise Hamming / Covered variants
+BGI,winnowmap,GRCh38,10x,10,1,85676,2019844,0.0424,4.241713716504839,0.6275413535869964,100 * Blockwise Hamming / Covered variants
+BGI,winnowmap,GRCh38,30x,30,2,69306,2094861,0.0331,3.3083817971693588,0.5196156226567686,100 * Blockwise Hamming / Covered variants
+BGI,winnowmap,GRCh38,50x,50,3,85721,2095303,0.0409,4.091102814246913,0.6118403939689228,100 * Blockwise Hamming / Covered variants
+ONT,minimap2,GRCh38,10x,10,1,222534,2034500,0.1094,10.938019169329074,1.0389386801582527,100 * Blockwise Hamming / Covered variants
+ONT,minimap2,GRCh38,30x,30,2,29524,2101288,0.0141,1.405043002196748,0.14768961629160768,100 * Blockwise Hamming / Covered variants
+ONT,minimap2,GRCh38,50x,50,3,32542,2101338,0.0155,1.5486323475804464,0.18994832649471494,100 * Blockwise Hamming / Covered variants
+ONT,winnowmap,GRCh38,10x,10,1,226183,2033425,0.1112,11.123252640249826,1.0462318013788214,100 * Blockwise Hamming / Covered variants
+ONT,winnowmap,GRCh38,30x,30,2,33383,2100133,0.0159,1.5895659941537037,0.2012785632679824,100 * Blockwise Hamming / Covered variants
+ONT,winnowmap,GRCh38,50x,50,3,24551,2099759,0.0117,1.1692294210907062,0.0678997348898002,100 * Blockwise Hamming / Covered variants
+HiFi,minimap2,GRCh38,10x,10,1,9512,2054190,0.0046,0.4630535636917715,-0.33436876908944296,100 * Blockwise Hamming / Covered variants
+HiFi,minimap2,GRCh38,30x,30,2,10607,2119021,0.005,0.5005613441301431,-0.300542691841626,100 * Blockwise Hamming / Covered variants
+HiFi,minimap2,GRCh38,50x,50,3,11994,2122981,0.0056,0.5649603081704453,-0.24798206288511399,100 * Blockwise Hamming / Covered variants
+HiFi,winnowmap,GRCh38,10x,10,1,11162,2049657,0.0054,0.5445789222294267,-0.26393917191379057,100 * Blockwise Hamming / Covered variants
+HiFi,winnowmap,GRCh38,30x,30,2,12836,2106748,0.0061,0.6092802746223089,-0.21518288188103693,100 * Blockwise Hamming / Covered variants
+HiFi,winnowmap,GRCh38,50x,50,3,14621,2109000,0.0069,0.693266951161688,-0.15909950262860043,100 * Blockwise Hamming / Covered variants

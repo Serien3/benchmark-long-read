@@ -1,0 +1,73 @@
+platform,mapper,caller,depth,row_label,metric_key,metric,display_value,display_unit,display_y,source_phased_snv_fraction,source_block_n50_mb,numerator_blockwise_hamming_errors,denominator_covered_variants,source_hamming_rate,giab_het_snvs,transformation
+BGI,minimap2,Clair3,30x,BGI · minimap2,phased_snv_pct,"Phased heterozygous
+SNVs (%)",95.03,%,6.699999999999999,0.9503,2.5,158638,2113731,0.0751,2184586,100 * source Phased SNVs fraction
+BGI,minimap2,DeepVariant,30x,BGI · minimap2,phased_snv_pct,"Phased heterozygous
+SNVs (%)",67.9,%,6.5,0.679,4.04,425948,2083211,0.2045,2184586,100 * source Phased SNVs fraction
+BGI,winnowmap,Clair3,30x,BGI · winnowmap,phased_snv_pct,"Phased heterozygous
+SNVs (%)",99.51,%,6.1,0.9951,2.53,155635,2116770,0.0735,2184586,100 * source Phased SNVs fraction
+BGI,winnowmap,DeepVariant,30x,BGI · winnowmap,phased_snv_pct,"Phased heterozygous
+SNVs (%)",60.88,%,5.9,0.6088,4,428661,2087627,0.2053,2184586,100 * source Phased SNVs fraction
+ONT,minimap2,Clair3,30x,ONT · minimap2,phased_snv_pct,"Phased heterozygous
+SNVs (%)",94.6,%,4.699999999999999,0.946,1.59,94956,2113682,0.0449,2184586,100 * source Phased SNVs fraction
+ONT,minimap2,DeepVariant,30x,ONT · minimap2,phased_snv_pct,"Phased heterozygous
+SNVs (%)",73.79,%,4.5,0.7379,1.2,49637,2118486,0.0234,2184586,100 * source Phased SNVs fraction
+ONT,winnowmap,Clair3,30x,ONT · winnowmap,phased_snv_pct,"Phased heterozygous
+SNVs (%)",99.48,%,4.1,0.9948,1.56,105055,2115397,0.0497,2184586,100 * source Phased SNVs fraction
+ONT,winnowmap,DeepVariant,30x,ONT · winnowmap,phased_snv_pct,"Phased heterozygous
+SNVs (%)",65.8,%,3.9,0.658,1.21,73449,2120126,0.0346,2184586,100 * source Phased SNVs fraction
+HiFi,minimap2,Clair3,30x,HiFi · minimap2,phased_snv_pct,"Phased heterozygous
+SNVs (%)",97.43,%,2.7,0.9743,0.62,35747,2125536,0.0168,2184586,100 * source Phased SNVs fraction
+HiFi,minimap2,DeepVariant,30x,HiFi · minimap2,phased_snv_pct,"Phased heterozygous
+SNVs (%)",76.9,%,2.5,0.769,0.41,35637,2131599,0.0167,2184586,100 * source Phased SNVs fraction
+HiFi,winnowmap,Clair3,30x,HiFi · winnowmap,phased_snv_pct,"Phased heterozygous
+SNVs (%)",99.72999999999999,%,2.1,0.9973,0.62,45598,2115858,0.0216,2184586,100 * source Phased SNVs fraction
+HiFi,winnowmap,DeepVariant,30x,HiFi · winnowmap,phased_snv_pct,"Phased heterozygous
+SNVs (%)",73.75,%,1.9,0.7375,0.41,47776,2120057,0.0225,2184586,100 * source Phased SNVs fraction
+BGI,minimap2,Clair3,30x,BGI · minimap2,block_ng50_mb,"Phase-block
+NG50 (Mb)",2.5,Mb,6.699999999999999,0.9503,2.5,158638,2113731,0.0751,2184586,none; source field is recorded in Mb and maps to genome-normalized NG50
+BGI,minimap2,DeepVariant,30x,BGI · minimap2,block_ng50_mb,"Phase-block
+NG50 (Mb)",4.04,Mb,6.5,0.679,4.04,425948,2083211,0.2045,2184586,none; source field is recorded in Mb and maps to genome-normalized NG50
+BGI,winnowmap,Clair3,30x,BGI · winnowmap,block_ng50_mb,"Phase-block
+NG50 (Mb)",2.53,Mb,6.1,0.9951,2.53,155635,2116770,0.0735,2184586,none; source field is recorded in Mb and maps to genome-normalized NG50
+BGI,winnowmap,DeepVariant,30x,BGI · winnowmap,block_ng50_mb,"Phase-block
+NG50 (Mb)",4,Mb,5.9,0.6088,4,428661,2087627,0.2053,2184586,none; source field is recorded in Mb and maps to genome-normalized NG50
+ONT,minimap2,Clair3,30x,ONT · minimap2,block_ng50_mb,"Phase-block
+NG50 (Mb)",1.59,Mb,4.699999999999999,0.946,1.59,94956,2113682,0.0449,2184586,none; source field is recorded in Mb and maps to genome-normalized NG50
+ONT,minimap2,DeepVariant,30x,ONT · minimap2,block_ng50_mb,"Phase-block
+NG50 (Mb)",1.2,Mb,4.5,0.7379,1.2,49637,2118486,0.0234,2184586,none; source field is recorded in Mb and maps to genome-normalized NG50
+ONT,winnowmap,Clair3,30x,ONT · winnowmap,block_ng50_mb,"Phase-block
+NG50 (Mb)",1.56,Mb,4.1,0.9948,1.56,105055,2115397,0.0497,2184586,none; source field is recorded in Mb and maps to genome-normalized NG50
+ONT,winnowmap,DeepVariant,30x,ONT · winnowmap,block_ng50_mb,"Phase-block
+NG50 (Mb)",1.21,Mb,3.9,0.658,1.21,73449,2120126,0.0346,2184586,none; source field is recorded in Mb and maps to genome-normalized NG50
+HiFi,minimap2,Clair3,30x,HiFi · minimap2,block_ng50_mb,"Phase-block
+NG50 (Mb)",0.62,Mb,2.7,0.9743,0.62,35747,2125536,0.0168,2184586,none; source field is recorded in Mb and maps to genome-normalized NG50
+HiFi,minimap2,DeepVariant,30x,HiFi · minimap2,block_ng50_mb,"Phase-block
+NG50 (Mb)",0.41,Mb,2.5,0.769,0.41,35637,2131599,0.0167,2184586,none; source field is recorded in Mb and maps to genome-normalized NG50
+HiFi,winnowmap,Clair3,30x,HiFi · winnowmap,block_ng50_mb,"Phase-block
+NG50 (Mb)",0.62,Mb,2.1,0.9973,0.62,45598,2115858,0.0216,2184586,none; source field is recorded in Mb and maps to genome-normalized NG50
+HiFi,winnowmap,DeepVariant,30x,HiFi · winnowmap,block_ng50_mb,"Phase-block
+NG50 (Mb)",0.41,Mb,1.9,0.7375,0.41,47776,2120057,0.0225,2184586,none; source field is recorded in Mb and maps to genome-normalized NG50
+BGI,minimap2,Clair3,30x,BGI · minimap2,hamming_error_pct,"Blockwise Hamming
+error (%)",7.50511772784711,%,6.699999999999999,0.9503,2.5,158638,2113731,0.0751,2184586,100 * Blockwise hamming / Covered variants
+BGI,minimap2,DeepVariant,30x,BGI · minimap2,hamming_error_pct,"Blockwise Hamming
+error (%)",20.4467046304959,%,6.5,0.679,4.04,425948,2083211,0.2045,2184586,100 * Blockwise hamming / Covered variants
+BGI,winnowmap,Clair3,30x,BGI · winnowmap,hamming_error_pct,"Blockwise Hamming
+error (%)",7.35247570591042,%,6.1,0.9951,2.53,155635,2116770,0.0735,2184586,100 * Blockwise hamming / Covered variants
+BGI,winnowmap,DeepVariant,30x,BGI · winnowmap,hamming_error_pct,"Blockwise Hamming
+error (%)",20.53340946443019,%,5.9,0.6088,4,428661,2087627,0.2053,2184586,100 * Blockwise hamming / Covered variants
+ONT,minimap2,Clair3,30x,ONT · minimap2,hamming_error_pct,"Blockwise Hamming
+error (%)",4.492444937317913,%,4.699999999999999,0.946,1.59,94956,2113682,0.0449,2184586,100 * Blockwise hamming / Covered variants
+ONT,minimap2,DeepVariant,30x,ONT · minimap2,hamming_error_pct,"Blockwise Hamming
+error (%)",2.3430412096185673,%,4.5,0.7379,1.2,49637,2118486,0.0234,2184586,100 * Blockwise hamming / Covered variants
+ONT,winnowmap,Clair3,30x,ONT · winnowmap,hamming_error_pct,"Blockwise Hamming
+error (%)",4.966207288750055,%,4.1,0.9948,1.56,105055,2115397,0.0497,2184586,100 * Blockwise hamming / Covered variants
+ONT,winnowmap,DeepVariant,30x,ONT · winnowmap,hamming_error_pct,"Blockwise Hamming
+error (%)",3.4643695704877917,%,3.9,0.658,1.21,73449,2120126,0.0346,2184586,100 * Blockwise hamming / Covered variants
+HiFi,minimap2,Clair3,30x,HiFi · minimap2,hamming_error_pct,"Blockwise Hamming
+error (%)",1.6817875585264142,%,2.7,0.9743,0.62,35747,2125536,0.0168,2184586,100 * Blockwise hamming / Covered variants
+HiFi,minimap2,DeepVariant,30x,HiFi · minimap2,hamming_error_pct,"Blockwise Hamming
+error (%)",1.6718435315460365,%,2.5,0.769,0.41,35637,2131599,0.0167,2184586,100 * Blockwise hamming / Covered variants
+HiFi,winnowmap,Clair3,30x,HiFi · winnowmap,hamming_error_pct,"Blockwise Hamming
+error (%)",2.155059555036302,%,2.1,0.9973,0.62,45598,2115858,0.0216,2184586,100 * Blockwise hamming / Covered variants
+HiFi,winnowmap,DeepVariant,30x,HiFi · winnowmap,hamming_error_pct,"Blockwise Hamming
+error (%)",2.2535243156198157,%,1.9,0.7375,0.41,47776,2120057,0.0225,2184586,100 * Blockwise hamming / Covered variants

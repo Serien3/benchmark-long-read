@@ -1,0 +1,9 @@
+metric_key,metric_label,unit,numerator_field,denominator_field,transformation
+phased_heterozygous_snvs_pct,"Phased heterozygous
+SNVs (%)",%,Phased SNVs,Het SNVs,100 * Phased SNVs / Het SNVs
+phase_block_NG50_Mb,"Phase-block
+NG50 (Mb)",Mb,,,none; WhatsHap block NG50 is recorded in Mb
+switch_errors_per_10000,"Switch errors per 10,000
+assessed pairs","errors per 10,000 assessed pairs",Switch errors,Assessed pairs,10000 * Switch errors / Assessed pairs
+blockwise_hamming_error_pct,"Blockwise Hamming
+error (%)",%,Blockwise Hamming,Covered variants,100 * Blockwise Hamming / Covered variants

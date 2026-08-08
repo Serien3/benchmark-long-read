@@ -1,0 +1,2 @@
+metric,source_field,plotted_unit,transformation,definition,scale
+Phase-block NG50,WhatsHap block NG50,Mb,none; source field is recorded in Mb,"Block length at which cumulative observed phase-block span reaches 50% of the GRCh38 chromosome 1-22 genome length (2,875,001,522 bp).",linear

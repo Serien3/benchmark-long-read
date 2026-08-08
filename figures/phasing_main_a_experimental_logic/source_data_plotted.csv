@@ -1,0 +1,14 @@
+"lane","stage","label","quantitative_observation"
+"design","sample","HG002 genomic DNA",FALSE
+"design","platforms","BGI | ONT | HiFi",FALSE
+"design","mappers","minimap2 | winnowmap",FALSE
+"design","depths","10x | 30x | 50x",FALSE
+"primary","input","alignment BAM",FALSE
+"primary","input","Clair3 heterozygous biallelic SNPs",FALSE
+"primary","input","Sniffles2 SVs with read names",FALSE
+"primary","phaser","LongPhase 2.0.2 joint SNP + SV phasing",FALSE
+"primary","output","phased SNP VCF: coverage, NG50, GIAB switch/Hamming errors",FALSE
+"primary","output","phased SV VCF: phased fraction, T2T-Q100 Truvari F1",FALSE
+"validation","input","alignment BAM + Clair3 SNP VCF",FALSE
+"validation","phaser","WhatsHap 2.8 SNP phasing",FALSE
+"validation","output","coverage, NG50, GIAB errors, haplotag yield",FALSE

@@ -1,0 +1,7 @@
+platform,mapper,depth,phased_rate_residual,ng50_residual_mb,hamming_rate_residual,covered_variants_match,hamming_count_match,mapping_note
+BGI,minimap2,30x,0,-0.0030000000000001137,0,TRUE,TRUE,legacy Block N50 Mb header maps to the dedicated genome-normalized WhatsHap block NG50 field
+BGI,winnowmap,30x,0,-0.0050000000000003375,0,TRUE,TRUE,legacy Block N50 Mb header maps to the dedicated genome-normalized WhatsHap block NG50 field
+ONT,minimap2,30x,0,0.0040000000000000036,0,TRUE,TRUE,legacy Block N50 Mb header maps to the dedicated genome-normalized WhatsHap block NG50 field
+ONT,winnowmap,30x,0,-9.999999999998899e-4,0,TRUE,TRUE,legacy Block N50 Mb header maps to the dedicated genome-normalized WhatsHap block NG50 field
+HiFi,minimap2,30x,0,0.0040000000000000036,0,TRUE,TRUE,legacy Block N50 Mb header maps to the dedicated genome-normalized WhatsHap block NG50 field
+HiFi,winnowmap,30x,0,0.0050000000000000044,0,TRUE,TRUE,legacy Block N50 Mb header maps to the dedicated genome-normalized WhatsHap block NG50 field

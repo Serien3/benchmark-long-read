@@ -1,0 +1,19 @@
+platform,mapper,reference,depth,depth_x,depth_index,total_svs,denominator_heterozygous_svs,numerator_phased_heterozygous_svs,source_phased_rate,plotted_phased_heterozygous_sv_pct,transformation
+BGI,minimap2,GRCh38,10x,10,1,19993,13399,9510,0.7098,70.97544592880065,100 * Phased SVs / Heterozygous SVs
+BGI,minimap2,GRCh38,30x,30,2,24419,16575,11854,0.7152,71.51734539969834,100 * Phased SVs / Heterozygous SVs
+BGI,minimap2,GRCh38,50x,50,3,24756,16506,11801,0.715,71.49521386162607,100 * Phased SVs / Heterozygous SVs
+BGI,winnowmap,GRCh38,10x,10,1,20384,14145,9336,0.66,66.00212089077412,100 * Phased SVs / Heterozygous SVs
+BGI,winnowmap,GRCh38,30x,30,2,25812,18351,12048,0.6565,65.65309792381886,100 * Phased SVs / Heterozygous SVs
+BGI,winnowmap,GRCh38,50x,50,3,26666,18800,12247,0.6514,65.1436170212766,100 * Phased SVs / Heterozygous SVs
+ONT,minimap2,GRCh38,10x,10,1,21807,13910,10669,0.767,76.70021567217829,100 * Phased SVs / Heterozygous SVs
+ONT,minimap2,GRCh38,30x,30,2,26021,17498,13436,0.7679,76.78591839067322,100 * Phased SVs / Heterozygous SVs
+ONT,minimap2,GRCh38,50x,50,3,26346,17580,13422,0.7635,76.3481228668942,100 * Phased SVs / Heterozygous SVs
+ONT,winnowmap,GRCh38,10x,10,1,22041,14547,10416,0.716,71.60239224582388,100 * Phased SVs / Heterozygous SVs
+ONT,winnowmap,GRCh38,30x,30,2,27337,19227,13504,0.7023,70.23456597493109,100 * Phased SVs / Heterozygous SVs
+ONT,winnowmap,GRCh38,50x,50,3,28143,19825,13572,0.6846,68.45901639344262,100 * Phased SVs / Heterozygous SVs
+HiFi,minimap2,GRCh38,10x,10,1,19918,12461,9779,0.7848,78.47684776502689,100 * Phased SVs / Heterozygous SVs
+HiFi,minimap2,GRCh38,30x,30,2,24777,16620,12752,0.7673,76.72683513838749,100 * Phased SVs / Heterozygous SVs
+HiFi,minimap2,GRCh38,50x,50,3,25248,16884,12790,0.7575,75.75219142383321,100 * Phased SVs / Heterozygous SVs
+HiFi,winnowmap,GRCh38,10x,10,1,20231,13127,9645,0.7347,73.47451816866001,100 * Phased SVs / Heterozygous SVs
+HiFi,winnowmap,GRCh38,30x,30,2,26006,18342,12804,0.6981,69.80700032711809,100 * Phased SVs / Heterozygous SVs
+HiFi,winnowmap,GRCh38,50x,50,3,26950,19040,12919,0.6785,67.85189075630252,100 * Phased SVs / Heterozygous SVs

@@ -1,0 +1,37 @@
+platform,mapper,row_label,metric_key,metric,clair3_value,deepvariant_value,deepvariant_minus_clair3,connector_definition
+BGI,minimap2,BGI · minimap2,phased_snv_pct,"Phased heterozygous
+SNVs (%)",95.03,67.9,-27.129999999999995,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+BGI,winnowmap,BGI · winnowmap,phased_snv_pct,"Phased heterozygous
+SNVs (%)",99.51,60.88,-38.63,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+ONT,minimap2,ONT · minimap2,phased_snv_pct,"Phased heterozygous
+SNVs (%)",94.6,73.79,-20.809999999999988,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+ONT,winnowmap,ONT · winnowmap,phased_snv_pct,"Phased heterozygous
+SNVs (%)",99.48,65.8,-33.68000000000001,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+HiFi,minimap2,HiFi · minimap2,phased_snv_pct,"Phased heterozygous
+SNVs (%)",97.43,76.9,-20.53,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+HiFi,winnowmap,HiFi · winnowmap,phased_snv_pct,"Phased heterozygous
+SNVs (%)",99.72999999999999,73.75,-25.97999999999999,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+BGI,minimap2,BGI · minimap2,block_ng50_mb,"Phase-block
+NG50 (Mb)",2.5,4.04,1.54,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+BGI,winnowmap,BGI · winnowmap,block_ng50_mb,"Phase-block
+NG50 (Mb)",2.53,4,1.4700000000000002,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+ONT,minimap2,ONT · minimap2,block_ng50_mb,"Phase-block
+NG50 (Mb)",1.59,1.2,-0.3900000000000001,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+ONT,winnowmap,ONT · winnowmap,block_ng50_mb,"Phase-block
+NG50 (Mb)",1.56,1.21,-0.3500000000000001,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+HiFi,minimap2,HiFi · minimap2,block_ng50_mb,"Phase-block
+NG50 (Mb)",0.62,0.41,-0.21000000000000002,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+HiFi,winnowmap,HiFi · winnowmap,block_ng50_mb,"Phase-block
+NG50 (Mb)",0.62,0.41,-0.21000000000000002,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+BGI,minimap2,BGI · minimap2,hamming_error_pct,"Blockwise Hamming
+error (%)",7.50511772784711,20.4467046304959,12.94158690264879,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+BGI,winnowmap,BGI · winnowmap,hamming_error_pct,"Blockwise Hamming
+error (%)",7.35247570591042,20.53340946443019,13.18093375851977,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+ONT,minimap2,ONT · minimap2,hamming_error_pct,"Blockwise Hamming
+error (%)",4.492444937317913,2.3430412096185673,-2.1494037276993456,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+ONT,winnowmap,ONT · winnowmap,hamming_error_pct,"Blockwise Hamming
+error (%)",4.966207288750055,3.4643695704877917,-1.501837718262263,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+HiFi,minimap2,HiFi · minimap2,hamming_error_pct,"Blockwise Hamming
+error (%)",1.6817875585264142,1.6718435315460365,-0.009944026980377663,DeepVariant minus Clair3 within the same 30x platform-mapper workflow
+HiFi,winnowmap,HiFi · winnowmap,hamming_error_pct,"Blockwise Hamming
+error (%)",2.155059555036302,2.2535243156198157,0.09846476058351383,DeepVariant minus Clair3 within the same 30x platform-mapper workflow

@@ -1,0 +1,2 @@
+metric,numerator_and_denominator,precision_definition,recall_definition,truth_set,benchmark_tool,plotted_unit,scale,interpretation
+SV benchmark F1,2 * TP-base / (2 * TP-base + FP + FN),TP-base / (TP-base + FP),TP-base / (TP-base + FN),T2TQ100 v1.1 SV with matching benchmark BED,Truvari 5.1.1; pass-only query; TP is TP-base,fraction,linear,Harmonic balance of SV call-set precision and recall against T2T-Q100; not a truth assessment of LongPhase haplotype orientation.

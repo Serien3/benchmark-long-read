@@ -1,0 +1,2 @@
+metric,source_field,plotted_unit,transformation,definition,scale
+Phase-block NG50,NG50 (kb),Mb,NG50 (kb) / 1000,"Block length at which cumulative observed phase-block span reaches 50% of the GRCh38 chromosome 1-22 genome length (2,875,001,522 bp).",linear

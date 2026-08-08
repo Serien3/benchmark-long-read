@@ -1,0 +1,2 @@
+metric,numerator,denominator,plotted_unit,transformation,axis_transformation,plotted_breaks_pct,interpretation,truth_scope
+Blockwise Hamming error,Blockwise Hamming errors after phase-block orientation correction,Covered truth variants,%,100 * Blockwise Hamming / Covered variants,log10 display scale; source percentages remain untransformed in Source Data,1|2|5|10|20,Fraction of covered truth variants assigned to the inconsistent haplotype after block orientation correction.,"GIAB v5.0q phased SNP truth; 2,184,586 truth heterozygous SNVs recorded consistently across all rows"

@@ -1,0 +1,5 @@
+metric_key,panel_title,y_title,y_min,y_max,y_breaks,label_accuracy,baseline_policy,observed_min,observed_max,values_within_window
+phased_benchmark_snps_pct,Phased benchmark SNPs,Phased benchmark SNPs (%),98.5,100,98.5|99|99.5|100,0.1,truncated 98.5-100% window; explicit ticks; comparisons are within-panel only,98.69211217771674,99.58754341097459,TRUE
+phase_block_NG50_Mb,Phase-block NG50,Phase-block NG50 (Mb),0,2,0|0.5|1|1.5|2,0.1,zero baseline,0.3207,1.7368,TRUE
+switch_errors_per_10000,Switch-error burden,"Errors per 10,000 pairs",0,1.8,0|0.5|1|1.5,0.1,zero baseline,1.0481300364189619,1.6151977685421597,TRUE
+blockwise_hamming_error_pct,Blockwise Hamming error,Blockwise Hamming error (%),0,4,0|1|2|3|4,1,zero baseline,0.5005613441301431,3.6050764241643747,TRUE

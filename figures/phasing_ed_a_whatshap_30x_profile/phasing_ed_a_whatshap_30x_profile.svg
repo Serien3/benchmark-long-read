@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='518.74pt' height='147.40pt' viewBox='0 0 518.74 147.40'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA='>
+    <rect x='0.00' y='0.00' width='518.74' height='147.40' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA=)'>
+<text x='4.25' y='11.02' style='font-size: 8.00px; font-weight: bold;fill: #202124; font-family: "Nimbus Sans";' textLength='4.45px' lengthAdjust='spacingAndGlyphs'>a</text>
+<text x='21.26' y='10.36' style='font-size: 6.20px;fill: #5F6368; font-family: "Nimbus Sans";' textLength='133.86px' lengthAdjust='spacingAndGlyphs'>WhatsHap  ·  HG002  ·  GRCh38  ·  matched 30×</text>
+<text x='344.96' y='10.29' text-anchor='end' style='font-size: 6.00px; font-weight: bold;fill: #343434; font-family: "Nimbus Sans";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>Platform</text>
+<rect x='360.00' y='4.99' width='6.24' height='6.24' style='stroke-width: 0.75; stroke: none; fill: #FFB000;' />
+<text x='370.90' y='10.25' style='font-size: 5.90px;fill: #343434; font-family: "Nimbus Sans";' textLength='10.14px' lengthAdjust='spacingAndGlyphs'>BGI</text>
+<rect x='411.87' y='4.99' width='6.24' height='6.24' style='stroke-width: 0.75; stroke: none; fill: #13A4A6;' />
+<text x='422.77' y='10.25' style='font-size: 5.90px;fill: #343434; font-family: "Nimbus Sans";' textLength='12.34px' lengthAdjust='spacingAndGlyphs'>ONT</text>
+<rect x='463.75' y='4.99' width='6.24' height='6.24' style='stroke-width: 0.75; stroke: none; fill: #9400D3;' />
+<text x='474.65' y='10.25' style='font-size: 5.90px;fill: #343434; font-family: "Nimbus Sans";' textLength='10.41px' lengthAdjust='spacingAndGlyphs'>HiFi</text>
+</g>
+<defs>
+  <clipPath id='cpMC4wMHwxMjkuNjl8MTguNDN8MTQ3LjQw'>
+    <rect x='0.00' y='18.43' width='129.69' height='128.98' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHwxMjkuNjl8MTguNDN8MTQ3LjQw)'>
+<rect x='0.00' y='18.43' width='129.69' height='128.98' style='stroke-width: 0.65; stroke: #FFFFFF; fill: #FFFFFF;' />
+</g>
+<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA=)'>
+</g>
+<defs>
+  <clipPath id='cpMjIuMzd8MTI1LjcyfDMwLjQ2fDEzNy4yMg=='>
+    <rect x='22.37' y='30.46' width='103.35' height='106.77' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMjIuMzd8MTI1LjcyfDMwLjQ2fDEzNy4yMg==)'>
+<rect x='22.37' y='30.46' width='103.35' height='106.77' style='stroke-width: 0.65; stroke: none; fill: #FFFFFF;' />
+<line x1='22.37' y1='137.22' x2='22.37' y2='30.46' style='stroke-width: 0.73; stroke: #E1E1E1; stroke-linecap: butt;' />
+<line x1='74.04' y1='137.22' x2='74.04' y2='30.46' style='stroke-width: 0.73; stroke: #E1E1E1; stroke-linecap: butt;' />
+<line x1='125.72' y1='137.22' x2='125.72' y2='30.46' style='stroke-width: 0.73; stroke: #E1E1E1; stroke-linecap: butt;' />
+<rect x='30.12' y='118.95' width='10.33' height='1690.95' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFB000;' />
+<rect x='43.04' y='126.51' width='10.33' height='1683.40' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #13A4A6;' />
+<rect x='55.96' y='76.11' width='10.33' height='1733.79' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9400D3;' />
+<rect x='81.79' y='39.22' width='10.33' height='1770.69' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFB000;' />
+<rect x='94.71' y='39.64' width='10.33' height='1770.26' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #13A4A6;' />
+<rect x='107.63' y='35.21' width='10.33' height='1774.69' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9400D3;' />
+</g>
+<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA=)'>
+<text x='21.47' y='139.34' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='8.05px' lengthAdjust='spacingAndGlyphs'> 94</text>
+<text x='21.47' y='103.75' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='8.05px' lengthAdjust='spacingAndGlyphs'> 96</text>
+<text x='21.47' y='68.16' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='8.05px' lengthAdjust='spacingAndGlyphs'> 98</text>
+<text x='21.47' y='32.57' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='9.66px' lengthAdjust='spacingAndGlyphs'>100</text>
+<text x='48.21' y='142.71' text-anchor='middle' style='font-size: 5.90px;fill: #292929; font-family: "Nimbus Sans";' textLength='25.56px' lengthAdjust='spacingAndGlyphs'>minimap2</text>
+<text x='99.88' y='142.71' text-anchor='middle' style='font-size: 5.90px;fill: #292929; font-family: "Nimbus Sans";' textLength='31.05px' lengthAdjust='spacingAndGlyphs'>winnowmap</text>
+<text transform='translate(8.63,83.84) rotate(-90)' text-anchor='middle' style='font-size: 6.40px; font-weight: bold;fill: #171717; font-family: "Nimbus Sans";' textLength='95.88px' lengthAdjust='spacingAndGlyphs'>Phased heterozygous SNVs (%)</text>
+<text x='74.04' y='26.93' text-anchor='middle' style='font-size: 7.00px; font-weight: bold;fill: #111111; font-family: "Nimbus Sans";' textLength='92.23px' lengthAdjust='spacingAndGlyphs'>Phased heterozygous SNVs</text>
+</g>
+<defs>
+  <clipPath id='cpMTI5LjY5fDI1OS4zN3wxOC40M3wxNDcuNDA='>
+    <rect x='129.69' y='18.43' width='129.69' height='128.98' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMTI5LjY5fDI1OS4zN3wxOC40M3wxNDcuNDA=)'>
+<rect x='129.69' y='18.43' width='129.69' height='128.98' style='stroke-width: 0.65; stroke: #FFFFFF; fill: #FFFFFF;' />
+</g>
+<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA=)'>
+</g>
+<defs>
+  <clipPath id='cpMTQ1LjYyfDI1NS40MHwzMC40NnwxMzcuMjI='>
+    <rect x='145.62' y='30.46' width='109.78' height='106.77' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMTQ1LjYyfDI1NS40MHwzMC40NnwxMzcuMjI=)'>
+<rect x='145.62' y='30.46' width='109.78' height='106.77' style='stroke-width: 0.65; stroke: none; fill: #FFFFFF;' />
+<line x1='145.62' y1='137.22' x2='145.62' y2='30.46' style='stroke-width: 0.73; stroke: #E1E1E1; stroke-linecap: butt;' />
+<line x1='200.51' y1='137.22' x2='200.51' y2='30.46' style='stroke-width: 0.73; stroke: #E1E1E1; stroke-linecap: butt;' />
+<line x1='255.40' y1='137.22' x2='255.40' y2='30.46' style='stroke-width: 0.73; stroke: #E1E1E1; stroke-linecap: butt;' />
+<rect x='153.85' y='48.15' width='10.98' height='89.08' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFB000;' />
+<rect x='167.57' y='80.78' width='10.98' height='56.44' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #13A4A6;' />
+<rect x='181.30' y='115.30' width='10.98' height='21.92' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9400D3;' />
+<rect x='208.74' y='47.01' width='10.98' height='90.22' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFB000;' />
+<rect x='222.47' y='81.67' width='10.98' height='55.55' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #13A4A6;' />
+<rect x='236.19' y='115.34' width='10.98' height='21.89' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9400D3;' />
+</g>
+<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA=)'>
+<text x='144.72' y='139.34' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='3.22px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='144.72' y='103.75' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='3.22px' lengthAdjust='spacingAndGlyphs'>1</text>
+<text x='144.72' y='68.16' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='3.22px' lengthAdjust='spacingAndGlyphs'>2</text>
+<text x='144.72' y='32.57' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='3.22px' lengthAdjust='spacingAndGlyphs'>3</text>
+<text x='173.06' y='142.71' text-anchor='middle' style='font-size: 5.90px;fill: #292929; font-family: "Nimbus Sans";' textLength='25.56px' lengthAdjust='spacingAndGlyphs'>minimap2</text>
+<text x='227.96' y='142.71' text-anchor='middle' style='font-size: 5.90px;fill: #292929; font-family: "Nimbus Sans";' textLength='31.05px' lengthAdjust='spacingAndGlyphs'>winnowmap</text>
+<text transform='translate(138.31,83.84) rotate(-90)' text-anchor='middle' style='font-size: 6.40px; font-weight: bold;fill: #171717; font-family: "Nimbus Sans";' textLength='71.45px' lengthAdjust='spacingAndGlyphs'>Phase-block NG50 (Mb)</text>
+<text x='200.51' y='26.93' text-anchor='middle' style='font-size: 7.00px; font-weight: bold;fill: #111111; font-family: "Nimbus Sans";' textLength='61.61px' lengthAdjust='spacingAndGlyphs'>Phase-block NG50</text>
+</g>
+<defs>
+  <clipPath id='cpMjU5LjM3fDM4OS4wNnwxOC40M3wxNDcuNDA='>
+    <rect x='259.37' y='18.43' width='129.69' height='128.98' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMjU5LjM3fDM4OS4wNnwxOC40M3wxNDcuNDA=)'>
+<rect x='259.37' y='18.43' width='129.69' height='128.98' style='stroke-width: 0.65; stroke: #FFFFFF; fill: #FFFFFF;' />
+</g>
+<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA=)'>
+</g>
+<defs>
+  <clipPath id='cpMjc1LjMwfDM4NS4wOXwzMC40NnwxMzcuMjI='>
+    <rect x='275.30' y='30.46' width='109.78' height='106.77' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMjc1LjMwfDM4NS4wOXwzMC40NnwxMzcuMjI=)'>
+<rect x='275.30' y='30.46' width='109.78' height='106.77' style='stroke-width: 0.65; stroke: none; fill: #FFFFFF;' />
+<line x1='275.30' y1='137.22' x2='275.30' y2='30.46' style='stroke-width: 0.73; stroke: #E1E1E1; stroke-linecap: butt;' />
+<line x1='330.19' y1='137.22' x2='330.19' y2='30.46' style='stroke-width: 0.73; stroke: #E1E1E1; stroke-linecap: butt;' />
+<line x1='385.09' y1='137.22' x2='385.09' y2='30.46' style='stroke-width: 0.73; stroke: #E1E1E1; stroke-linecap: butt;' />
+<rect x='283.54' y='82.63' width='10.98' height='54.60' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFB000;' />
+<rect x='297.26' y='80.01' width='10.98' height='57.22' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #13A4A6;' />
+<rect x='310.98' y='44.71' width='10.98' height='92.52' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9400D3;' />
+<rect x='338.43' y='83.88' width='10.98' height='53.34' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFB000;' />
+<rect x='352.15' y='73.20' width='10.98' height='64.02' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #13A4A6;' />
+<rect x='365.87' y='55.43' width='10.98' height='81.79' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9400D3;' />
+</g>
+<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA=)'>
+<text x='274.41' y='139.34' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='3.22px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='274.41' y='115.61' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='3.22px' lengthAdjust='spacingAndGlyphs'>2</text>
+<text x='274.41' y='91.89' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='3.22px' lengthAdjust='spacingAndGlyphs'>4</text>
+<text x='274.41' y='68.16' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='3.22px' lengthAdjust='spacingAndGlyphs'>6</text>
+<text x='274.41' y='44.43' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='3.22px' lengthAdjust='spacingAndGlyphs'>8</text>
+<text x='302.75' y='142.71' text-anchor='middle' style='font-size: 5.90px;fill: #292929; font-family: "Nimbus Sans";' textLength='25.56px' lengthAdjust='spacingAndGlyphs'>minimap2</text>
+<text x='357.64' y='142.71' text-anchor='middle' style='font-size: 5.90px;fill: #292929; font-family: "Nimbus Sans";' textLength='31.05px' lengthAdjust='spacingAndGlyphs'>winnowmap</text>
+<text transform='translate(268.00,83.84) rotate(-90)' text-anchor='middle' style='font-size: 6.40px; font-weight: bold;fill: #171717; font-family: "Nimbus Sans";' textLength='69.25px' lengthAdjust='spacingAndGlyphs'>Errors per 10,000 pairs</text>
+<text x='330.19' y='26.93' text-anchor='middle' style='font-size: 7.00px; font-weight: bold;fill: #111111; font-family: "Nimbus Sans";' textLength='66.84px' lengthAdjust='spacingAndGlyphs'>Switch-error burden</text>
+</g>
+<defs>
+  <clipPath id='cpMzg5LjA2fDUxOC43NHwxOC40M3wxNDcuNDA='>
+    <rect x='389.06' y='18.43' width='129.69' height='128.98' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMzg5LjA2fDUxOC43NHwxOC40M3wxNDcuNDA=)'>
+<rect x='389.06' y='18.43' width='129.69' height='128.98' style='stroke-width: 0.65; stroke: #FFFFFF; fill: #FFFFFF;' />
+</g>
+<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA=)'>
+</g>
+<defs>
+  <clipPath id='cpNDA0Ljk5fDUxNC43N3wzMC40NnwxMzcuMjI='>
+    <rect x='404.99' y='30.46' width='109.78' height='106.77' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNDA0Ljk5fDUxNC43N3wzMC40NnwxMzcuMjI=)'>
+<rect x='404.99' y='30.46' width='109.78' height='106.77' style='stroke-width: 0.65; stroke: none; fill: #FFFFFF;' />
+<line x1='404.99' y1='137.22' x2='404.99' y2='30.46' style='stroke-width: 0.73; stroke: #E1E1E1; stroke-linecap: butt;' />
+<line x1='459.88' y1='137.22' x2='459.88' y2='30.46' style='stroke-width: 0.73; stroke: #E1E1E1; stroke-linecap: butt;' />
+<line x1='514.77' y1='137.22' x2='514.77' y2='30.46' style='stroke-width: 0.73; stroke: #E1E1E1; stroke-linecap: butt;' />
+<rect x='413.22' y='37.06' width='10.98' height='100.16' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFB000;' />
+<rect x='426.94' y='77.27' width='10.98' height='59.96' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #13A4A6;' />
+<rect x='440.67' y='114.78' width='10.98' height='22.44' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9400D3;' />
+<rect x='468.11' y='39.10' width='10.98' height='98.13' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFB000;' />
+<rect x='481.84' y='70.95' width='10.98' height='66.28' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #13A4A6;' />
+<rect x='495.56' y='108.46' width='10.98' height='28.76' style='stroke-width: 0.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9400D3;' />
+</g>
+<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA=)'>
+<text x='404.09' y='139.34' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='3.22px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='404.09' y='112.65' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='3.22px' lengthAdjust='spacingAndGlyphs'>2</text>
+<text x='404.09' y='85.95' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='3.22px' lengthAdjust='spacingAndGlyphs'>4</text>
+<text x='404.09' y='59.26' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='3.22px' lengthAdjust='spacingAndGlyphs'>6</text>
+<text x='404.09' y='32.57' text-anchor='end' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";' textLength='3.22px' lengthAdjust='spacingAndGlyphs'>8</text>
+<text x='432.43' y='142.71' text-anchor='middle' style='font-size: 5.90px;fill: #292929; font-family: "Nimbus Sans";' textLength='25.56px' lengthAdjust='spacingAndGlyphs'>minimap2</text>
+<text x='487.33' y='142.71' text-anchor='middle' style='font-size: 5.90px;fill: #292929; font-family: "Nimbus Sans";' textLength='31.05px' lengthAdjust='spacingAndGlyphs'>winnowmap</text>
+<text transform='translate(397.68,83.84) rotate(-90)' text-anchor='middle' style='font-size: 6.40px; font-weight: bold;fill: #171717; font-family: "Nimbus Sans";' textLength='90.72px' lengthAdjust='spacingAndGlyphs'>Blockwise Hamming error (%)</text>
+<text x='459.88' y='26.93' text-anchor='middle' style='font-size: 7.00px; font-weight: bold;fill: #111111; font-family: "Nimbus Sans";' textLength='86.58px' lengthAdjust='spacingAndGlyphs'>Blockwise Hamming error</text>
+</g>
+</g>
+</svg>

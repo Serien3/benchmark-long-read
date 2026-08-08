@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='518.74pt' height='87.87pt' viewBox='0 0 518.74 87.87'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1MTguNzR8MC4wMHw4Ny44Nw=='>
+    <rect x='0.00' y='0.00' width='518.74' height='87.87' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHw4Ny44Nw==)'>
+<rect x='0.00' y='0.000000000000014' width='518.74' height='87.87' style='stroke-width: 0.75; stroke: none; fill: #FFFFFF;' />
+<text x='3.40' y='6.88' style='font-size: 8.00px; font-weight: bold;fill: #202124; font-family: "Nimbus Sans";' textLength='4.45px' lengthAdjust='spacingAndGlyphs'>a</text>
+<polygon points='20.13,78.80 118.77,78.80 118.65,78.80 119.15,78.78 119.64,78.68 120.11,78.50 120.54,78.25 120.93,77.93 121.26,77.56 121.53,77.13 121.73,76.67 121.85,76.19 121.89,75.69 121.89,75.69 121.89,13.89 121.89,13.89 121.85,13.39 121.73,12.90 121.53,12.44 121.26,12.02 120.93,11.64 120.54,11.32 120.11,11.07 119.64,10.89 119.15,10.79 118.77,10.77 20.13,10.77 20.50,10.79 20.00,10.77 19.50,10.83 19.02,10.97 18.57,11.19 18.15,11.47 17.79,11.82 17.49,12.22 17.26,12.67 17.10,13.14 17.02,13.64 17.01,13.89 17.01,75.69 17.02,75.43 17.02,75.94 17.10,76.43 17.26,76.91 17.49,77.35 17.79,77.75 18.15,78.10 18.57,78.39 19.02,78.60 19.50,78.74 20.00,78.80 ' style='stroke-width: 0.41; stroke: #E3E6E8; fill: #FFFFFF;' />
+<text x='22.68' y='19.59' style='font-size: 7.10px; font-weight: bold;fill: #202124; font-family: "Nimbus Sans";' textLength='77.84px' lengthAdjust='spacingAndGlyphs'>Matched HG002 design</text>
+<text x='22.68' y='28.19' style='font-size: 5.80px;fill: #62676D; font-family: "Nimbus Sans";' textLength='66.03px' lengthAdjust='spacingAndGlyphs'>genomic DNA  |  GRCh38</text>
+<circle cx='25.51' cy='37.70' r='2.29' style='stroke-width: 0.34; stroke: #FFFFFF; fill: #FFFFFF;' />
+<circle cx='57.54' cy='37.70' r='2.29' style='stroke-width: 0.34; stroke: #FFFFFF; fill: #FFFFFF;' />
+<circle cx='86.46' cy='37.70' r='2.29' style='stroke-width: 0.34; stroke: #FFFFFF; fill: #FFFFFF;' />
+<circle cx='25.51' cy='37.70' r='2.29' style='stroke-width: 0.34; stroke: #FFFFFF; fill: #FFB000;' />
+<circle cx='57.54' cy='37.70' r='2.29' style='stroke-width: 0.34; stroke: #FFFFFF; fill: #13A4A6;' />
+<circle cx='86.46' cy='37.70' r='2.29' style='stroke-width: 0.34; stroke: #FFFFFF; fill: #9400D3;' />
+<text x='30.61' y='39.77' style='font-size: 5.70px;fill: #202124; font-family: "Nimbus Sans";' textLength='9.80px' lengthAdjust='spacingAndGlyphs'>BGI</text>
+<text x='62.65' y='39.77' style='font-size: 5.70px;fill: #202124; font-family: "Nimbus Sans";' textLength='11.94px' lengthAdjust='spacingAndGlyphs'>ONT</text>
+<text x='91.56' y='39.77' style='font-size: 5.70px;fill: #202124; font-family: "Nimbus Sans";' textLength='10.05px' lengthAdjust='spacingAndGlyphs'>HiFi</text>
+<polyline points='22.68,49.04 35.43,49.04 ' style='stroke-width: 0.79; stroke: #202124;' />
+<text x='39.69' y='51.08' style='font-size: 5.60px;fill: #202124; font-family: "Nimbus Sans";' textLength='24.22px' lengthAdjust='spacingAndGlyphs'>minimap2</text>
+<polyline points='73.70,49.04 86.46,49.04 ' style='stroke-width: 0.79; stroke: #202124; stroke-dasharray: 1.05,3.15,4.20,3.15;' />
+<text x='90.71' y='51.08' style='font-size: 5.60px;fill: #202124; font-family: "Nimbus Sans";' textLength='29.44px' lengthAdjust='spacingAndGlyphs'>winnowmap</text>
+<text x='22.68' y='62.28' style='font-size: 6.00px;fill: #202124; font-family: "Nimbus Sans";' textLength='47.28px' lengthAdjust='spacingAndGlyphs'>10×     30×     50×</text>
+<text x='22.68' y='73.89' style='font-size: 5.20px;fill: #62676D; font-family: "Nimbus Sans";' textLength='59.03px' lengthAdjust='spacingAndGlyphs'>18 matched combinations</text>
+<text x='129.83' y='10.11' style='font-size: 5.20px; font-weight: bold;fill: #4D7895; font-family: "Nimbus Sans";' textLength='95.73px' lengthAdjust='spacingAndGlyphs'>PRIMARY  |  JOINT SNP + SV PHASING</text>
+<polygon points='134.93,38.55 213.73,38.55 213.61,38.55 214.11,38.53 214.60,38.43 215.07,38.25 215.50,38.00 215.89,37.68 216.23,37.31 216.49,36.88 216.69,36.42 216.81,35.93 216.85,35.43 216.85,35.43 216.85,15.59 216.85,15.59 216.81,15.09 216.69,14.60 216.49,14.14 216.23,13.72 215.89,13.34 215.50,13.02 215.07,12.77 214.60,12.60 214.11,12.50 213.73,12.47 134.93,12.47 135.30,12.50 134.80,12.47 134.31,12.54 133.82,12.68 133.37,12.89 132.96,13.18 132.60,13.52 132.29,13.92 132.06,14.37 131.90,14.84 131.82,15.34 131.81,15.59 131.81,35.43 131.82,35.18 131.82,35.68 131.90,36.18 132.06,36.66 132.29,37.10 132.60,37.50 132.96,37.85 133.37,38.13 133.82,38.35 134.31,38.49 134.80,38.55 ' style='stroke-width: 0.41; stroke: #AEB4BA; fill: #F7F8F8;' />
+<text x='136.63' y='19.65' style='font-size: 5.70px; font-weight: bold;fill: #202124; font-family: "Nimbus Sans";' textLength='42.12px' lengthAdjust='spacingAndGlyphs'>Alignment BAM</text>
+<text x='136.63' y='27.69' style='font-size: 5.20px;fill: #202124; font-family: "Nimbus Sans";' textLength='55.34px' lengthAdjust='spacingAndGlyphs'>Clair3 het biallelic SNPs</text>
+<text x='136.63' y='35.62' style='font-size: 5.20px;fill: #202124; font-family: "Nimbus Sans";' textLength='63.86px' lengthAdjust='spacingAndGlyphs'>Sniffles2 SVs + read names</text>
+<polygon points='241.94,38.55 307.98,38.55 307.86,38.55 308.36,38.53 308.85,38.43 309.32,38.25 309.76,38.00 310.14,37.68 310.48,37.31 310.75,36.88 310.94,36.42 311.06,35.93 311.10,35.43 311.10,35.43 311.10,15.59 311.10,15.59 311.06,15.09 310.94,14.60 310.75,14.14 310.48,13.72 310.14,13.34 309.76,13.02 309.32,12.77 308.85,12.60 308.36,12.50 307.98,12.47 241.94,12.47 242.31,12.50 241.81,12.47 241.31,12.54 240.83,12.68 240.38,12.89 239.96,13.18 239.60,13.52 239.30,13.92 239.07,14.37 238.91,14.84 238.83,15.34 238.82,15.59 238.82,35.43 238.83,35.18 238.83,35.68 238.91,36.18 239.07,36.66 239.30,37.10 239.60,37.50 239.96,37.85 240.38,38.13 240.83,38.35 241.31,38.49 241.81,38.55 ' style='stroke-width: 0.60; stroke: #4D7895; fill: #EAF2F8;' />
+<text x='274.96' y='23.38' text-anchor='middle' style='font-size: 6.60px; font-weight: bold;fill: #202124; font-family: "Nimbus Sans";' textLength='51.91px' lengthAdjust='spacingAndGlyphs'>LongPhase 2.0.2</text>
+<text x='274.96' y='31.73' text-anchor='middle' style='font-size: 5.40px;fill: #62676D; font-family: "Nimbus Sans";' textLength='56.00px' lengthAdjust='spacingAndGlyphs'>joint SNP + SV phasing</text>
+<polygon points='324.28,24.24 505.70,24.24 505.61,24.23 505.97,24.22 506.33,24.15 506.67,24.02 506.99,23.83 507.27,23.60 507.51,23.33 507.71,23.02 507.85,22.69 507.94,22.33 507.97,21.97 507.97,21.97 507.97,13.75 507.97,13.75 507.94,13.38 507.85,13.03 507.71,12.69 507.51,12.39 507.27,12.11 506.99,11.88 506.67,11.70 506.33,11.57 505.97,11.50 505.70,11.48 324.28,11.48 324.56,11.50 324.19,11.48 323.83,11.53 323.48,11.63 323.15,11.78 322.85,11.99 322.59,12.24 322.37,12.54 322.20,12.86 322.08,13.21 322.02,13.57 322.02,13.75 322.02,21.97 322.02,21.79 322.02,22.15 322.08,22.51 322.20,22.86 322.37,23.18 322.59,23.47 322.85,23.73 323.15,23.93 323.48,24.09 323.83,24.19 324.19,24.23 ' style='stroke-width: 0.41; stroke: #E3E6E8; fill: #FFFFFF;' />
+<text x='325.98' y='19.90' style='font-size: 5.60px; font-weight: bold;fill: #202124; font-family: "Nimbus Sans";' textLength='45.44px' lengthAdjust='spacingAndGlyphs'>Phased SNP VCF</text>
+<text x='384.09' y='19.68' style='font-size: 5.00px;fill: #202124; font-family: "Nimbus Sans";' textLength='115.70px' lengthAdjust='spacingAndGlyphs'>coverage  |  NG50  |  GIAB switch + Hamming errors</text>
+<polygon points='324.28,39.54 505.70,39.54 505.61,39.54 505.97,39.53 506.33,39.45 506.67,39.32 506.99,39.14 507.27,38.91 507.51,38.64 507.71,38.33 507.85,37.99 507.94,37.64 507.97,37.28 507.97,37.28 507.97,29.06 507.97,29.06 507.94,28.69 507.85,28.34 507.71,28.00 507.51,27.69 507.27,27.42 506.99,27.19 506.67,27.01 506.33,26.88 505.97,26.80 505.70,26.79 324.28,26.79 324.56,26.80 324.19,26.79 323.83,26.83 323.48,26.93 323.15,27.09 322.85,27.30 322.59,27.55 322.37,27.84 322.20,28.17 322.08,28.51 322.02,28.87 322.02,29.06 322.02,37.28 322.02,37.09 322.02,37.46 322.08,37.82 322.20,38.16 322.37,38.49 322.59,38.78 322.85,39.03 323.15,39.24 323.48,39.40 323.83,39.50 324.19,39.54 ' style='stroke-width: 0.41; stroke: #E3E6E8; fill: #FFFFFF;' />
+<text x='325.98' y='35.20' style='font-size: 5.60px; font-weight: bold;fill: #202124; font-family: "Nimbus Sans";' textLength='41.23px' lengthAdjust='spacingAndGlyphs'>Phased SV VCF</text>
+<text x='384.09' y='34.99' style='font-size: 5.00px;fill: #202124; font-family: "Nimbus Sans";' textLength='87.31px' lengthAdjust='spacingAndGlyphs'>phased fraction  |  T2T-Q100 Truvari F1</text>
+<polyline points='121.61,25.51 130.96,25.51 ' style='stroke-width: 0.49; stroke: #AEB4BA;' />
+<polygon points='127.65,27.43 130.96,25.51 127.65,23.60 ' style='stroke-width: 0.49; stroke: #AEB4BA; fill: #FFFFFF;' />
+<polyline points='217.70,25.51 234.43,25.51 ' style='stroke-width: 0.49; stroke: #4D7895;' />
+<polygon points='231.11,27.43 234.43,25.51 231.11,23.60 ' style='stroke-width: 0.49; stroke: #4D7895; fill: #FFFFFF;' />
+<polyline points='311.24,25.51 317.48,25.51 317.48,17.86 ' style='stroke-width: 0.49; stroke: #4D7895;' />
+<polyline points='317.48,25.51 317.48,33.17 ' style='stroke-width: 0.49; stroke: #4D7895;' />
+<polyline points='317.48,17.86 320.31,17.86 ' style='stroke-width: 0.49; stroke: #4D7895;' />
+<polygon points='317.00,19.77 320.31,17.86 317.00,15.94 ' style='stroke-width: 0.49; stroke: #4D7895; fill: #FFFFFF;' />
+<polyline points='317.48,33.17 320.31,33.17 ' style='stroke-width: 0.49; stroke: #4D7895;' />
+<polygon points='317.00,35.08 320.31,33.17 317.00,31.25 ' style='stroke-width: 0.49; stroke: #4D7895; fill: #FFFFFF;' />
+<text x='129.83' y='52.63' style='font-size: 5.20px; font-weight: bold;fill: #7D878E; font-family: "Nimbus Sans";' textLength='145.89px' lengthAdjust='spacingAndGlyphs'>INDEPENDENT VALIDATION  |  SNP PHASING + HAPLOTAG</text>
+<polygon points='134.93,77.67 213.73,77.67 213.61,77.67 214.11,77.65 214.60,77.55 215.07,77.37 215.50,77.12 215.89,76.80 216.23,76.42 216.49,76.00 216.69,75.54 216.81,75.05 216.85,74.55 216.85,74.55 216.85,60.38 216.85,60.38 216.81,59.88 216.69,59.39 216.49,58.93 216.23,58.50 215.89,58.13 215.50,57.81 215.07,57.56 214.60,57.38 214.11,57.28 213.73,57.26 134.93,57.26 135.30,57.28 134.80,57.26 134.31,57.32 133.82,57.46 133.37,57.68 132.96,57.96 132.60,58.31 132.29,58.71 132.06,59.16 131.90,59.63 131.82,60.13 131.81,60.38 131.81,74.55 131.82,74.30 131.82,74.80 131.90,75.30 132.06,75.77 132.29,76.22 132.60,76.62 132.96,76.97 133.37,77.25 133.82,77.47 134.31,77.61 134.80,77.67 ' style='stroke-width: 0.41; stroke: #AEB4BA; fill: #F7F8F8;' />
+<text x='136.63' y='65.53' style='font-size: 5.60px; font-weight: bold;fill: #202124; font-family: "Nimbus Sans";' textLength='41.45px' lengthAdjust='spacingAndGlyphs'>Alignment BAM</text>
+<text x='136.63' y='73.04' style='font-size: 5.20px;fill: #202124; font-family: "Nimbus Sans";' textLength='37.27px' lengthAdjust='spacingAndGlyphs'>Clair3 SNP VCF</text>
+<polygon points='241.94,77.67 307.98,77.67 307.86,77.67 308.36,77.65 308.85,77.55 309.32,77.37 309.76,77.12 310.14,76.80 310.48,76.42 310.75,76.00 310.94,75.54 311.06,75.05 311.10,74.55 311.10,74.55 311.10,60.38 311.10,60.38 311.06,59.88 310.94,59.39 310.75,58.93 310.48,58.50 310.14,58.13 309.76,57.81 309.32,57.56 308.85,57.38 308.36,57.28 307.98,57.26 241.94,57.26 242.31,57.28 241.81,57.26 241.31,57.32 240.83,57.46 240.38,57.68 239.96,57.96 239.60,58.31 239.30,58.71 239.07,59.16 238.91,59.63 238.83,60.13 238.82,60.38 238.82,74.55 238.83,74.30 238.83,74.80 238.91,75.30 239.07,75.77 239.30,76.22 239.60,76.62 239.96,76.97 240.38,77.25 240.83,77.47 241.31,77.61 241.81,77.67 ' style='stroke-width: 0.56; stroke: #7D878E; fill: #F2F4F5;' />
+<text x='274.96' y='66.39' text-anchor='middle' style='font-size: 6.40px; font-weight: bold;fill: #202124; font-family: "Nimbus Sans";' textLength='41.91px' lengthAdjust='spacingAndGlyphs'>WhatsHap 2.8</text>
+<text x='274.96' y='73.65' text-anchor='middle' style='font-size: 5.30px;fill: #62676D; font-family: "Nimbus Sans";' textLength='30.88px' lengthAdjust='spacingAndGlyphs'>SNP phasing</text>
+<polygon points='325.13,77.67 507.69,77.67 507.56,77.67 508.06,77.65 508.55,77.55 509.02,77.37 509.46,77.12 509.85,76.80 510.18,76.42 510.45,76.00 510.64,75.54 510.76,75.05 510.80,74.55 510.80,74.55 510.80,60.38 510.80,60.38 510.76,59.88 510.64,59.39 510.45,58.93 510.18,58.50 509.85,58.13 509.46,57.81 509.02,57.56 508.55,57.38 508.06,57.28 507.69,57.26 325.13,57.26 325.51,57.28 325.01,57.26 324.51,57.32 324.03,57.46 323.57,57.68 323.16,57.96 322.80,58.31 322.50,58.71 322.27,59.16 322.11,59.63 322.03,60.13 322.02,60.38 322.02,74.55 322.03,74.30 322.03,74.80 322.11,75.30 322.27,75.77 322.50,76.22 322.80,76.62 323.16,76.97 323.57,77.25 324.03,77.47 324.51,77.61 325.01,77.67 ' style='stroke-width: 0.41; stroke: #E3E6E8; fill: #FFFFFF;' />
+<text x='325.98' y='65.57' style='font-size: 5.70px; font-weight: bold;fill: #202124; font-family: "Nimbus Sans";' textLength='55.80px' lengthAdjust='spacingAndGlyphs'>Phased SNP outputs</text>
+<text x='325.98' y='73.32' style='font-size: 5.20px;fill: #202124; font-family: "Nimbus Sans";' textLength='115.20px' lengthAdjust='spacingAndGlyphs'>coverage  |  NG50  |  GIAB errors  |  haplotag yield</text>
+<polyline points='121.61,67.46 130.96,67.46 ' style='stroke-width: 0.49; stroke: #AEB4BA;' />
+<polygon points='127.65,69.38 130.96,67.46 127.65,65.55 ' style='stroke-width: 0.49; stroke: #AEB4BA; fill: #FFFFFF;' />
+<polyline points='217.70,67.46 234.43,67.46 ' style='stroke-width: 0.49; stroke: #7D878E;' />
+<polygon points='231.11,69.38 234.43,67.46 231.11,65.55 ' style='stroke-width: 0.49; stroke: #7D878E; fill: #FFFFFF;' />
+<polyline points='311.24,67.46 320.88,67.46 ' style='stroke-width: 0.49; stroke: #7D878E;' />
+<polygon points='317.57,69.38 320.88,67.46 317.57,65.55 ' style='stroke-width: 0.49; stroke: #7D878E; fill: #FFFFFF;' />
+</g>
+</g>
+</svg>

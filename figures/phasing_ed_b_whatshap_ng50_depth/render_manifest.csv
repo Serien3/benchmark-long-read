@@ -1,0 +1,5 @@
+file,format,width_mm,height_mm,dpi,bytes,md5,font_family,editable_text,plotted_points,raw_trajectories,panel_layout,depth_coordinate_grammar,generated_utc
+phasing_ed_b_whatshap_ng50_depth.svg,svg,88,48,,10093,4f254f3dcb3ac5533afdffc268d4db12,Nimbus Sans,TRUE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",2026-08-08 10:45:30 UTC
+phasing_ed_b_whatshap_ng50_depth.pdf,pdf,88,48,,16663,23576fecd43dce8b0a69068c5561759b,Nimbus Sans,TRUE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",2026-08-08 10:45:30 UTC
+phasing_ed_b_whatshap_ng50_depth.tiff,tiff,88,48,600,7063326,4b0ec5b21c4c78ed70c9a92a40ab8d75,Nimbus Sans,FALSE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",2026-08-08 10:45:30 UTC
+phasing_ed_b_whatshap_ng50_depth.png,png,88,48,600,99866,2ed95686901f1ab9f4a449938c3b0064,Nimbus Sans,FALSE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",2026-08-08 10:45:30 UTC

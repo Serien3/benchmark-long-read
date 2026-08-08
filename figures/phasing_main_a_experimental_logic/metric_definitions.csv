@@ -1,0 +1,8 @@
+"display_term","definition","transformation_in_later_panels"
+"SNP coverage","Phased benchmark SNPs divided by benchmark SNPs for LongPhase; phased heterozygous SNVs divided by heterozygous SNVs for WhatsHap.","fraction x 100 for percent display"
+"NG50","Phase-block length at which cumulative block span reaches 50% of the GRCh38 chr1-22 genome length.","kb / 1000 for Mb display where needed"
+"Switch error","Switch errors divided by assessed adjacent variant pairs; switch errors equal switch events plus twice the flip events.","rate x 10000 for errors per 10,000 assessed pairs"
+"Hamming error","Blockwise Hamming errors divided by covered truth variants after block orientation correction.","rate x 100 for percent display; logarithmic axis only where specified"
+"SV phased fraction","Phased heterozygous SV genotypes divided by all heterozygous SV genotypes; phased means that the GT separator is '|'.","fraction x 100 for percent display"
+"SV benchmark F1","Harmonic mean of precision and recall from Truvari comparison of the SV call set with T2T-Q100; not a truth test of phase orientation.","none"
+"Haplotag yield","H1 plus H2 tagged alignments divided by all processed alignments; not unique reads and not truth-validated assignments.","fraction x 100 for percent display"

@@ -1,0 +1,5 @@
+metric_key,panel_title,y_title,y_min,y_max,y_breaks,label_accuracy,baseline_policy,observed_min,observed_max,values_within_window
+phased_heterozygous_snvs_pct,Phased heterozygous SNVs,Phased heterozygous SNVs (%),94,100,94|96|98|100,1,truncated 94-100% window; explicit ticks; comparisons are within-panel only,94.60236096480273,99.73265455316796,TRUE
+phase_block_NG50_Mb,Phase-block NG50,Phase-block NG50 (Mb),0,3,0|1|2|3,1,zero baseline,0.615,2.535,TRUE
+switch_errors_per_10000,Switch-error burden,"Errors per 10,000 pairs",0,9,0|2|4|6|8,1,zero baseline,4.4965113029811725,7.798650280841159,TRUE
+blockwise_hamming_error_pct,Blockwise Hamming error,Blockwise Hamming error (%),0,8,0|2|4|6|8,1,zero baseline,1.6817875585264142,7.50511772784711,TRUE

@@ -1,0 +1,49 @@
+platform,mapper,reference,depth,metric,display_value,display_unit,numerator,denominator,source_value,source_value_unit,transformation
+HiFi,minimap2,GRCh38,30x,"Phased benchmark
+SNPs (%)",99.58754341097459,%,2140935,2149802,0.9959,fraction,100 * Phased SNPs / Benchmark SNPs
+HiFi,winnowmap,GRCh38,30x,"Phased benchmark
+SNPs (%)",99.44509117861344,%,2127937,2139811,0.9945,fraction,100 * Phased SNPs / Benchmark SNPs
+ONT,minimap2,GRCh38,30x,"Phased benchmark
+SNPs (%)",99.15563678086173,%,2122474,2140548,0.9916,fraction,100 * Phased SNPs / Benchmark SNPs
+ONT,winnowmap,GRCh38,30x,"Phased benchmark
+SNPs (%)",99.08150590257023,%,2121771,2141440,0.9908,fraction,100 * Phased SNPs / Benchmark SNPs
+BGI,minimap2,GRCh38,30x,"Phased benchmark
+SNPs (%)",98.80235243696278,%,2116296,2141949,0.988,fraction,100 * Phased SNPs / Benchmark SNPs
+BGI,winnowmap,GRCh38,30x,"Phased benchmark
+SNPs (%)",98.69211217771674,%,2115422,2143456,0.9869,fraction,100 * Phased SNPs / Benchmark SNPs
+HiFi,minimap2,GRCh38,30x,"Phase-block
+NG50 (Mb)",0.3257,Mb,,,325.7,kb,NG50 (kb) / 1000
+HiFi,winnowmap,GRCh38,30x,"Phase-block
+NG50 (Mb)",0.3207,Mb,,,320.7,kb,NG50 (kb) / 1000
+ONT,minimap2,GRCh38,30x,"Phase-block
+NG50 (Mb)",1.0221,Mb,,,1022.1,kb,NG50 (kb) / 1000
+ONT,winnowmap,GRCh38,30x,"Phase-block
+NG50 (Mb)",1.0241,Mb,,,1024.1,kb,NG50 (kb) / 1000
+BGI,minimap2,GRCh38,30x,"Phase-block
+NG50 (Mb)",1.6964000000000001,Mb,,,1696.4,kb,NG50 (kb) / 1000
+BGI,winnowmap,GRCh38,30x,"Phase-block
+NG50 (Mb)",1.7368,Mb,,,1736.8,kb,NG50 (kb) / 1000
+HiFi,minimap2,GRCh38,30x,"Switch errors per 10,000
+assessed pairs",1.0481300364189619,"errors per 10,000 assessed pairs",221,2108517,1.05e-4,fraction,10000 * Switch errors / Assessed pairs
+HiFi,winnowmap,GRCh38,30x,"Switch errors per 10,000
+assessed pairs",1.4406877900755692,"errors per 10,000 assessed pairs",302,2096221,1.44e-4,fraction,10000 * Switch errors / Assessed pairs
+ONT,minimap2,GRCh38,30x,"Switch errors per 10,000
+assessed pairs",1.2969228597911955,"errors per 10,000 assessed pairs",272,2097272,1.3e-4,fraction,10000 * Switch errors / Assessed pairs
+ONT,winnowmap,GRCh38,30x,"Switch errors per 10,000
+assessed pairs",1.345330629314182,"errors per 10,000 assessed pairs",282,2096139,1.35e-4,fraction,10000 * Switch errors / Assessed pairs
+BGI,minimap2,GRCh38,30x,"Switch errors per 10,000
+assessed pairs",1.6151977685421597,"errors per 10,000 assessed pairs",338,2092623,1.62e-4,fraction,10000 * Switch errors / Assessed pairs
+BGI,winnowmap,GRCh38,30x,"Switch errors per 10,000
+assessed pairs",1.5579532317732614,"errors per 10,000 assessed pairs",326,2092489,1.56e-4,fraction,10000 * Switch errors / Assessed pairs
+HiFi,minimap2,GRCh38,30x,"Blockwise Hamming
+error (%)",0.5005613441301431,%,10607,2119021,0.005,fraction,100 * Blockwise Hamming / Covered variants
+HiFi,winnowmap,GRCh38,30x,"Blockwise Hamming
+error (%)",0.6092802746223089,%,12836,2106748,0.0061,fraction,100 * Blockwise Hamming / Covered variants
+ONT,minimap2,GRCh38,30x,"Blockwise Hamming
+error (%)",1.405043002196748,%,29524,2101288,0.0141,fraction,100 * Blockwise Hamming / Covered variants
+ONT,winnowmap,GRCh38,30x,"Blockwise Hamming
+error (%)",1.5895659941537037,%,33383,2100133,0.0159,fraction,100 * Blockwise Hamming / Covered variants
+BGI,minimap2,GRCh38,30x,"Blockwise Hamming
+error (%)",3.6050764241643747,%,75527,2095018,0.0361,fraction,100 * Blockwise Hamming / Covered variants
+BGI,winnowmap,GRCh38,30x,"Blockwise Hamming
+error (%)",3.3083817971693588,%,69306,2094861,0.0331,fraction,100 * Blockwise Hamming / Covered variants

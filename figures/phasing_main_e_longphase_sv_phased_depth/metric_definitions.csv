@@ -1,0 +1,2 @@
+metric,numerator,denominator,plotted_unit,transformation,scale,interpretation
+Phased heterozygous SV fraction,Heterozygous SV records whose genotype uses the phased separator '|',All heterozygous SV records; homozygous and missing genotypes excluded,%,100 * Phased SVs / Heterozygous SVs,linear,Coverage of phased heterozygous genotypes in the LongPhase SV output; not a truth-set assessment of haplotype orientation.

@@ -1,0 +1,2 @@
+metric,numerator,denominator,plotted_unit,transformation,scale,axis_range,interpretation
+Phased heterozygous SNV fraction,Phased SNVs,Heterozygous SNVs in the WhatsHap SNP call set,%,100 * Phased SNVs / Het SNVs,linear; shared across mapper regions,94-100%,"Fraction of heterozygous SNVs assigned to a phase block by WhatsHap; this is phasing yield, not truth-validated phasing accuracy."
