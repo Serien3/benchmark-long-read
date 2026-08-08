@@ -1,0 +1,7 @@
+artifact,role
+sv_benchmark_accounting_T2TQ100_30x_minimap2.png,preview
+sv_benchmark_accounting_T2TQ100_30x_minimap2.svg,editable vector
+sv_benchmark_accounting_T2TQ100_30x_minimap2.pdf,publication vector
+sv_benchmark_accounting_T2TQ100_30x_minimap2.tiff,600 dpi print raster
+source_data_plotted.csv,plotted source data
+data_filter_audit.csv,filter and transformation audit

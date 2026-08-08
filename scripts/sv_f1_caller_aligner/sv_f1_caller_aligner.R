@@ -1,18 +1,20 @@
 #!/usr/bin/env Rscript
 
 # =============================================================================
-# SV detection F1 across caller, aligner, platform, and sequencing depth
+# SV detection and genotype F1 across caller, aligner, platform, and depth
 #
 # Figure contract
-#   Claim      : platform differences in SV detection depend on both depth and
-#                the caller-aligner workflow.
-#   Evidence   : all 72 original F1 observations per truth set; no aggregation.
+#   Claim      : platform differences in SV detection and genotype agreement
+#                depend on depth and the caller-aligner workflow.
+#   Evidence   : all 144 original F1 and GT-F1 observations per truth set; no
+#                aggregation.
 #   Archetype  : stand-alone quantitative trajectory chart.
 #   Encoding   : x = four callers under minimap2 followed by the same four
 #                callers under winnowmap; each caller contains three ordered
 #                depth columns shared by all platforms; colour = platform;
-#                opacity redundantly encodes depth.
-#   Integrity  : original F1 only (never gt-F1 or refine F1); deterministic
+#                opacity redundantly encodes depth; point shape and line type
+#                redundantly encode F1 versus GT-F1.
+#   Integrity  : original F1 and gt-F1 only (never refine F1); deterministic
 #                within-category offsets are visual separation, not data jitter.
 #   Export     : editable SVG/PDF, 600 dpi TIFF, and PNG preview.
 # =============================================================================
@@ -39,13 +41,16 @@ find_root <- function() {
 
 ROOT <- find_root()
 DATA_DIR <- file.path(ROOT, "data")
-OUTPUT_DIR <- file.path(ROOT, "figures", "codex_sv_f1_caller_aligner")
+OUTPUT_DIR <- file.path(
+  ROOT, "figures", "SV_benchmark", "sv_f1_caller_aligner"
+)
 dir.create(OUTPUT_DIR, recursive = TRUE, showWarnings = FALSE)
 
 CALLERS <- c("cuteSV", "Sniffles2", "sawfish", "SVDSS")
 ALIGNERS <- c("minimap2", "winnowmap")
 PLATFORMS <- c("BGI", "ONT", "HiFi")
 DEPTHS <- c("10x", "30x", "50x")
+METRICS <- c("F1", "GT-F1")
 
 BENCHMARKS <- list(
   GIAB5 = list(
@@ -77,6 +82,9 @@ DEPTH_ALPHA <- c(
 # shared depth columns; BGI, ONT, and HiFi observations at the same depth use
 # exactly the same x coordinate.
 DEPTH_OFFSET <- c(`10x` = -0.20, `30x` = 0, `50x` = 0.20)
+
+METRIC_SHAPES <- c(F1 = 16, `GT-F1` = 2)
+METRIC_LINETYPES <- c(F1 = "solid", `GT-F1` = "22")
 
 font_candidates <- c("Arial", "Helvetica", "Nimbus Sans",
                      "Liberation Sans", "sans")
@@ -117,33 +125,43 @@ read_benchmark <- function(spec, benchmark_key) {
       platform = factor(platform, levels = PLATFORMS),
       depth = factor(depth, levels = DEPTHS),
       depth_numeric = as.integer(sub("x$", "", as.character(depth))),
-      F1 = as.numeric(F1)
+      F1 = as.numeric(F1),
+      `GT-F1` = as.numeric(.data[["gt-F1"]])
     ) %>%
-    arrange(aligner, caller, platform, depth_numeric)
+    pivot_longer(
+      cols = all_of(METRICS),
+      names_to = "metric",
+      values_to = "score"
+    ) %>%
+    mutate(
+      metric = factor(metric, levels = METRICS)
+    ) %>%
+    arrange(aligner, caller, platform, metric, depth_numeric)
 
-  if (any(!is.finite(filtered$F1))) {
-    stop(benchmark_key, " contains non-finite detection F1 values")
+  if (any(!is.finite(filtered$score))) {
+    stop(benchmark_key, " contains non-finite F1 or GT-F1 values")
   }
-  if (any(filtered$F1 < 0 | filtered$F1 > 1)) {
-    stop(benchmark_key, " contains detection F1 values outside [0, 1]")
+  if (any(filtered$score < 0 | filtered$score > 1)) {
+    stop(benchmark_key, " contains F1 or GT-F1 values outside [0, 1]")
   }
 
   key_counts <- filtered %>%
-    count(aligner, caller, platform, depth, name = "n")
-  if (nrow(key_counts) != 72L || any(key_counts$n != 1L)) {
-    stop(benchmark_key, " is not a complete unique 2 x 4 x 3 x 3 design")
+    count(aligner, caller, platform, depth, metric, name = "n")
+  if (nrow(key_counts) != 144L || any(key_counts$n != 1L)) {
+    stop(benchmark_key, " is not a complete unique 2 x 4 x 3 x 3 x 2 design")
   }
 
   expected <- expand_grid(
     aligner = factor(ALIGNERS, levels = ALIGNERS),
     caller = factor(CALLERS, levels = CALLERS),
     platform = factor(PLATFORMS, levels = PLATFORMS),
-    depth = factor(DEPTHS, levels = DEPTHS)
+    depth = factor(DEPTHS, levels = DEPTHS),
+    metric = factor(METRICS, levels = METRICS)
   )
   missing_keys <- expected %>%
     anti_join(
-      filtered %>% select(aligner, caller, platform, depth),
-      by = c("aligner", "caller", "platform", "depth")
+      filtered %>% select(aligner, caller, platform, depth, metric),
+      by = c("aligner", "caller", "platform", "depth", "metric")
     )
   if (nrow(missing_keys) > 0L) {
     stop(benchmark_key, " has missing caller-aligner-platform-depth keys")
@@ -153,13 +171,14 @@ read_benchmark <- function(spec, benchmark_key) {
     benchmark = benchmark_key,
     truth_set = spec$label,
     source_rows = n_source,
-    plotted_rows = nrow(filtered),
-    excluded_rows = n_source - nrow(filtered),
+    plotted_rows = nrow(filtered) / length(METRICS),
+    plotted_metric_points = nrow(filtered),
+    excluded_rows = n_source - nrow(filtered) / length(METRICS),
     filter_rule = paste0(
       "reference=", spec$reference,
       "; callers=cuteSV|Sniffles2|sawfish|SVDSS",
       "; aligners=minimap2|winnowmap; platforms=BGI|ONT|HiFi",
-      "; depths=10x|30x|50x; metric=original F1"
+      "; depths=10x|30x|50x; metrics=original F1|gt-F1"
     )
   )
   filtered
@@ -173,7 +192,9 @@ add_layout <- function(d) {
       # A 0.65-unit inter-aligner gap separates the two workflow blocks.
       category_x = caller_index + if_else(aligner == "winnowmap", 4.65, 0),
       x = category_x + unname(DEPTH_OFFSET[as.character(depth)]),
-      trajectory = interaction(aligner, caller, platform, drop = TRUE)
+      trajectory = interaction(
+        aligner, caller, platform, metric, drop = TRUE
+      )
     )
 }
 
@@ -183,14 +204,14 @@ make_segments <- function(d) {
     arrange(depth_numeric, .by_group = TRUE) %>%
     mutate(
       xend = lead(x),
-      yend = lead(F1),
+      yend = lead(score),
       segment_depth = lead(depth)
     ) %>%
     filter(!is.na(xend), !is.na(yend), !is.na(segment_depth)) %>%
     ungroup()
 
-  if (nrow(segments) != 48L) {
-    stop("Expected 48 depth segments but found ", nrow(segments))
+  if (nrow(segments) != 96L) {
+    stop("Expected 96 depth segments but found ", nrow(segments))
   }
   segments
 }
@@ -254,7 +275,7 @@ theme_reference_f1 <- function(base_family = BASE_FAMILY) {
 make_plot <- function(d, truth_label) {
   d <- add_layout(d)
   segments <- make_segments(d)
-  ylim <- f1_limits(d$F1)
+  ylim <- f1_limits(d$score)
   ybreaks <- f1_breaks(ylim)
   grid_breaks <- ybreaks
   xlim <- c(0.52, 9.13)
@@ -265,7 +286,7 @@ make_plot <- function(d, truth_label) {
   block_divider <- mean(c(max(1:4), min(1:4 + 4.65)))
   block_y <- ylim[2] - diff(ylim) * 0.025
 
-  p <- ggplot(d, aes(x = x, y = F1)) +
+  p <- ggplot(d, aes(x = x, y = score)) +
     geom_hline(
       yintercept = grid_breaks,
       colour = "#D0D0D0", linewidth = 0.27, linetype = "44"
@@ -294,15 +315,15 @@ make_plot <- function(d, truth_label) {
     geom_segment(
       data = segments,
       aes(
-        x = x, y = F1, xend = xend, yend = yend,
-        colour = platform, alpha = segment_depth
+        x = x, y = score, xend = xend, yend = yend,
+        colour = platform, alpha = segment_depth, linetype = metric
       ),
       inherit.aes = FALSE,
       linewidth = 0.45, lineend = "round", show.legend = FALSE
     ) +
     geom_point(
-      aes(colour = platform, alpha = depth),
-      size = 1.90, stroke = 0
+      aes(colour = platform, alpha = depth, shape = metric),
+      size = 2.05, stroke = 0.55
     ) +
     annotate(
       "text", x = block_centres, y = block_y,
@@ -316,6 +337,15 @@ make_plot <- function(d, truth_label) {
     scale_alpha_manual(
       name = "Depth", values = DEPTH_ALPHA,
       breaks = DEPTHS, drop = FALSE
+    ) +
+    scale_shape_manual(
+      name = "Metric", values = METRIC_SHAPES,
+      breaks = METRICS, drop = FALSE
+    ) +
+    scale_linetype_manual(
+      values = METRIC_LINETYPES,
+      breaks = METRICS, drop = FALSE,
+      guide = "none"
     ) +
     scale_x_continuous(
       breaks = category_centres,
@@ -338,11 +368,15 @@ make_plot <- function(d, truth_label) {
       alpha = guide_legend(
         order = 2, nrow = 1,
         override.aes = list(colour = "#575757", size = 1.90)
+      ),
+      shape = guide_legend(
+        order = 3, nrow = 1,
+        override.aes = list(colour = "#575757", alpha = 1, size = 2.05)
       )
     ) +
     labs(
-      title = paste0("SV detection · ", truth_label),
-      subtitle = "GRCh38 · original F1",
+      title = paste0("SV benchmark · ", truth_label),
+      subtitle = "GRCh38 · detection F1 and GT-F1",
       x = "SV caller",
       y = "F1 score"
     ) +
@@ -406,10 +440,11 @@ for (benchmark_key in names(BENCHMARKS)) {
       aligner = as.character(aligner),
       platform = as.character(platform),
       depth = as.character(depth),
+      metric = as.character(metric),
       trajectory = as.character(trajectory)
     )
   coincident_groups <- layout_source %>%
-    count(aligner, caller, depth, x, F1, name = "n_platforms") %>%
+    count(aligner, caller, depth, metric, x, score, name = "n_platforms") %>%
     filter(n_platforms > 1L)
   all_source[[benchmark_key]] <- layout_source
   audits[[benchmark_key]] <- attr(d, "audit")
@@ -417,7 +452,7 @@ for (benchmark_key in names(BENCHMARKS)) {
     benchmark = benchmark_key,
     truth_set = spec$label,
     plotted_points = nrow(d),
-    depth_trajectories = 24L,
+    depth_trajectories = 48L,
     plotted_segments = attr(p, "segments"),
     depth_position_order = "10x<30x<50x",
     platforms_share_depth_x = TRUE,
@@ -426,9 +461,9 @@ for (benchmark_key in names(BENCHMARKS)) {
     platform_offset = "BGI=0;ONT=0;HiFi=0",
     depth_offset = "10x=-0.20;30x=0;50x=0.20",
     depth_alpha = "10x=0.30;30x=0.60;50x=1.00",
-    metric = "F1",
+    metric = "F1|GT-F1",
     refine_used = FALSE,
-    gt_metric_used = FALSE,
+    gt_metric_used = TRUE,
     y_min = attr(p, "ylim")[1],
     y_max = attr(p, "ylim")[2],
     width_mm = 183,
@@ -438,7 +473,7 @@ for (benchmark_key in names(BENCHMARKS)) {
 
   message(
     sprintf(
-      "  72 points / 24 trajectories / 48 segments; F1 axis [%.2f, %.2f]",
+      "  144 points / 48 trajectories / 96 segments; score axis [%.2f, %.2f]",
       attr(p, "ylim")[1], attr(p, "ylim")[2]
     )
   )
@@ -448,4 +483,4 @@ write_csv(bind_rows(all_source), file.path(OUTPUT_DIR, "source_data_plotted.csv"
 write_csv(bind_rows(audits), file.path(OUTPUT_DIR, "data_filter_audit.csv"))
 write_csv(bind_rows(manifests), file.path(OUTPUT_DIR, "render_manifest.csv"))
 
-message("Created two SV detection F1 figures in: ", OUTPUT_DIR)
+message("Created two SV F1 and GT-F1 figures in: ", OUTPUT_DIR)

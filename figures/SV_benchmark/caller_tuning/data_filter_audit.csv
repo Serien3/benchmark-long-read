@@ -1,0 +1,9 @@
+source_table,source_rows,plotted_rows,status,reason
+cutesv_round1_fullfactor.csv,162,162,complete,All factorial observations shown; raw and refined F1 use separate atlases
+cutesv_round2_targeted.csv,14,14,complete,All targeted runs shown in workbook order
+cutesv_hifi_wholegenome.csv,6,6,complete,All precision-recall observations shown
+cutesv_hifi_callcount.csv,6,6,complete,All direct call counts shown
+cutesv_hifi_refine_incomplete.csv,5,0,not plotted,HiFi-specific 50x refined F1 is absent in workbook; no partial trajectory drawn
+cutesv_hifi_cmrg_incomplete.csv,4,0,not plotted,Only 10x and 30x are recorded; retained as extracted source data for a later dedicated view
+sniffles2_matrix_50x.csv,9,9,complete,All 3 x 3 parameter combinations shown in each evaluation heatmap
+sniffles2_cross_depth.csv,6,6,complete,All depth-MAPQ combinations and all three recorded F1 evaluations shown

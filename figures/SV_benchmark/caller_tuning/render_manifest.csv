@@ -1,0 +1,12 @@
+figure,source_file,source_workbook,plotted_rows,width_mm,height_mm,smoothing,interpolation,aggregation,missing_data,exports
+cutesv_round1_mapq10_raw_f1_atlas,cutesv_round1_fullfactor.csv,最新数据评测.xlsx,81,183,139,FALSE,FALSE,FALSE,,SVG|PDF|TIFF600|PNG300
+cutesv_round1_mapq20_raw_f1_atlas,cutesv_round1_fullfactor.csv,最新数据评测.xlsx,81,183,139,FALSE,FALSE,FALSE,,SVG|PDF|TIFF600|PNG300
+cutesv_round1_mapq10_refine_f1_atlas,cutesv_round1_fullfactor.csv,最新数据评测.xlsx,81,183,139,FALSE,FALSE,FALSE,,SVG|PDF|TIFF600|PNG300
+cutesv_round1_mapq20_refine_f1_atlas,cutesv_round1_fullfactor.csv,最新数据评测.xlsx,81,183,139,FALSE,FALSE,FALSE,,SVG|PDF|TIFF600|PNG300
+cutesv_round2_targeted_f1,cutesv_round2_targeted.csv,最新数据评测.xlsx,28,183,128,FALSE,FALSE,FALSE,,SVG|PDF|TIFF600|PNG300
+cutesv_hifi_parameter_pr,cutesv_hifi_wholegenome.csv,最新数据评测.xlsx,6,74,74,FALSE,FALSE,FALSE,none in plotted table; workbook benchmark label requires provenance confirmation,SVG|PDF|TIFF600|PNG300
+cutesv_hifi_parameter_callcount,cutesv_hifi_callcount.csv,最新数据评测.xlsx,6,89,76,FALSE,FALSE,FALSE,,SVG|PDF|TIFF600|PNG300
+sniffles2_matrix_50x_raw_f1,sniffles2_matrix_50x.csv,最新数据评测.xlsx,9,89,74,FALSE,FALSE,FALSE,,SVG|PDF|TIFF600|PNG300
+sniffles2_matrix_50x_refine_f1,sniffles2_matrix_50x.csv,最新数据评测.xlsx,9,89,74,FALSE,FALSE,FALSE,,SVG|PDF|TIFF600|PNG300
+sniffles2_matrix_50x_cmrg_f1,sniffles2_matrix_50x.csv,最新数据评测.xlsx,9,89,74,FALSE,FALSE,FALSE,,SVG|PDF|TIFF600|PNG300
+sniffles2_cross_depth_f1,sniffles2_cross_depth.csv,最新数据评测.xlsx,18,120,84,FALSE,FALSE,FALSE,,SVG|PDF|TIFF600|PNG300

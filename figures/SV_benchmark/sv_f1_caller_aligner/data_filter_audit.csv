@@ -1,3 +1,3 @@
-benchmark,truth_set,source_rows,plotted_rows,excluded_rows,filter_rule
-GIAB5,GIAB v5.0q,120,72,48,reference=GRCh38; callers=cuteSV|Sniffles2|sawfish|SVDSS; aligners=minimap2|winnowmap; platforms=BGI|ONT|HiFi; depths=10x|30x|50x; metric=original F1
-CMRG,GIAB CMRG,72,72,0,reference=GRCh38; callers=cuteSV|Sniffles2|sawfish|SVDSS; aligners=minimap2|winnowmap; platforms=BGI|ONT|HiFi; depths=10x|30x|50x; metric=original F1
+benchmark,truth_set,source_rows,plotted_rows,plotted_metric_points,excluded_rows,filter_rule
+GIAB5,GIAB v5.0q,120,72,144,48,reference=GRCh38; callers=cuteSV|Sniffles2|sawfish|SVDSS; aligners=minimap2|winnowmap; platforms=BGI|ONT|HiFi; depths=10x|30x|50x; metrics=original F1|gt-F1
+CMRG,GIAB CMRG,72,72,144,0,reference=GRCh38; callers=cuteSV|Sniffles2|sawfish|SVDSS; aligners=minimap2|winnowmap; platforms=BGI|ONT|HiFi; depths=10x|30x|50x; metrics=original F1|gt-F1

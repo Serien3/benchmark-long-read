@@ -1,0 +1,2 @@
+source_file,source_rows,selected_rows,selected_benchmark,selected_reference,selected_depth,selected_aligner,selected_callers,selected_platforms,exclusion_reason,aggregation_used,smoothing_used,ring_denominators,reuse_level,unsupported_template_feature_omitted
+sv_benchmark_T2TQ100.csv,108,6,T2T-Q100 v1.1,GRCh38,30x,minimap2,cuteSV|Sniffles2,BGI|ONT|HiFi,"user-defined panel scope: T2T-Q100, 30x, minimap2, cuteSV and Sniffles2 only",FALSE,FALSE,outer=tp-base+FN; inner=tp-call+FP; each workflow and ring normalized independently,structural adaptation,SVTYPE sectors
