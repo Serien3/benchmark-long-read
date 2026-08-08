@@ -1,10 +1,10 @@
 # Reads 与比对 QC 正文结果图及科研叙事方案
 
 > 状态：增强确认版  
-> 确认日期：2026-08-06  
+> 确认日期：2026-08-08
 > 论文角色：开篇主结果图，用于建立后续变异检测、相位与组装分析的输入基线  
 > 适用范围：HG002 三平台 reads QC、GRCh38/T2T-CHM13 双参考比对 QC  
-> 当前不纳入：30×表观错误谱 pilot  
+> Extended Data：30×表观 alignment-error spectrum pilot
 > 绘图后端：R；当前阶段分别输出独立单图，不直接生成组图
 
 ## 1. 图件科学契约
@@ -29,6 +29,7 @@
 | Primary supporting evidence | 30× read profile；30× primary mapped-read rate |
 | Experimental-design evidence | 9 个输入层级的 approximate input depth |
 | Operational evidence | BAM output footprint，默认 Extended Data、保留主图替换位 |
+| Pilot validation evidence | GRCh38/GIAB-masked apparent alignment-error spectrum，Extended Data |
 | 统计定位 | 单个 HG002 的技术条件矩阵；描述性比较，不做群体推断 |
 | 最终组图尺寸 | 183 mm 宽，目标高度 155–165 mm，绝不超过 170 mm |
 | 单图后端 | R / ggplot2；SVG、PDF、TIFF 和预览 PNG |
@@ -39,7 +40,8 @@
 2. **输入是什么**：匹配产量下的 read length 与 reported Q-score profile；
 3. **比对后发生什么**：coverage breadth 如何响应 depth、reference 和 aligner；
 4. **哪些差异仍保留**：primary mapped-read rate，以及可选的 BAM footprint；
-5. **为什么影响后文**：相同总碱基量不等于相同的信息结构或分析输入。
+5. **局部高质量比对中残留什么**：apparent mismatch、insertion 和 deletion spectrum；
+6. **为什么影响后文**：相同总碱基量不等于相同的信息结构或分析输入。
 
 ## 2. 数据口径与术语定义
 
@@ -78,6 +80,12 @@
 
 - 表示当前统一版本、preset、排序与输出设置下生成的 BAM 文件大小。
 - 它可以作为实际存储占用报告，但不替代运行时间、峰值内存、能耗或经济成本。
+
+### 2.7 Apparent alignment-error spectrum
+
+- 使用GRCh38上chr1/2/3各约1 Mb pilot窗口与GIAB high-confidence regions的交集，并屏蔽已知truth variant sites。
+- 只统计primary、MAPQ≥20、BQ≥20比对中的mismatch bases、insertion bases和deletion bases；三类碱基数以aligned Q20 bases为共同分母并标准化为每1,000 bases。
+- 该指标报告当前参考、mask、区域和比对流程下的alignment residual，不写作平台本征错误率或全基因组经验准确性。
 
 ## 3. Results 的完整科学闭环
 
@@ -164,11 +172,19 @@ Q20-read base share = Mean-Q>20 read yield / total yield
 - ONT：81.35–102.88 GiB；
 - HiFi：34.45–41.01 GiB。
 
-在匹配 reference 和 aligner 时，BGI/ONT BAM 约为 HiFi 的2.36–2.72倍；30×下 winnowmap BAM 较 minimap2 小约6.6–11.5%。
+四个 reference–aligner 条件中的平台顺序均为 BGI、ONT、HiFi。在匹配 reference 和 aligner 时，BGI/ONT BAM 约为 HiFi 的2.36–2.72倍；30×下六个 platform–reference 配对中，winnowmap BAM 均小于 minimap2，降幅约6.6–11.5%；六个 platform–aligner 配对中，T2T-CHM13 BAM 也均小于 GRCh38。Panel e 因而需要同时保留平台、aligner 和 reference 三个可直接读取的比较方向，而不是只画其中一组配对差值。
 
 **论文定位。** 该指标具有实际流程价值，但科学优先级低于 read profile、coverage breadth 和 primary mapping。默认作为 Extended Data；只有当正文将存储占用写成独立结果段落、且最终版面仍能保证可读性时，才提升为主图 panel e。
 
-### 3.6 与后续实验衔接
+### 3.6 GIAB-masked pilot regions 中保留平台特异的表观错误组成
+
+**实验。** 对三个平台的30× GRCh38 BAM分别使用minimap2和winnowmap结果，在2,981,290个pilot-region bases中屏蔽6,488个GIAB truth sites，并以aligned Q20 bases为分母统计mismatch、insertion和deletion bases。
+
+**结果。** 两个aligner中的total apparent-error burden均保持BGI、ONT、HiFi的顺序：BGI为17.239–17.552、ONT为6.351–6.436、HiFi为1.101–1.117 errors per 1,000 aligned Q20 bases。Deletion bases占BGI总量的85.4–85.7%、ONT的84.5–84.6%，在HiFi中为57.3–58.6%。Winnowmap相对minimap2的总量变化为BGI −1.78%、ONT −1.32%、HiFi +1.47%，未改变主要平台结构。
+
+**论文定位。** 这组结果作为Extended Data报告局部GIAB-masked条件下的表观alignment residual及组成，连接reported read Q与下游variant calling；正式donor-specific mat/pat error spectrum仍承担平台经验准确性的主结论。
+
+### 3.7 与后续实验衔接
 
 Results 本节建议用以下逻辑收束：
 
@@ -184,12 +200,12 @@ Results 本节建议用以下逻辑收束：
 
 - **科学问题**：三个平台的输入剂量是否匹配？
 - **数据**：reads QC 全部9个观测。
-- **图形**：target depth 与 approximate input depth 的点线图。
-- **x轴**：Target depth（10、30、50×）。
-- **y轴**：Approximate input depth（0–52×）。
-- **参考线**：灰色 `y=x`。
-- **标注**：只直接标出 ONT nominal 50×对应的47.77×；其余精确值进入Source Data。
-- **编码**：平台颜色；同一平台的三个嵌套层级用细线连接。
+- **图形**：三行nested-depth ruler；每个平台占据独立一行，不再使用点、折线或图例。
+- **水平标尺**：共享0–50×深度范围；浅灰竖线标记10×、30×和50×目标位置，浅灰底轨道延伸至50×。
+- **嵌套结构**：每条平台色带的三个连续区段依次终止于实际10×、30×和最高深度；内部白色切口对应前两个实际子集边界，色带终点对应最高深度。
+- **标注**：9个approximate input depth全部由绘图数据生成并直接写入相应区段；ONT末段在47.768×停止，其后到50×的灰色缺口保持可见。
+- **编码**：BGI橙、ONT青、HiFi紫；平台使用固定行位置和直接标签，不再依赖叠加轨迹或独立图例。
+- **尺寸**：60 × 34 mm，匹配主图顶行约30%宽度的紧凑槽位。
 - **作用**：建立比较前提，不承担平台优劣结论。
 
 ### Panel b｜30× integrated read profile
@@ -240,18 +256,24 @@ Panel b 应当使读者在同一平台行内完成“长度—reported Q—Q20�
 - **科学问题**：匹配30×输入后，read-level primary mapping retention是否仍随平台、参考和aligner而变化？
 - **角色**：在Panel c的position-level coverage breadth之后，补充不重复的read-level mapping结果。
 - **数据**：12个30×观测。
-- **图形**：按参考基因组分成GRCh38和T2T-CHM13两个独立小图的categorical condition dot plot。
-- **x轴**：Aligner（minimap2、winnowmap）；两个类别位于等距中心，浅灰竖线位于类别边界而不穿过数据点。
-- **y轴**：Primary mapped-read rate（97.5–100.10%），两个小图使用同一范围和刻度。
-- **平台**：颜色；完全复用Panel c的BGI橙、ONT青、HiFi紫和实心圆点语法。
-- **限制**：12个原始点精确定位；不使用coverage breadth、不连线、不抖动、不聚合、不拟合趋势，也不绘制截断柱形。
+- **图形**：紧凑的3×4 annotated heatmap；行是BGI、ONT、HiFi，列按GRCh38和T2T-CHM13分组，每组依次为minimap2、winnowmap。
+- **填色**：统一的97.9–100.0%顺序蓝灰色标表示primary mapped-read rate；每格叠加两位小数的原始百分比，使精确值不依赖颜色估读。
+- **平台**：行名旁保留Panel c的BGI橙、ONT青、HiFi紫圆点，平台色不参与数值填色。
+- **尺寸**：89 mm单栏宽度；12个单元格占据主体画布，避免把稀疏观测摊成宽幅点图。
+- **限制**：12个原始值逐格呈现；不使用coverage breadth、不连线、不聚合、不增加“best”或排名标记。
 - **作用**：直接报告四个mapping条件中的平台分离，以及每个平台对reference和aligner变化的响应；与Panel c形成position-level breadth → read-level retention的互补证据链。
 
 ### Panel e｜30× BAM output footprint（可替换面板）
 
+- **科学问题**：匹配30×输入后，统一流程产生的BAM存储占用如何随平台、参考基因组和aligner变化？
+- **角色**：在Panel d报告read-level retention之后，补充同一12条件矩阵中的实际输出规模；二者共享实验骨架，但回答不同问题。
 - **数据**：12个30×观测。
-- **图形与编码**：复用Panel d的两个reference小图、aligner类别x轴和平台颜色编码，不绘制点间连接线。
-- **y轴**：BAM size（0–115 GiB）。
+- **图形**：紧凑的3×4 in-cell horizontal-bar matrix；行与列顺序完全复用Panel d，保持两个单栏面板可无缝并排。
+- **长度编码**：每格先画相同长度的浅灰0–115 GiB轨道，再由同一起点绘制平台色水平条；所有12格共享真实零基线和相同上限，因此条长可跨格直接比较。
+- **精确值**：每格直接标注两位小数的BAM size；BGI和ONT数值置于条内末端，HiFi数值置于短条右侧，避免遮挡且不依赖颜色估读。
+- **平台与条件**：BGI橙、ONT青、HiFi紫沿用全文语义；reference用上方分组标题，aligner用列标签表达，不增加点型、线型或图例。
+- **尺寸与限制**：89 × 54 mm；不使用哑铃图、点图、连接线、热图色阶、聚合、排序或“best”标记。
+- **作用**：一张图同时显示稳定的平台层级、同平台的aligner变化以及同平台–aligner的reference变化；统一零基线保留BAM size作为绝对量的正确视觉语义。
 - **默认位置**：Extended Data。
 - **提升条件**：正文明确设置独立的storage-footprint结果段落，且与panel d并排后最终组图仍能在≤170 mm高度和5–7 pt字号下清晰阅读。
 
@@ -298,12 +320,22 @@ Panel b 应当使读者在同一平台行内完成“长度—reported Q—Q20�
 - 按reference和aligner分面，展示三个嵌套深度的真实轨迹。
 - 使用实际Gb可正确处理ONT nominal 50×只有153.68 Gb的情况，也比按nominal depth讨论“线性”更准确。
 
+### Extended Data 3｜30× apparent alignment-error spectrum pilot
+
+- 使用`error_spectrum_pilot.csv`全部6个platform–aligner条件。
+- 采用3×2 stacked horizontal-bar matrix；每格共享0–18 errors per 1,000 aligned Q20 bases的真实零基线。
+- Mismatch、insertion和deletion以可加的error bases rate堆叠；条末直接标注total apparent-error burden。
+- 平台以固定行和全文统一色圆点识别，aligner以空间列区分，error component使用独立的低饱和度色组。
+- 事件数、reads seen和aligned Q20 bases保留在Source Data，不与标准化error-base rate混入同一视觉尺度。
+- 最终尺寸89 × 54 mm；不使用误差线、配对连接线、排名或第二张重复热图。
+
 ### Source Data
 
 主图和Extended Data至少提供：
 
 - 完整9行reads QC；
 - 完整36行alignment QC；
+- 完整6行apparent-error pilot及重算后的component rates；
 - 每个panel实际使用的长表；
 - fraction-to-percent转换后的字段；
 - Q20-read base share及其明确公式；
@@ -316,11 +348,12 @@ Panel b 应当使读者在同一平台行内完成“长度—reported Q—Q20�
 ### 6.1 平台与条件编码
 
 - 平台固定映射：BGI橙色 `#FFB000`、ONT青色 `#13A4A6`、HiFi紫色 `#9400D3`。
-- 颜色只编码平台，不在不同panel中改变语义。
+- 平台身份固定使用BGI橙、ONT青、HiFi紫，不在不同panel中改变语义。
+- Panel d等定量热图使用独立的顺序蓝灰色标编码连续指标；平台固定色只出现在行标记中，不用于热图填色。
 - BGI橙色点通常使用细深色描边；Panel c为匹配四联折线图语法，三个平台统一使用
   无额外形状编码的实心圆点。平台名称和数值标签使用黑色，避免低对比度彩色文字。
 - 两种aligner叠加在同一坐标区且必须区分时，minimap2使用实心圆、winnowmap使用空心菱形；只有连线本身代表连续响应或配对位移时才使用线型。
-  Panel c已按aligner拆为空间独立小图；Panel d将aligner放在x轴类别位置，因此两图均不重复增加aligner形状或线型编码。
+  Panel c已按aligner拆为空间独立小图；Panel d将aligner放在热图列位置，因此两图均不重复增加aligner形状或线型编码。
 - 在平台已经由固定行位置或直接标签识别的panel中，不增加第二套平台形状编码。
 
 ### 6.2 版式层级
@@ -397,7 +430,6 @@ read_length_kb = read_length_bp / 1000
 
 ## 9. 当前明确不纳入的项目
 
-- 30× apparent-error spectrum pilot；
 - 仅BGI存在的SeqKit individual bases Q≥20比例；
 - BAM路径、修改时间和Status等运行元数据；
 - 单独的read count或total bases主图，因为它们与匹配产量和平均读长高度冗余；
@@ -413,18 +445,20 @@ read_length_kb = read_length_bp / 1000
 - reads QC完整读取9行；30×代表层恰好包含BGI、ONT和HiFi各1行。
 - alignment QC完整读取36行；每个platform–depth–reference–aligner组合恰好1行。
 - Panel a使用9行；panel b使用3行；panel c使用36行；panel d和可选panel e各使用12行。
+- Apparent-error Extended Data使用全部6行，恰好覆盖3平台×2 aligner；不筛除任何条件。
 - 派生后确认30× Q>20 read fraction为33.6%、78.3%、93.2%。
 - 派生后确认Q20-read base share为40.3%、83.0%、91.7%。
 - 复算确认coverage signed median aligner difference为−0.025个百分点，median absolute difference为0.050个百分点。
 
 ### 10.2 图形正确性
 
-- Panel a中ONT 47.768×清晰可见。
+- Panel a包含3条空间独立的平台标尺、9个连续嵌套区段和9个实际深度标签；任何平台均不得被另一平台覆盖，ONT 47.768×后的目标缺口清晰可见。
 - Panel b不把summary statistics画成误差区间。
 - Panel c两个reference使用不同起点但相同2.5个百分点跨度的y轴窗口，
   四个小图保留全部36个点；深度点位于类别中心，竖线只标记类别边界。
-- Panel d恰好保留12个30×原始点，两个reference小图共享97.5–100.10%的y轴；aligner点位于类别中心，竖线只标记类别边界；不复用coverage breadth且不绘制点间连接线。
-- 若保留可选Panel e，同样恰好绘制12个原始点，并沿用Panel d的无连接线categorical condition dot plot。
+- Panel d恰好保留12个30×原始单元格，行列键与platform–reference–aligner一一对应；统一填色色标为97.9–100.0%，每格数值直接来自绘图数据，不复用coverage breadth。
+- 若保留可选Panel e，同样恰好绘制12个原始单元格；每格为共同0–115 GiB尺度的零基线条形轨道，行列键与Panel d完全一致，但不复用热图编码。
+- Apparent-error Extended Data恰好绘制6个共同0–18尺度的堆叠条形；18个component segments从原始碱基数重算，三段之和逐条件恢复total error rate。
 - 百分比轴缩放只用于点线图，不用于截断柱形。
 - 所有数值标签均由绘图数据生成，不手工抄成不可追踪常量。
 
@@ -432,7 +466,9 @@ read_length_kb = read_length_bp / 1000
 
 - 每个单图按其未来组图槽位尺寸单独检查，而不是只看放大的工作预览。
 - 检查灰度、常见色觉缺陷和低分辨率PDF预览中的平台可辨识度。
-- 检查BGI橙色点、ONT青色点、HiFi紫色点、Panel d中相邻但不重叠的观测以及5–7 pt文字是否仍可读。
+- 检查Panel a的9个区段内数值、白色嵌套边界、灰色目标标尺和ONT最高深度缺口在60 × 34 mm最终尺寸下是否清晰。
+- 检查BGI橙色、ONT青色、HiFi紫色语义，Panel d深浅单元格中的黑/白数值文字，Panel e长条内和短条外数值文字，以及5–7 pt标签在89 mm最终宽度下是否仍可读。
+- 检查apparent-error图中的细小mismatch段仍可见、六个total标签不与堆叠边界冲突、两个aligner共享相同0–18尺度且component legend在89 mm宽度下可读。
 - 检查SVG/PDF文字可编辑、字体无意外替换、TIFF尺寸和DPI正确。
 
 ### 10.4 读者验收问题
@@ -445,3 +481,5 @@ read_length_kb = read_length_bp / 1000
 4. GRCh38上的平台收敛是否能够直接外推到T2T-CHM13？
 5. Coverage breadth接近时，primary mapped-read rate是否仍然不同？
 6. 哪些结果可以作为下游任务的输入解释基线，哪些不能被扩展成平台总排名？
+
+Extended Data还应独立回答：在GIAB-masked pilot regions中，三个平台的total apparent-error burden与mismatch/insertion/deletion组成是否在两个aligner下保持相同主要结构？

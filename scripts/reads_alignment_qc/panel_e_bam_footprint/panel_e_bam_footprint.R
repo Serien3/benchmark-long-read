@@ -1,22 +1,22 @@
 #!/usr/bin/env Rscript
 
 # =============================================================================
-# Panel e: BAM output footprint at the matched 30x condition
+# Panel e: BAM output footprint across mapping conditions at matched 30x
 #
 # Scientific contract
-#   Claim      : under the current unified alignment and BAM-output workflow,
-#                30x BAM storage footprint differs substantially by platform
-#                and modestly but consistently by aligner.
-#   Role       : operational evidence, defaulting to Extended Data and retained
-#                as a possible main-figure replacement panel.
+#   Claim      : under the unified alignment/BAM workflow, the 30x output
+#                footprint is strongly platform-dependent and also changes
+#                consistently with aligner and reference genome.
+#   Role       : operational complement to Panel d's read-retention result.
 #   Evidence   : all 12 strict-30x platform x reference x aligner conditions.
-#   Archetype  : two-facet matched-condition dot plot.
-#   Encoding   : row and colour = platform; point shape = aligner; neutral
-#                segment = matched aligner pair within platform and reference.
-#   Integrity  : no aggregation, jitter, smoothing, uncertainty, test or
-#                p-value; BAM size is reported on a zero-based GiB axis.
-#   Reuse      : structural adaptation of the confirmed Panel d matched-condition
-#                geometry, with metric-specific data guards and axis contract.
+#   Archetype  : compact 3 x 4 in-cell horizontal-bar matrix.
+#   Encoding   : rows = platform; columns = reference x aligner; bar length =
+#                BAM size on one common zero-based 0-115 GiB scale; bar colour
+#                = platform; exact source value printed in every cell.
+#   Integrity  : no aggregation, connector, point, jitter, fitted trend,
+#                uncertainty interval, statistical test or p-value.
+#   Reuse      : inherit Panel d's 89 x 54 mm matrix, typography, reference
+#                headers, row/column order, platform palette and grey accents.
 # =============================================================================
 
 suppressPackageStartupMessages({
@@ -48,20 +48,19 @@ dir.create(OUTPUT_DIR, recursive = TRUE, showWarnings = FALSE)
 REFERENCES <- c("GRCh38", "T2T-CHM13")
 ALIGNERS <- c("minimap2", "winnowmap")
 PLATFORMS <- c("BGI", "ONT", "HiFi")
-PLATFORM_Y_LEVELS <- rev(PLATFORMS)
 
 PLATFORM_COLOURS <- c(
   BGI = "#FFB000",
   ONT = "#13A4A6",
   HiFi = "#9400D3"
 )
-ALIGNER_SHAPES <- c(
-  minimap2 = 16,
-  winnowmap = 5
-)
 
-WIDTH_MM = 183
-HEIGHT_MM = 38
+SCALE_LIMIT_GIB <- 115
+CELL_WIDTH <- 0.88
+CELL_HEIGHT <- 0.46
+
+WIDTH_MM = 89
+HEIGHT_MM = 54
 PNG_DPI = 320
 TIFF_DPI = 600
 OUTPUT_STEM <- "bam_output_footprint_30x"
@@ -77,8 +76,6 @@ choose_font <- function() {
 
 BASE_FAMILY <- choose_font()
 
-# Cairo consults the PDF font database while measuring text. Register the
-# available Helvetica-compatible Nimbus metrics under the system family name.
 if (identical(BASE_FAMILY, "Nimbus Sans") &&
     !(BASE_FAMILY %in% names(grDevices::pdfFonts()))) {
   nimbus_metrics <- grDevices::pdfFonts("NimbusSan")[[1]]
@@ -91,9 +88,7 @@ if (identical(BASE_FAMILY, "Nimbus Sans") &&
 assert_near <- function(observed, expected, label, tolerance = 1e-8) {
   if (length(observed) != 1L || !is.finite(observed) ||
       abs(observed - expected) > tolerance) {
-    stop(
-      label, " changed: expected ", expected, "; observed ", observed
-    )
+    stop(label, " changed: expected ", expected, "; observed ", observed)
   }
 }
 
@@ -127,14 +122,14 @@ plot_data <- raw %>%
     source_dataset = Dataset,
     platform = factor(
       sub("_latest$", "", Dataset),
-      levels = PLATFORM_Y_LEVELS
+      levels = PLATFORMS
     ),
     depth_label = Depth,
     nominal_depth_x = as.numeric(sub("x$", "", Depth)),
     bam_size_gib = as.numeric(`BAM size GiB`)
   ) %>%
   filter(depth_label == "30x") %>%
-  arrange(reference, desc(as.integer(platform)), aligner)
+  arrange(reference, aligner, platform)
 
 if (nrow(plot_data) != 12L) {
   stop("Expected exactly 12 strict-30x observations; found ", nrow(plot_data))
@@ -153,8 +148,8 @@ if (any(plot_data$nominal_depth_x != 30)) {
 }
 if (any(!is.finite(plot_data$bam_size_gib)) ||
     any(plot_data$bam_size_gib < 0 |
-        plot_data$bam_size_gib > 115)) {
-  stop("BAM sizes must be finite and lie inside the declared 0-115 GiB axis")
+        plot_data$bam_size_gib > SCALE_LIMIT_GIB)) {
+  stop("BAM sizes must be finite and lie inside the declared 0-115 GiB scale")
 }
 
 duplicate_keys <- plot_data %>%
@@ -190,7 +185,7 @@ if (nrow(missing_keys) > 0L || nrow(unexpected_keys) > 0L) {
   stop("The 30x subset is not the complete symmetric 12-condition matrix")
 }
 
-# ---- Matched-pair and operational audits ----------------------------------
+# ---- Descriptive audits ----------------------------------------------------
 
 minimap2_values <- plot_data %>%
   filter(aligner == "minimap2") %>%
@@ -213,15 +208,16 @@ paired_values <- inner_join(
   by = c("reference", "platform")
 ) %>%
   mutate(
-    reference = factor(reference, levels = REFERENCES),
-    platform = factor(platform, levels = PLATFORM_Y_LEVELS),
     winnowmap_minus_minimap2_gib =
       winnowmap_bam_size_gib - minimap2_bam_size_gib,
     winnowmap_relative_change_pct =
       100 * winnowmap_minus_minimap2_gib / minimap2_bam_size_gib,
     winnowmap_reduction_pct = -winnowmap_relative_change_pct
   ) %>%
-  arrange(reference, desc(as.integer(platform)))
+  arrange(
+    factor(reference, levels = REFERENCES),
+    factor(platform, levels = PLATFORMS)
+  )
 
 if (nrow(paired_values) != 6L) {
   stop("Expected six matched reference x platform aligner pairs")
@@ -235,8 +231,7 @@ platform_ranges <- plot_data %>%
     maximum_gib = max(bam_size_gib),
     range_gib = maximum_gib - minimum_gib,
     .groups = "drop"
-  ) %>%
-  arrange(desc(as.integer(platform)))
+  )
 
 hifi_values <- plot_data %>%
   filter(platform == "HiFi") %>%
@@ -259,10 +254,70 @@ matched_platform_to_hifi <- plot_data %>%
     platform_to_hifi_ratio =
       platform_bam_size_gib / hifi_bam_size_gib
   ) %>%
-  arrange(reference, platform, aligner)
+  arrange(
+    factor(reference, levels = REFERENCES),
+    factor(aligner, levels = ALIGNERS),
+    factor(platform, levels = PLATFORMS)
+  )
 
 if (nrow(matched_platform_to_hifi) != 8L) {
   stop("Expected eight matched BGI/ONT-to-HiFi footprint ratios")
+}
+
+grch38_values <- plot_data %>%
+  filter(reference == "GRCh38") %>%
+  transmute(
+    aligner = as.character(aligner),
+    platform = as.character(platform),
+    grch38_bam_size_gib = bam_size_gib
+  )
+t2t_values <- plot_data %>%
+  filter(reference == "T2T-CHM13") %>%
+  transmute(
+    aligner = as.character(aligner),
+    platform = as.character(platform),
+    t2t_chm13_bam_size_gib = bam_size_gib
+  )
+
+paired_reference_values <- inner_join(
+  grch38_values,
+  t2t_values,
+  by = c("aligner", "platform")
+) %>%
+  mutate(
+    t2t_minus_grch38_gib =
+      t2t_chm13_bam_size_gib - grch38_bam_size_gib,
+    t2t_relative_change_pct =
+      100 * t2t_minus_grch38_gib / grch38_bam_size_gib
+  ) %>%
+  arrange(
+    factor(aligner, levels = ALIGNERS),
+    factor(platform, levels = PLATFORMS)
+  )
+
+if (nrow(paired_reference_values) != 6L) {
+  stop("Expected six matched platform x aligner reference pairs")
+}
+
+condition_order <- plot_data %>%
+  arrange(reference, aligner, desc(bam_size_gib)) %>%
+  group_by(reference, aligner) %>%
+  summarise(
+    platform_order = paste(as.character(platform), collapse = " > "),
+    maximum_gib = max(bam_size_gib),
+    minimum_gib = min(bam_size_gib),
+    platform_spread_gib = maximum_gib - minimum_gib,
+    .groups = "drop"
+  )
+
+if (any(condition_order$platform_order != "BGI > ONT > HiFi")) {
+  stop("The BAM-footprint platform ordering changed in a mapping condition")
+}
+if (any(paired_values$winnowmap_minus_minimap2_gib >= 0)) {
+  stop("Winnowmap is no longer smaller than minimap2 in every matched pair")
+}
+if (any(paired_reference_values$t2t_minus_grch38_gib >= 0)) {
+  stop("T2T-CHM13 is no longer smaller than GRCh38 in every matched pair")
 }
 
 range_value <- function(platform_name, field) {
@@ -273,7 +328,6 @@ range_value <- function(platform_name, field) {
   ]
 }
 
-# Guards link the plotted matrix to the confirmed operational summary.
 assert_near(range_value("BGI", "minimum_gib"), 90.51, "BGI minimum")
 assert_near(range_value("BGI", "maximum_gib"), 109.30, "BGI maximum")
 assert_near(range_value("ONT", "minimum_gib"), 81.35, "ONT minimum")
@@ -301,6 +355,51 @@ assert_near(
   "Maximum matched platform-to-HiFi ratio"
 )
 
+# ---- Matrix geometry -------------------------------------------------------
+
+matrix_data <- plot_data %>%
+  mutate(
+    condition_x = case_when(
+      reference == "GRCh38" & aligner == "minimap2" ~ 1.00,
+      reference == "GRCh38" & aligner == "winnowmap" ~ 2.00,
+      reference == "T2T-CHM13" & aligner == "minimap2" ~ 3.25,
+      reference == "T2T-CHM13" & aligner == "winnowmap" ~ 4.25,
+      TRUE ~ NA_real_
+    ),
+    platform_y = case_when(
+      platform == "BGI" ~ 3,
+      platform == "ONT" ~ 2,
+      platform == "HiFi" ~ 1,
+      TRUE ~ NA_real_
+    ),
+    track_xmin = condition_x - CELL_WIDTH / 2,
+    track_xmax = condition_x + CELL_WIDTH / 2,
+    track_ymin = platform_y - CELL_HEIGHT / 2,
+    track_ymax = platform_y + CELL_HEIGHT / 2,
+    bar_xmin = track_xmin,
+    bar_xmax = track_xmin + CELL_WIDTH * bam_size_gib / SCALE_LIMIT_GIB,
+    bar_fraction = bam_size_gib / SCALE_LIMIT_GIB,
+    value_label = sprintf("%.2f", bam_size_gib),
+    label_inside = bam_size_gib >= 65,
+    label_x = if_else(label_inside, bar_xmax - 0.035, bar_xmax + 0.040),
+    label_hjust = if_else(label_inside, 1, 0),
+    bar_colour = unname(PLATFORM_COLOURS[as.character(platform)])
+  )
+
+if (any(!is.finite(matrix_data$condition_x)) ||
+    any(!is.finite(matrix_data$platform_y))) {
+  stop("Failed to map at least one matrix row or column position")
+}
+if (any(matrix_data$bar_xmax < matrix_data$track_xmin |
+        matrix_data$bar_xmax > matrix_data$track_xmax)) {
+  stop("At least one BAM bar lies outside its common 0-115 GiB track")
+}
+if (sum(matrix_data$label_inside) != 8L) {
+  stop("Expected eight inside labels and four outside labels")
+}
+
+# ---- Traceable outputs -----------------------------------------------------
+
 write_csv(
   plot_data %>%
     mutate(
@@ -313,13 +412,37 @@ write_csv(
   na = ""
 )
 write_csv(
-  paired_values %>%
-    mutate(
+  matrix_data %>%
+    transmute(
       reference = as.character(reference),
+      aligner = as.character(aligner),
       platform = as.character(platform),
-      across(where(is.numeric), ~ round(.x, 6))
-    ),
+      bam_size_gib,
+      scale_limit_gib = SCALE_LIMIT_GIB,
+      bar_fraction,
+      condition_x,
+      platform_y,
+      track_xmin,
+      track_xmax,
+      bar_xmin,
+      bar_xmax,
+      label_inside,
+      label_x,
+      label_hjust
+    ) %>%
+    mutate(across(where(is.numeric), ~ round(.x, 6))),
+  file.path(OUTPUT_DIR, "matrix_cell_geometry_audit.csv"),
+  na = ""
+)
+write_csv(
+  paired_values %>% mutate(across(where(is.numeric), ~ round(.x, 6))),
   file.path(OUTPUT_DIR, "paired_aligner_differences.csv"),
+  na = ""
+)
+write_csv(
+  paired_reference_values %>%
+    mutate(across(where(is.numeric), ~ round(.x, 6))),
+  file.path(OUTPUT_DIR, "paired_reference_differences.csv"),
   na = ""
 )
 write_csv(
@@ -337,6 +460,16 @@ write_csv(
   file.path(OUTPUT_DIR, "matched_platform_to_hifi_ratios.csv"),
   na = ""
 )
+write_csv(
+  condition_order %>%
+    mutate(
+      reference = as.character(reference),
+      aligner = as.character(aligner),
+      across(where(is.numeric), ~ round(.x, 6))
+    ),
+  file.path(OUTPUT_DIR, "condition_platform_order_audit.csv"),
+  na = ""
+)
 
 data_audit <- data.frame(
   source_file = basename(INPUT_FILE),
@@ -348,16 +481,17 @@ data_audit <- data.frame(
   observed_unique_keys = nrow(distinct(
     plot_data, reference, aligner, platform
   )),
-  matched_aligner_pairs = nrow(paired_values),
+  plotted_cells = nrow(matrix_data),
+  common_scale_gib = paste0("0-", SCALE_LIMIT_GIB),
   transform_platform = "remove terminal _latest suffix",
   transform_bam_size = "none; source values are already GiB",
   filter_rule = "Depth == 30x; one row per reference x aligner x platform",
-  exclusion_reason = paste(
-    "Panel e is the prespecified matched 30x footprint comparison;",
-    "full depth response is reserved for Extended Data 2"
+  geometry = paste(
+    "3 x 4 in-cell horizontal-bar matrix; common zero baseline;",
+    "exact value in every cell; no points or connectors"
   ),
   replicate_statement = paste(
-    "one HG002 30x technical subset per platform; conditions are not",
+    "one HG002 30x technical subset per platform; mapping conditions are not",
     "biological replicates"
   ),
   stringsAsFactors = FALSE
@@ -370,122 +504,129 @@ write_csv(
 
 # ---- Figure ----------------------------------------------------------------
 
-theme_bam_footprint <- function(
-    base_size = 6.3,
-    base_family = BASE_FAMILY
-) {
-  theme_classic(base_size = base_size, base_family = base_family) +
-    theme(
-      axis.line.x = element_line(colour = "#252525", linewidth = 0.30),
-      axis.line.y = element_blank(),
-      axis.ticks.x = element_line(colour = "#252525", linewidth = 0.30),
-      axis.ticks.y = element_blank(),
-      axis.ticks.length.x = unit(1.0, "mm"),
-      axis.title.x = element_text(
-        colour = "#202020", size = 6.3, margin = margin(t = 1.5)
-      ),
-      axis.title.y = element_blank(),
-      axis.text.x = element_text(
-        colour = "#4D4D4D", size = 5.7, margin = margin(t = 0.8)
-      ),
-      axis.text.y = element_text(
-        colour = "#252525", size = 6.2, face = "bold",
-        margin = margin(r = 1.4)
-      ),
-      strip.background = element_blank(),
-      strip.text = element_text(
-        colour = "#202020", size = 6.5, face = "bold",
-        margin = margin(b = 1.3)
-      ),
-      panel.grid.major.x = element_line(
-        colour = "#E9E9E9", linewidth = 0.25
-      ),
-      panel.grid.major.y = element_blank(),
-      panel.grid.minor = element_blank(),
-      panel.spacing.x = unit(7.0, "mm"),
-      legend.position = "top",
-      legend.justification = "center",
-      legend.direction = "horizontal",
-      legend.title = element_text(
-        colour = "#252525", size = 5.8, face = "bold"
-      ),
-      legend.text = element_text(colour = "#333333", size = 5.7),
-      legend.key = element_blank(),
-      legend.key.width = unit(5.0, "mm"),
-      legend.key.height = unit(2.6, "mm"),
-      legend.spacing.x = unit(0.8, "mm"),
-      legend.margin = margin(0, 0, 0.8, 0, unit = "mm"),
-      plot.margin = margin(1.2, 2.0, 1.2, 1.8, unit = "mm")
-    )
-}
+scale_key_start <- 2.195
+scale_key_end <- scale_key_start + CELL_WIDTH
+scale_key_breaks <- c(0, 60, 115)
+scale_key_data <- data.frame(
+  value = scale_key_breaks,
+  x = scale_key_start +
+    CELL_WIDTH * scale_key_breaks / SCALE_LIMIT_GIB,
+  label = as.character(scale_key_breaks)
+)
 
-p <- ggplot(
-  plot_data,
-  aes(
-    x = bam_size_gib,
-    y = platform,
-    colour = platform,
-    shape = aligner
-  )
-) +
-  geom_segment(
-    data = paired_values,
+panel_e_plot <- ggplot(matrix_data) +
+  geom_rect(
     aes(
-      x = minimap2_bam_size_gib,
-      xend = winnowmap_bam_size_gib,
-      y = platform,
-      yend = platform
+      xmin = track_xmin,
+      xmax = track_xmax,
+      ymin = track_ymin,
+      ymax = track_ymax
     ),
+    fill = "#EEF1F2",
+    colour = "#D7D7D7",
+    linewidth = 0.24
+  ) +
+  geom_rect(
+    aes(
+      xmin = bar_xmin,
+      xmax = bar_xmax,
+      ymin = track_ymin,
+      ymax = track_ymax,
+      fill = bar_colour
+    ),
+    colour = NA
+  ) +
+  geom_text(
+    aes(
+      x = label_x,
+      y = platform_y,
+      label = value_label,
+      hjust = label_hjust
+    ),
+    family = BASE_FAMILY,
+    fontface = "bold",
+    size = 1.96,
+    colour = "#171717"
+  ) +
+  annotate(
+    "text", x = 1.50, y = 3.78, label = "GRCh38 30×",
+    family = BASE_FAMILY, fontface = "bold", size = 2.54,
+    colour = "#111111"
+  ) +
+  annotate(
+    "text", x = 3.75, y = 3.78, label = "T2T-CHM13 30×",
+    family = BASE_FAMILY, fontface = "bold", size = 2.54,
+    colour = "#111111"
+  ) +
+  annotate(
+    "segment", x = 0.56, xend = 2.44, y = 3.49, yend = 3.49,
+    colour = "#D7D7D7", linewidth = 0.34
+  ) +
+  annotate(
+    "segment", x = 2.81, xend = 4.69, y = 3.49, yend = 3.49,
+    colour = "#D7D7D7", linewidth = 0.34
+  ) +
+  annotate(
+    "text",
+    x = c(1.00, 2.00, 3.25, 4.25),
+    y = 0.50,
+    label = c("minimap2", "winnowmap", "minimap2", "winnowmap"),
+    family = BASE_FAMILY,
+    size = 2.12,
+    colour = "#292929"
+  ) +
+  annotate(
+    "text", x = mean(c(scale_key_start, scale_key_end)), y = 0.12,
+    label = "BAM output footprint (GiB)",
+    family = BASE_FAMILY, fontface = "bold", size = 2.26,
+    colour = "#222222"
+  ) +
+  annotate(
+    "segment",
+    x = scale_key_start, xend = scale_key_end,
+    y = -0.08, yend = -0.08,
+    colour = "#D4D8DA", linewidth = 2.20, lineend = "butt"
+  ) +
+  geom_segment(
+    data = scale_key_data,
+    aes(x = x, xend = x, y = -0.15, yend = -0.01),
     inherit.aes = FALSE,
-    colour = "#B8B8B8",
-    linewidth = 0.42,
-    lineend = "round"
+    colour = "#FFFFFF",
+    linewidth = 0.30
   ) +
-  geom_point(
-    colour = "#3D3D3D",
-    size = 2.25,
-    stroke = 0.58,
-    show.legend = FALSE
+  geom_text(
+    data = scale_key_data,
+    aes(x = x, y = -0.31, label = label),
+    inherit.aes = FALSE,
+    family = BASE_FAMILY,
+    size = 1.98,
+    colour = "#292929"
   ) +
-  geom_point(size = 1.75, stroke = 0.44) +
-  facet_grid(cols = vars(reference)) +
-  scale_colour_manual(
-    values = PLATFORM_COLOURS,
-    breaks = PLATFORMS,
-    limits = PLATFORMS,
-    drop = FALSE,
-    guide = "none"
-  ) +
-  scale_shape_manual(
-    name = "Aligner",
-    values = ALIGNER_SHAPES,
-    breaks = ALIGNERS,
-    limits = ALIGNERS,
-    drop = FALSE
-  ) +
+  scale_fill_identity() +
   scale_x_continuous(
-    name = "BAM output footprint (GiB)",
-    limits = c(0, 115),
-    breaks = seq(0, 100, by = 20),
+    limits = c(0.08, 4.72),
     expand = expansion(mult = 0)
   ) +
-  scale_y_discrete(
-    limits = PLATFORM_Y_LEVELS,
-    drop = FALSE,
-    expand = expansion(add = 0.42)
+  scale_y_continuous(
+    breaks = c(3, 2, 1),
+    labels = PLATFORMS,
+    limits = c(-0.48, 3.94),
+    expand = expansion(mult = 0)
   ) +
-  guides(
-    shape = guide_legend(
-      nrow = 1,
-      byrow = TRUE,
-      override.aes = list(
-        colour = "#333333",
-        size = 1.9,
-        stroke = 0.5
-      )
-    )
-  ) +
-  theme_bam_footprint()
+  coord_cartesian(clip = "off") +
+  labs(x = NULL, y = NULL) +
+  theme_void(base_size = 6.7, base_family = BASE_FAMILY) +
+  theme(
+    axis.text.y = element_text(
+      colour = "#171717", size = 6.4, face = "bold",
+      margin = margin(r = 4.0)
+    ),
+    plot.margin = margin(1.5, 2.0, 1.0, 2.0, unit = "mm")
+  )
+
+draw_panel_e <- function() {
+  print(panel_e_plot)
+}
 
 # ---- Export ----------------------------------------------------------------
 
@@ -504,7 +645,7 @@ svglite::svglite(
   bg = "white",
   fix_text_size = FALSE
 )
-print(p)
+draw_panel_e()
 grDevices::dev.off()
 
 grDevices::cairo_pdf(
@@ -515,7 +656,7 @@ grDevices::cairo_pdf(
   bg = "white",
   onefile = TRUE
 )
-print(p)
+draw_panel_e()
 grDevices::dev.off()
 
 ragg::agg_tiff(
@@ -527,7 +668,7 @@ ragg::agg_tiff(
   compression = "lzw",
   background = "white"
 )
-print(p)
+draw_panel_e()
 grDevices::dev.off()
 
 ragg::agg_png(
@@ -538,7 +679,7 @@ ragg::agg_png(
   res = PNG_DPI,
   background = "white"
 )
-print(p)
+draw_panel_e()
 grDevices::dev.off()
 
 rendered_paths <- c(svg_path, pdf_path, tiff_path, png_path)
@@ -551,7 +692,19 @@ render_manifest <- data.frame(
   editable_text = c(TRUE, TRUE, FALSE, FALSE),
   base_family = BASE_FAMILY,
   selected_rows = nrow(plot_data),
-  matched_pairs = nrow(paired_values),
+  plotted_cells = nrow(matrix_data),
+  plotted_references = length(REFERENCES),
+  geometry = paste(
+    "3 x 4 in-cell horizontal-bar matrix; exact values;",
+    "one common zero-based 0-115 GiB scale"
+  ),
+  row_encoding = "platform: BGI, ONT, HiFi; fixed platform-coloured bars",
+  column_encoding = paste(
+    "GRCh38 minimap2, GRCh38 winnowmap, T2T-CHM13 minimap2,",
+    "T2T-CHM13 winnowmap"
+  ),
+  point_geometries = 0L,
+  connector_geometries = 0L,
   bytes = as.numeric(file.info(rendered_paths)$size),
   md5 = unname(tools::md5sum(rendered_paths)),
   stringsAsFactors = FALSE
@@ -562,7 +715,8 @@ write_csv(
   na = ""
 )
 
-message("Rendered Panel e to: ", OUTPUT_DIR)
-message("Selected rows: ", nrow(plot_data), " / ", n_source)
-message("Matched aligner pairs: ", nrow(paired_values))
+message("Rendered revised Panel e to: ", OUTPUT_DIR)
+message("Plotted BAM-footprint cells: ", nrow(matrix_data), " / 12")
+message("Point geometries: 0")
+message("Connector segments: 0")
 message("Font family: ", BASE_FAMILY)

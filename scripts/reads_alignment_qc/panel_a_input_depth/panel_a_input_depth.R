@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 
 # =============================================================================
-# Panel a: approximate input depth across nested HG002 read subsets
+# Panel a: nested input-depth rulers for HG002 read subsets
 #
 # Scientific contract
 #   Claim      : the 10x and 30x inputs are depth matched across platforms;
@@ -9,11 +9,14 @@
 #                subset contains 47.768x of available sequence yield.
 #   Role       : experimental-design evidence, not a platform ranking panel.
 #   Evidence   : all nine platform x target-depth observations.
-#   Archetype  : compact identity-reference line plot.
-#   Encoding   : colour = platform; grey dashed line = exact target matching.
-#   Integrity  : no aggregation, jitter, smoothing, uncertainty, or inference.
-#   Reuse      : build anew; style-only inheritance from the project palette,
-#                typography, vector export, and audit conventions.
+#   Archetype  : compact nested-depth ruler.
+#   Encoding   : one horizontal platform-coloured ruler per platform; internal
+#                boundaries = achieved 10x and 30x subsets; endpoint = achieved
+#                highest-depth subset; grey guides = 10x, 30x and 50x targets.
+#   Integrity  : all nine observed depths are encoded and directly labelled;
+#                no aggregation, overlap, jitter, smoothing or inference.
+#   Reuse      : build the geometry anew; inherit the project palette,
+#                Panel c typography, pale-guide styling and export contract.
 # =============================================================================
 
 suppressPackageStartupMessages({
@@ -51,7 +54,7 @@ PLATFORM_COLOURS <- c(
 )
 
 WIDTH_MM = 60
-HEIGHT_MM = 52
+HEIGHT_MM = 34
 PNG_DPI = 320
 TIFF_DPI = 600
 OUTPUT_STEM <- "approximate_input_depth"
@@ -191,104 +194,237 @@ audit <- data.frame(
   transform_depth = "remove terminal x suffix and parse numeric",
   transform_delta = "approximate_input_depth_x - target_input_depth_x",
   filter_rule = "none; all nine reads-QC observations plotted",
+  archetype = "three-row nested-depth ruler",
+  plotted_segments = 9L,
+  platform_rows = 3L,
   replicate_statement = "nested technical depth subsets; not independent replicates",
   stringsAsFactors = FALSE
 )
 write_csv(audit, file.path(OUTPUT_DIR, "data_filter_audit.csv"), na = "")
 
-# ---- Figure ---------------------------------------------------------------
+# ---- Nested-ruler mapping --------------------------------------------------
 
-theme_input_depth <- function(base_size = 6.4, base_family = BASE_FAMILY) {
-  theme_classic(base_size = base_size, base_family = base_family) +
-    theme(
-      axis.line = element_line(colour = "#252525", linewidth = 0.28),
-      axis.ticks = element_line(colour = "#252525", linewidth = 0.28),
-      axis.ticks.length = unit(1.15, "mm"),
-      axis.title = element_text(
-        colour = "#202020", size = 6.4, margin = margin(t = 2.0, r = 2.0)
-      ),
-      axis.text = element_text(colour = "#4D4D4D", size = 5.8),
-      legend.position = "top",
-      legend.justification = "center",
-      legend.direction = "horizontal",
-      legend.title = element_blank(),
-      legend.text = element_text(colour = "#333333", size = 5.8),
-      legend.key = element_blank(),
-      legend.key.width = unit(7.0, "mm"),
-      legend.key.height = unit(2.4, "mm"),
-      legend.spacing.x = unit(0.8, "mm"),
-      legend.margin = margin(0, 0, 1.0, 0, unit = "mm"),
-      panel.grid = element_blank(),
-      plot.margin = margin(1.2, 2.2, 1.5, 1.5, unit = "mm")
-    )
+PLATFORM_Y <- c(BGI = 3, ONT = 2, HiFi = 1)
+PLATFORM_LABEL_COLOURS <- c(
+  BGI = "#1C1C1C",
+  ONT = "#10282A",
+  HiFi = "#FFFFFF"
+)
+
+nested_summary <- plot_data %>%
+  group_by(platform) %>%
+  summarise(
+    depth_10x = approximate_input_depth_x[target_input_depth_x == 10],
+    depth_30x = approximate_input_depth_x[target_input_depth_x == 30],
+    depth_highest = approximate_input_depth_x[target_input_depth_x == 50],
+    .groups = "drop"
+  ) %>%
+  mutate(platform_y = unname(PLATFORM_Y[as.character(platform)]))
+
+if (nrow(nested_summary) != 3L ||
+    any(!is.finite(nested_summary$platform_y))) {
+  stop("Expected one complete nested-depth ruler per platform")
+}
+if (any(nested_summary$depth_10x >= nested_summary$depth_30x) ||
+    any(nested_summary$depth_30x >= nested_summary$depth_highest)) {
+  stop("Nested input-depth boundaries must be strictly increasing")
 }
 
-p <- ggplot(
-  plot_data,
-  aes(
-    x = target_input_depth_x,
-    y = approximate_input_depth_x,
-    colour = platform,
-    group = platform
+segment_data <- bind_rows(
+  nested_summary %>%
+    transmute(
+      platform, platform_y,
+      target_depth_x = 10,
+      segment_start_x = 0,
+      segment_end_x = depth_10x
+    ),
+  nested_summary %>%
+    transmute(
+      platform, platform_y,
+      target_depth_x = 30,
+      segment_start_x = depth_10x,
+      segment_end_x = depth_30x
+    ),
+  nested_summary %>%
+    transmute(
+      platform, platform_y,
+      target_depth_x = 50,
+      segment_start_x = depth_30x,
+      segment_end_x = depth_highest
+    )
+) %>%
+  mutate(
+    achieved_depth_x = segment_end_x,
+    incremental_depth_x = segment_end_x - segment_start_x,
+    delta_from_target_x = achieved_depth_x - target_depth_x,
+    target_attainment_pct = 100 * achieved_depth_x / target_depth_x,
+    value_label = sprintf("%.3f×", achieved_depth_x),
+    value_label_x = segment_end_x - 0.45,
+    value_label_colour = unname(
+      PLATFORM_LABEL_COLOURS[as.character(platform)]
+    )
+  ) %>%
+  arrange(platform, target_depth_x)
+
+if (nrow(segment_data) != 9L ||
+    any(segment_data$incremental_depth_x <= 0)) {
+  stop("Expected nine positive nested ruler segments")
+}
+
+write_csv(
+  segment_data %>%
+    mutate(
+      platform = as.character(platform),
+      across(where(is.numeric), ~ round(.x, 6))
+    ),
+  file.path(OUTPUT_DIR, "nested_depth_ruler_audit.csv"),
+  na = ""
+)
+
+# ---- Figure ---------------------------------------------------------------
+
+track_data <- nested_summary %>%
+  transmute(
+    platform,
+    platform_y,
+    track_start_x = 0,
+    track_end_x = 50
   )
-) +
-  geom_abline(
-    slope = 1,
-    intercept = 0,
-    colour = "#A7A7A7",
-    linewidth = 0.27,
-    linetype = "22"
+
+separator_data <- segment_data %>%
+  filter(target_depth_x %in% c(10, 30)) %>%
+  transmute(
+    platform,
+    platform_y,
+    boundary_x = achieved_depth_x
+  )
+
+target_guides <- data.frame(
+  target_depth_x = c(10, 30, 50),
+  target_label = c("10×", "30×", "50×"),
+  label_hjust = c(0.5, 0.5, 1.0)
+)
+
+p <- ggplot() +
+  geom_segment(
+    data = target_guides,
+    aes(
+      x = target_depth_x,
+      xend = target_depth_x,
+      y = 0.62,
+      yend = 3.38
+    ),
+    inherit.aes = FALSE,
+    colour = "#D7D7D7",
+    linewidth = 0.34
   ) +
-  geom_line(linewidth = 0.42, lineend = "round") +
-  geom_point(colour = "white", size = 2.65, show.legend = FALSE) +
-  geom_point(size = 1.95) +
-  annotate(
-    "segment",
-    x = 50,
-    xend = 50,
-    y = 47.2,
-    yend = 45.7,
-    colour = "#6B6B6B",
-    linewidth = 0.22
+  geom_rect(
+    data = track_data,
+    aes(
+      xmin = track_start_x,
+      xmax = track_end_x,
+      ymin = platform_y - 0.29,
+      ymax = platform_y + 0.29
+    ),
+    inherit.aes = FALSE,
+    fill = "#F1F1F1",
+    colour = "#D2D2D2",
+    linewidth = 0.25
+  ) +
+  geom_rect(
+    data = segment_data,
+    aes(
+      xmin = segment_start_x,
+      xmax = segment_end_x,
+      ymin = platform_y - 0.28,
+      ymax = platform_y + 0.28,
+      fill = platform
+    ),
+    inherit.aes = FALSE,
+    colour = NA
+  ) +
+  geom_segment(
+    data = separator_data,
+    aes(
+      x = boundary_x,
+      xend = boundary_x,
+      y = platform_y - 0.28,
+      yend = platform_y + 0.28
+    ),
+    inherit.aes = FALSE,
+    colour = "#FFFFFF",
+    linewidth = 0.52
+  ) +
+  geom_text(
+    data = segment_data,
+    aes(
+      x = value_label_x,
+      y = platform_y,
+      label = value_label,
+      colour = value_label_colour
+    ),
+    inherit.aes = FALSE,
+    hjust = 1,
+    vjust = 0.5,
+    family = BASE_FAMILY,
+    fontface = "bold",
+    size = 1.80,
+    show.legend = FALSE
+  ) +
+  geom_text(
+    data = target_guides,
+    aes(
+      x = target_depth_x,
+      y = 3.53,
+      label = target_label,
+      hjust = label_hjust
+    ),
+    inherit.aes = FALSE,
+    vjust = 0,
+    family = BASE_FAMILY,
+    size = 1.98,
+    colour = "#333333"
   ) +
   annotate(
     "text",
-    x = 49.6,
-    y = 44.7,
-    label = "47.77×",
-    hjust = 1,
-    vjust = 1,
+    x = 25,
+    y = 3.98,
+    label = "Target input depth",
     family = BASE_FAMILY,
-    size = 2.0,
-    colour = "#343434"
+    fontface = "bold",
+    size = 2.26,
+    colour = "#171717"
   ) +
-  scale_colour_manual(
+  scale_fill_manual(
     values = PLATFORM_COLOURS,
     breaks = PLATFORMS,
     limits = PLATFORMS,
-    drop = FALSE
+    drop = FALSE,
+    guide = "none"
   ) +
+  scale_colour_identity() +
   scale_x_continuous(
-    name = "Target input depth (×)",
-    breaks = c(0, 10, 30, 50),
-    limits = c(0, 52),
+    limits = c(0, 50.25),
     expand = expansion(mult = 0)
   ) +
   scale_y_continuous(
-    name = "Approximate input depth (×)",
-    breaks = c(0, 10, 30, 50),
-    limits = c(0, 52),
+    breaks = c(3, 2, 1),
+    labels = PLATFORMS,
+    limits = c(0.50, 4.12),
     expand = expansion(mult = 0)
   ) +
-  coord_fixed(ratio = 1, clip = "off") +
-  guides(
-    colour = guide_legend(
-      nrow = 1,
-      byrow = TRUE,
-      override.aes = list(linewidth = 0.42, size = 1.9)
-    )
-  ) +
-  theme_input_depth()
+  coord_cartesian(clip = "off") +
+  labs(x = NULL, y = NULL) +
+  theme_void(base_size = 6.4, base_family = BASE_FAMILY) +
+  theme(
+    axis.text.y = element_text(
+      colour = "#171717",
+      size = 6.2,
+      face = "bold",
+      margin = margin(r = 2.2)
+    ),
+    plot.margin = margin(1.0, 1.5, 0.7, 1.3, unit = "mm")
+  )
 
 # ---- Export ---------------------------------------------------------------
 
@@ -354,6 +490,14 @@ render_manifest <- data.frame(
   editable_text = c(TRUE, TRUE, FALSE, FALSE),
   base_family = BASE_FAMILY,
   plotted_rows = nrow(plot_data),
+  plotted_segments = nrow(segment_data),
+  platform_rulers = nrow(nested_summary),
+  direct_value_labels = nrow(segment_data),
+  geometry = paste(
+    "nested-depth rulers; internal 10x and 30x achieved boundaries;",
+    "highest-depth achieved endpoint; target guides at 10x, 30x and 50x"
+  ),
+  overlap = "none; one spatially independent ruler per platform",
   bytes = as.numeric(file.info(rendered_paths)$size),
   md5 = unname(tools::md5sum(rendered_paths)),
   stringsAsFactors = FALSE
@@ -366,4 +510,6 @@ write_csv(
 
 message("Rendered Panel a to: ", OUTPUT_DIR)
 message("Plotted rows: ", nrow(plot_data), " / ", n_source)
+message("Nested ruler segments: ", nrow(segment_data), " / 9")
+message("Overplotted platform trajectories: 0")
 message("Font family: ", BASE_FAMILY)

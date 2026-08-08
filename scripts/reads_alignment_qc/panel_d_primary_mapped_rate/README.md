@@ -1,9 +1,8 @@
 # Panel d — 30× primary mapped-read rate
 
-This task renders the read-level mapping-retention panel for the
-reads/alignment QC opening figure. It reports primary mapped-read rate across
-the complete 30× reference × aligner matrix without reusing the coverage
-breadth values already shown in Panel c.
+This task renders a compact annotated heatmap for the read-level mapping
+retention result. It reports the complete 30× platform × reference × aligner
+matrix without reusing the coverage breadth values already shown in Panel c.
 
 ## Run
 
@@ -20,15 +19,16 @@ Rscript scripts/reads_alignment_qc/panel_d_primary_mapped_rate/panel_d_primary_m
 
 ## Evidence mapping
 
-- Two independent panels identify GRCh38 and T2T-CHM13.
-- The x axis contains the two aligner categories; the y axis reports
-  `100 × Primary mapped rate` on the same 97.5–100.10% window in both panels.
-- BGI, ONT and HiFi use the established Panel c palette and the same filled
-  circular mark vocabulary.
-- Aligner categories sit at the centres of three pale vertical boundary
-  guides, matching Panel c's categorical layout grammar.
-- All 12 observations are plotted at their exact coordinates. There are no
-  connector segments, breadth values, jitter, summaries or fitted trends.
+- Rows are BGI, ONT and HiFi; the adjacent coloured dots preserve the fixed
+  platform palette used in Panel c.
+- Columns are grouped into GRCh38 and T2T-CHM13, with minimap2 and winnowmap
+  shown in the same order within each group.
+- A single sequential blue-grey scale encodes
+  `100 × Primary mapped rate` from 97.9% to 100.0%.
+- Every cell contains its exact percentage to two decimal places, with
+  contrast-aware black or white text.
+- All 12 observations are displayed once. There are no connector segments,
+  coverage values, summaries, ranking badges or fitted trends.
 
 ## Outputs
 
@@ -47,6 +47,6 @@ Outputs are written to
 - `data_filter_audit.csv`
 - `render_manifest.csv`
 
-The plot is rendered at 183 × 52 mm as a standalone full-width panel. It is
-not a manuscript figure assembly.
+The plot is rendered at the Nature-style single-column size of 89 × 54 mm.
+It is a standalone panel rather than a manuscript figure assembly.
 

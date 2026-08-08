@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='518.74pt' height='147.40pt' viewBox='0 0 518.74 147.40'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='252.28pt' height='153.07pt' viewBox='0 0 252.28 153.07'>
 <g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
@@ -21,99 +21,62 @@
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
 <defs>
-  <clipPath id='cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA='>
-    <rect x='0.00' y='0.00' width='518.74' height='147.40' />
+  <clipPath id='cpMC4wMHwyNTIuMjh8MC4wMHwxNTMuMDc='>
+    <rect x='0.00' y='0.00' width='252.28' height='153.07' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA=)'>
-<rect x='200.86' y='6.38' width='117.03' height='7.09' style='stroke-width: 0.65; stroke: none; fill: #FFFFFF;' />
-<text x='200.86' y='12.11' style='font-size: 6.00px; font-weight: bold;fill: #222222; font-family: "Nimbus Sans";'>Platform</text>
-<circle cx='234.99' cy='9.92' r='2.35' style='stroke-width: 0.43; stroke: none; fill: #FFB000;' />
-<circle cx='265.04' cy='9.92' r='2.35' style='stroke-width: 0.43; stroke: none; fill: #13A4A6;' />
-<circle cx='297.42' cy='9.92' r='2.35' style='stroke-width: 0.43; stroke: none; fill: #9400D3;' />
-<text x='244.85' y='12.11' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>BGI</text>
-<text x='274.90' y='12.11' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>ONT</text>
-<text x='307.28' y='12.11' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>HiFi</text>
-</g>
-<defs>
-  <clipPath id='cpMC4wMHwyNTkuMzd8MTkuODR8MTQ3LjQw'>
-    <rect x='0.00' y='19.84' width='259.37' height='127.56' />
-  </clipPath>
-</defs>
-<g clip-path='url(#cpMC4wMHwyNTkuMzd8MTkuODR8MTQ3LjQw)'>
-<rect x='0.00' y='19.84' width='259.37' height='127.56' style='stroke-width: 0.65; stroke: #FFFFFF; fill: #FFFFFF;' />
-</g>
-<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA=)'>
-</g>
-<defs>
-  <clipPath id='cpMzUuNDh8MjUzLjcwfDMyLjgxfDEyOC41MQ=='>
-    <rect x='35.48' y='32.81' width='218.22' height='95.69' />
-  </clipPath>
-</defs>
-<g clip-path='url(#cpMzUuNDh8MjUzLjcwfDMyLjgxfDEyOC41MQ==)'>
-<rect x='35.48' y='32.81' width='218.22' height='95.69' style='stroke-width: 0.65; stroke: none; fill: #FFFFFF;' />
-<line x1='35.48' y1='128.51' x2='35.48' y2='32.81' style='stroke-width: 0.73; stroke: #D7D7D7; stroke-linecap: butt;' />
-<line x1='144.59' y1='128.51' x2='144.59' y2='32.81' style='stroke-width: 0.73; stroke: #D7D7D7; stroke-linecap: butt;' />
-<line x1='253.70' y1='128.51' x2='253.70' y2='32.81' style='stroke-width: 0.73; stroke: #D7D7D7; stroke-linecap: butt;' />
-<circle cx='90.03' cy='47.90' r='2.40' style='stroke-width: 0.43; stroke: none; fill: #FFB000;' />
-<circle cx='90.03' cy='97.59' r='2.40' style='stroke-width: 0.43; stroke: none; fill: #13A4A6;' />
-<circle cx='90.03' cy='36.49' r='2.40' style='stroke-width: 0.43; stroke: none; fill: #9400D3;' />
-<circle cx='199.14' cy='61.15' r='2.40' style='stroke-width: 0.43; stroke: none; fill: #FFB000;' />
-<circle cx='199.14' cy='98.33' r='2.40' style='stroke-width: 0.43; stroke: none; fill: #13A4A6;' />
-<circle cx='199.14' cy='36.49' r='2.40' style='stroke-width: 0.43; stroke: none; fill: #9400D3;' />
-</g>
-<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA=)'>
-<text x='34.48' y='130.69' text-anchor='end' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>97.5%</text>
-<text x='34.48' y='112.29' text-anchor='end' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>98.0%</text>
-<text x='34.48' y='93.89' text-anchor='end' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>98.5%</text>
-<text x='34.48' y='75.48' text-anchor='end' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>99.0%</text>
-<text x='34.48' y='57.08' text-anchor='end' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>99.5%</text>
-<text x='34.48' y='38.68' text-anchor='end' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>100.0%</text>
-<text x='90.03' y='134.21' text-anchor='middle' style='font-size: 6.20px;fill: #292929; font-family: "Nimbus Sans";'>minimap2</text>
-<text x='199.14' y='134.21' text-anchor='middle' style='font-size: 6.20px;fill: #292929; font-family: "Nimbus Sans";'>winnowmap</text>
-<text x='144.59' y='142.51' text-anchor='middle' style='font-size: 6.80px; font-weight: bold;fill: #171717; font-family: "Nimbus Sans";'>Aligner</text>
-<text transform='translate(10.62,80.66) rotate(-90)' text-anchor='middle' style='font-size: 6.80px; font-weight: bold;fill: #171717; font-family: "Nimbus Sans";'>Primary mapped-read rate</text>
-<text x='144.59' y='29.05' text-anchor='middle' style='font-size: 7.20px; font-weight: bold;fill: #111111; font-family: "Nimbus Sans";'>GRCh38 30×</text>
-</g>
-<defs>
-  <clipPath id='cpMjU5LjM3fDUxOC43NHwxOS44NHwxNDcuNDA='>
-    <rect x='259.37' y='19.84' width='259.37' height='127.56' />
-  </clipPath>
-</defs>
-<g clip-path='url(#cpMjU5LjM3fDUxOC43NHwxOS44NHwxNDcuNDA=)'>
-<rect x='259.37' y='19.84' width='259.37' height='127.56' style='stroke-width: 0.65; stroke: #FFFFFF; fill: #FFFFFF;' />
-</g>
-<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA=)'>
-</g>
-<defs>
-  <clipPath id='cpMjk0Ljg1fDUxMy4wN3wzMi44MXwxMjguNTE='>
-    <rect x='294.85' y='32.81' width='218.22' height='95.69' />
-  </clipPath>
-</defs>
-<g clip-path='url(#cpMjk0Ljg1fDUxMy4wN3wzMi44MXwxMjguNTE=)'>
-<rect x='294.85' y='32.81' width='218.22' height='95.69' style='stroke-width: 0.65; stroke: none; fill: #FFFFFF;' />
-<line x1='294.85' y1='128.51' x2='294.85' y2='32.81' style='stroke-width: 0.73; stroke: #D7D7D7; stroke-linecap: butt;' />
-<line x1='403.96' y1='128.51' x2='403.96' y2='32.81' style='stroke-width: 0.73; stroke: #D7D7D7; stroke-linecap: butt;' />
-<line x1='513.07' y1='128.51' x2='513.07' y2='32.81' style='stroke-width: 0.73; stroke: #D7D7D7; stroke-linecap: butt;' />
-<circle cx='349.40' cy='60.05' r='2.40' style='stroke-width: 0.43; stroke: none; fill: #FFB000;' />
-<circle cx='349.40' cy='104.22' r='2.40' style='stroke-width: 0.43; stroke: none; fill: #13A4A6;' />
-<circle cx='349.40' cy='39.44' r='2.40' style='stroke-width: 0.43; stroke: none; fill: #9400D3;' />
-<circle cx='458.51' cy='72.56' r='2.40' style='stroke-width: 0.43; stroke: none; fill: #FFB000;' />
-<circle cx='458.51' cy='112.31' r='2.40' style='stroke-width: 0.43; stroke: none; fill: #13A4A6;' />
-<circle cx='458.51' cy='39.07' r='2.40' style='stroke-width: 0.43; stroke: none; fill: #9400D3;' />
-</g>
-<g clip-path='url(#cpMC4wMHw1MTguNzR8MC4wMHwxNDcuNDA=)'>
-<text x='293.85' y='130.69' text-anchor='end' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>97.5%</text>
-<text x='293.85' y='112.29' text-anchor='end' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>98.0%</text>
-<text x='293.85' y='93.89' text-anchor='end' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>98.5%</text>
-<text x='293.85' y='75.48' text-anchor='end' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>99.0%</text>
-<text x='293.85' y='57.08' text-anchor='end' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>99.5%</text>
-<text x='293.85' y='38.68' text-anchor='end' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>100.0%</text>
-<text x='349.40' y='134.21' text-anchor='middle' style='font-size: 6.20px;fill: #292929; font-family: "Nimbus Sans";'>minimap2</text>
-<text x='458.51' y='134.21' text-anchor='middle' style='font-size: 6.20px;fill: #292929; font-family: "Nimbus Sans";'>winnowmap</text>
-<text x='403.96' y='142.51' text-anchor='middle' style='font-size: 6.80px; font-weight: bold;fill: #171717; font-family: "Nimbus Sans";'>Aligner</text>
-<text transform='translate(269.99,80.66) rotate(-90)' text-anchor='middle' style='font-size: 6.80px; font-weight: bold;fill: #171717; font-family: "Nimbus Sans";'> </text>
-<text x='403.96' y='29.05' text-anchor='middle' style='font-size: 7.20px; font-weight: bold;fill: #111111; font-family: "Nimbus Sans";'>T2T-CHM13 30×</text>
+<g clip-path='url(#cpMC4wMHwyNTIuMjh8MC4wMHwxNTMuMDc=)'>
+<rect x='0.00' y='0.00' width='252.28' height='153.07' style='stroke-width: 0.00; stroke: none;' />
+<rect x='46.26' y='21.68' width='42.38' height='26.96' style='stroke-width: 1.02; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #4A6D79;' />
+<rect x='46.26' y='54.55' width='42.38' height='26.96' style='stroke-width: 1.02; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #D0DBDF;' />
+<rect x='46.26' y='87.42' width='42.38' height='26.96' style='stroke-width: 1.02; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #294F5B;' />
+<rect x='94.42' y='21.68' width='42.38' height='26.96' style='stroke-width: 1.02; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #72939E;' />
+<rect x='94.42' y='54.55' width='42.38' height='26.96' style='stroke-width: 1.02; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #D1DCE0;' />
+<rect x='94.42' y='87.42' width='42.38' height='26.96' style='stroke-width: 1.02; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #294F5B;' />
+<rect x='154.62' y='21.68' width='42.38' height='26.96' style='stroke-width: 1.02; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #6E909B;' />
+<rect x='154.62' y='54.55' width='42.38' height='26.96' style='stroke-width: 1.02; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #DDE5E7;' />
+<rect x='154.62' y='87.42' width='42.38' height='26.96' style='stroke-width: 1.02; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #325763;' />
+<rect x='202.79' y='21.68' width='42.38' height='26.96' style='stroke-width: 1.02; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #90ABB4;' />
+<rect x='202.79' y='54.55' width='42.38' height='26.96' style='stroke-width: 1.02; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #EDF1F2;' />
+<rect x='202.79' y='87.42' width='42.38' height='26.96' style='stroke-width: 1.02; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #315662;' />
+<text x='67.45' y='37.25' text-anchor='middle' style='font-size: 5.75px; font-weight: bold;fill: #FFFFFF; font-family: "Nimbus Sans";'>99.69%</text>
+<text x='67.45' y='70.12' text-anchor='middle' style='font-size: 5.75px; font-weight: bold;fill: #182126; font-family: "Nimbus Sans";'>98.34%</text>
+<text x='67.45' y='102.99' text-anchor='middle' style='font-size: 5.75px; font-weight: bold;fill: #FFFFFF; font-family: "Nimbus Sans";'>100.00%</text>
+<text x='115.61' y='37.25' text-anchor='middle' style='font-size: 5.75px; font-weight: bold;fill: #FFFFFF; font-family: "Nimbus Sans";'>99.33%</text>
+<text x='115.61' y='70.12' text-anchor='middle' style='font-size: 5.75px; font-weight: bold;fill: #182126; font-family: "Nimbus Sans";'>98.32%</text>
+<text x='115.61' y='102.99' text-anchor='middle' style='font-size: 5.75px; font-weight: bold;fill: #FFFFFF; font-family: "Nimbus Sans";'>100.00%</text>
+<text x='175.81' y='37.25' text-anchor='middle' style='font-size: 5.75px; font-weight: bold;fill: #FFFFFF; font-family: "Nimbus Sans";'>99.36%</text>
+<text x='175.81' y='70.12' text-anchor='middle' style='font-size: 5.75px; font-weight: bold;fill: #182126; font-family: "Nimbus Sans";'>98.16%</text>
+<text x='175.81' y='102.99' text-anchor='middle' style='font-size: 5.75px; font-weight: bold;fill: #FFFFFF; font-family: "Nimbus Sans";'>99.92%</text>
+<text x='223.98' y='37.25' text-anchor='middle' style='font-size: 5.75px; font-weight: bold;fill: #182126; font-family: "Nimbus Sans";'>99.02%</text>
+<text x='223.98' y='70.12' text-anchor='middle' style='font-size: 5.75px; font-weight: bold;fill: #182126; font-family: "Nimbus Sans";'>97.94%</text>
+<text x='223.98' y='102.99' text-anchor='middle' style='font-size: 5.75px; font-weight: bold;fill: #FFFFFF; font-family: "Nimbus Sans";'>99.93%</text>
+<circle cx='32.77' cy='35.15' r='2.03' style='stroke-width: 0.43; stroke: none; fill: #FFB000;' />
+<circle cx='32.77' cy='68.03' r='2.03' style='stroke-width: 0.43; stroke: none; fill: #13A4A6;' />
+<circle cx='32.77' cy='100.90' r='2.03' style='stroke-width: 0.43; stroke: none; fill: #9400D3;' />
+<text x='91.53' y='12.14' text-anchor='middle' style='font-size: 7.23px; font-weight: bold;fill: #111111; font-family: "Nimbus Sans";'>GRCh38 30×</text>
+<text x='199.90' y='12.14' text-anchor='middle' style='font-size: 7.23px; font-weight: bold;fill: #111111; font-family: "Nimbus Sans";'>T2T-CHM13 30×</text>
+<line x1='46.26' y1='19.05' x2='136.80' y2='19.05' style='stroke-width: 0.73; stroke: #D7D7D7; stroke-linecap: butt;' />
+<line x1='154.62' y1='19.05' x2='245.17' y2='19.05' style='stroke-width: 0.73; stroke: #D7D7D7; stroke-linecap: butt;' />
+<text x='12.41' y='37.48' text-anchor='middle' style='font-size: 6.40px; font-weight: bold;fill: #171717; font-family: "Nimbus Sans";'>BGI</text>
+<text x='12.41' y='70.36' text-anchor='middle' style='font-size: 6.40px; font-weight: bold;fill: #171717; font-family: "Nimbus Sans";'>ONT</text>
+<text x='12.41' y='103.23' text-anchor='middle' style='font-size: 6.40px; font-weight: bold;fill: #171717; font-family: "Nimbus Sans";'>HiFi</text>
+<text x='67.45' y='123.20' text-anchor='middle' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>minimap2</text>
+<text x='115.61' y='123.20' text-anchor='middle' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>winnowmap</text>
+<text x='175.81' y='123.20' text-anchor='middle' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>minimap2</text>
+<text x='223.98' y='123.20' text-anchor='middle' style='font-size: 6.00px;fill: #292929; font-family: "Nimbus Sans";'>winnowmap</text>
+<text x='134.88' y='133.47' text-anchor='middle' style='font-size: 6.40px; font-weight: bold;fill: #222222; font-family: "Nimbus Sans";'>Primary mapped-read rate</text>
+<image width='96.38' height='6.24' x='86.69' y='135.16' preserveAspectRatio='none' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAABCAYAAABkOJMpAAAAnElEQVQ4ja2SUQ6AIAxD6/0va6L/9YMNioxlJiYa3GYfpXqc100CAIm2AvYEG9hq/XbNfXKdO0/nEVv3TNl7Zokj/ZD52Vstl2k/ztqhi+v+3kuTMYbG/Qcewn7M2Gly9n9+avkU9q/mtjun30FN+0hr7XxaL6vdw6ibR81v5UJmIbPPPCfh91oZcj5kDHSv499+5bPTa76pfn3/AcCLBfLuB7fCAAAAAElFTkSuQmCC'/>
+<rect x='86.69' y='135.16' width='96.38' height='6.24' style='stroke-width: 0.00; stroke: none;' />
+<polyline points='91.42,137.94 91.42,141.40 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
+<polyline points='137.16,137.94 137.16,141.40 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
+<polyline points='182.90,137.94 182.90,141.40 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
+<polyline points='91.42,138.62 91.42,135.16 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
+<polyline points='137.16,138.62 137.16,135.16 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
+<polyline points='182.90,138.62 182.90,135.16 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
+<text x='91.42' y='148.96' text-anchor='middle' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";'>98%</text>
+<text x='137.16' y='148.96' text-anchor='middle' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";'>99%</text>
+<text x='182.90' y='148.96' text-anchor='middle' style='font-size: 5.80px;fill: #292929; font-family: "Nimbus Sans";'>100%</text>
 </g>
 </g>
 </svg>

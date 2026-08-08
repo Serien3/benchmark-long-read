@@ -1,0 +1,2 @@
+source_file,source_rows,selected_rows,excluded_rows,expected_unique_keys,observed_unique_keys,depth,reference,region_bases,truth_masked_sites,common_scale,rate_transform,geometry,replicate_statement
+error_spectrum_pilot.csv,6,6,0,6,6,30x,GRCh38,2981290,6488,"0-18 per 1,000 Q20 bases","1,000 x component error bases / aligned Q20 bases; components sum to total","3 x 2 stacked horizontal-bar matrix; common zero baseline; exact total label; no points, connectors or aggregation",one HG002 30x technical subset per platform; aligner conditions are not biological replicates

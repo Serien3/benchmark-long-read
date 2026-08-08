@@ -1,0 +1,5 @@
+reference,aligner,platform_order,maximum_gib,minimum_gib,platform_spread_gib
+GRCh38,minimap2,BGI > ONT > HiFi,109.3,41.01,68.29
+GRCh38,winnowmap,BGI > ONT > HiFi,97.34,37.42,59.92
+T2T-CHM13,minimap2,BGI > ONT > HiFi,101.55,37.35,64.2
+T2T-CHM13,winnowmap,BGI > ONT > HiFi,90.51,34.45,56.06

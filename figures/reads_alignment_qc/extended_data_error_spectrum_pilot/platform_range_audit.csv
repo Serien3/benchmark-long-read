@@ -1,0 +1,4 @@
+platform,n_aligners,minimum_total_per_1k,maximum_total_per_1k,minimum_deletion_share_pct,maximum_deletion_share_pct
+BGI,2,17.23934994,17.55151084,85.39560064,85.65857824
+ONT,2,6.35132479,6.43617452,84.52686746,84.62803854
+HiFi,2,1.1007299,1.11695271,57.33664881,58.64986188

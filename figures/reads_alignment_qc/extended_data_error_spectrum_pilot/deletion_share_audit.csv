@@ -1,0 +1,7 @@
+platform,aligner,deletion_bases,total_error_bases,deletion_share_pct
+BGI,minimap2,1332044,1555062,85.658578
+ONT,minimap2,447574,528872,84.628039
+HiFi,minimap2,49114,85659,57.336649
+BGI,winnowmap,1303522,1526451,85.395601
+ONT,winnowmap,440953,521672,84.526867
+HiFi,winnowmap,50955,86880,58.649862

@@ -1,0 +1,4 @@
+platform,minimap2_total_per_1k,winnowmap_total_per_1k,winnowmap_minus_minimap2_per_1k,winnowmap_relative_change_pct
+BGI,17.55151084,17.23934994,-0.3121609,-1.77854147
+ONT,6.43617452,6.35132479,-0.08484973,-1.31832545
+HiFi,1.1007299,1.11695271,0.01622282,1.47382342

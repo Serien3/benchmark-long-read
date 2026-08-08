@@ -1,0 +1,3 @@
+aligner,platform_order,maximum_total_per_1k,minimum_total_per_1k,platform_spread_per_1k
+minimap2,BGI > ONT > HiFi,17.55151084,1.1007299,16.45078094
+winnowmap,BGI > ONT > HiFi,17.23934994,1.11695271,16.12239723

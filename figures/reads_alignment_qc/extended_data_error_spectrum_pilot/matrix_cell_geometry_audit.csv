@@ -1,0 +1,7 @@
+platform,aligner,total_per_1k,total_label,condition_x,platform_y,track_xmin,track_xmax,total_xend,label_inside,label_x,label_hjust,scale_limit_per_1k
+BGI,minimap2,17.55151084,17.552,1,3,0.21,1.79,1.75063262,TRUE,1.70563262,1,18
+ONT,minimap2,6.43617452,6.436,1,2,0.21,1.79,0.7749531,FALSE,0.8249531,0,18
+HiFi,minimap2,1.1007299,1.101,1,1,0.21,1.79,0.30661962,FALSE,0.35661962,0,18
+BGI,winnowmap,17.23934994,17.239,3,3,2.21,3.79,3.72323183,TRUE,3.67823183,1,18
+ONT,winnowmap,6.35132479,6.351,3,2,2.21,3.79,2.76750518,FALSE,2.81750518,0,18
+HiFi,winnowmap,1.11695271,1.117,3,1,2.21,3.79,2.30804363,FALSE,2.35804363,0,18

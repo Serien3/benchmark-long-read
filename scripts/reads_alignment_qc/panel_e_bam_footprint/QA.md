@@ -1,76 +1,70 @@
 # Figure QA contract — Panel e
 
-- Core conclusion: under the current unified workflow, BAM output footprint at
-  30× differs substantially by platform and more modestly by aligner.
-- Manuscript role: operational evidence; default Extended Data panel and
-  retained main-figure replacement option.
-- Archetype: two-facet matched-condition dot plot.
-- Reuse level: structural adaptation of Panel d's confirmed geometry, with a
-  new metric-specific data contract and zero-based axis.
+- Core conclusion: at matched nominal 30× input, BAM output footprint shows a
+  stable platform hierarchy across all four reference × aligner conditions,
+  with directly readable aligner- and reference-associated changes.
+- Manuscript role: operational complement to Panel d; default Extended Data
+  panel with a reserved 89-mm main-figure slot.
+- Archetype: 3 × 4 in-cell horizontal-bar matrix.
 - Backend: R only.
-- Final dimensions: 183 × 38 mm, matching Panel d's compact full-width slot.
-- Data: 12 strict-30× rows selected from the 36-row alignment-QC matrix; 24
-  non-30× rows are excluded by the prespecified panel scope.
-- Platform encoding: fixed rows plus BGI `#FFB000`, ONT `#13A4A6` and HiFi
-  `#9400D3`; no redundant platform legend.
-- Aligner encoding: minimap2 = filled circle; winnowmap = open diamond.
-- Pair connection: one thin neutral segment joins the matched aligner values
-  within each platform and reference.
-- Geometry: exact x positions and shared row positions; no jitter, dodge,
-  smoothing, aggregation or fitted trend.
-- Replicate statement: one HG002 30× technical subset per platform; aligner and
-  reference conditions are not biological replicates.
-- Axis: both reference facets share a zero-based 0–115 GiB x domain, supporting
-  direct absolute-size comparison without a truncated bar-like baseline.
-- Scope: BAM size describes output storage under the current workflow and does
-  not establish runtime, peak-memory, energy or cost differences.
-- Typography: Helvetica-compatible sans serif; black row labels; frameless
-  legend; white background and sparse pale vertical reading guides.
+- Final dimensions: 89 × 54 mm, identical to Panel d.
+- Data: 12 strict-30× rows from the 36-row alignment-QC matrix; all platform ×
+  reference × aligner keys occur once.
+- Row encoding: BGI, ONT and HiFi in fixed order; bar fills use the established
+  platform colours `#FFB000`, `#13A4A6` and `#9400D3`.
+- Column encoding: GRCh38/minimap2, GRCh38/winnowmap,
+  T2T-CHM13/minimap2 and T2T-CHM13/winnowmap.
+- Quantitative encoding: every cell has the same zero-based 0–115 GiB track;
+  coloured bar length and an exact two-decimal label both encode BAM size.
+- Geometry: 12 tracks and 12 bars; zero points, zero pair connectors, no
+  aggregation, jitter, smoothing, fit or ranking mark.
+- Typography: Helvetica-compatible Nimbus Sans; 6–7 pt hierarchy, bold
+  reference headers and row labels, black quantitative labels.
+- Style alignment: white background, Panel c platform palette, Panel d matrix
+  order and header rules, and the same single-column export slot.
 - Export: editable SVG/PDF, 600 dpi LZW TIFF and 320 dpi PNG preview.
-- Traceability: all plotted values, matched differences, platform ranges,
-  matched HiFi ratios, row counts, dimensions and checksums are exported.
-- Main reviewer risk: BAM size is pipeline- and format-dependent. The figure
-  reports the prespecified workflow output directly and avoids broader
-  operational claims.
+- Traceability: source values, bar geometry, platform ordering, matched aligner
+  changes, matched reference changes, platform ranges, dimensions and file
+  checksums are exported beside the figure.
 
 ## Executed validation
 
-- Data contract: PASS — 12/36 rows selected by the strict `Depth == "30x"`
-  rule, 24 non-30× rows excluded, and all 12 reference × aligner × platform
-  keys are present exactly once.
-- Numeric guard: PASS — all BAM sizes are finite, non-negative and lie within
-  the declared 0–115 GiB axis; no unit conversion is applied.
-- Platform-range audit: PASS — BGI spans 90.51–109.30 GiB, ONT spans
-  81.35–102.88 GiB and HiFi spans 34.45–41.01 GiB across the four displayed
-  reference–aligner conditions.
-- Matched-aligner audit: PASS — six reference × platform pairs were recovered.
-  Winnowmap BAMs are 6.639–11.480% smaller than their matched minimap2 BAMs
-  under the recorded workflow.
-- Matched-platform audit: PASS — the eight matched BGI/ONT-to-HiFi footprint
-  ratios range from 2.361× to 2.719×.
-- R syntax/runtime: PASS — the final script parses and renders successfully
-  with R 4.6.1 and emits no runtime warnings.
-- Static source preflight: READY — 13 PASS, 1 reviewed WARN and 0 FAIL. The
-  sole warning is the validator's generic request for an R parse check, which
-  was run separately. The 183-mm width passed the double-column check.
-- Raster dimensions: PASS — PNG 2305 × 478 px at 320 dpi; TIFF
-  4322 × 897 px at 600 dpi with LZW compression, matching 183 × 38 mm after
-  integer pixel rounding.
-- Vector dimensions: PASS — the one-page PDF is approximately 518 × 107 pt;
-  SVG is 518.74 × 107.72 pt, both matching 183 × 38 mm.
-- Editable text/font: PASS — SVG contains 21 text elements; PDF embeds
-  subsetted Nimbus Sans Regular and Bold fonts with Unicode mapping.
-- Visual inspection at final size: PASS — facets, platform rows, 20-GiB ticks,
-  pair segments and aligner legend are unclipped and legible. The zero origin,
-  common facet scale and restrained geometry support direct absolute-size
-  comparison.
-- Consistency inspection: PASS — dimensions, typography, platform colours,
-  marker semantics, connectors, facet order and spacing match Panel d.
-- Statistics: descriptive only. `n` is 12 technical conditions from one HG002
-  30× subset per platform. Biological replicates, across-sample centre/spread,
-  uncertainty intervals, statistical tests, multiple-comparison correction and
-  p-value display are not defined.
-- Source data: `source_data_plotted.csv`; matched aligner differences, platform
-  ranges and matched HiFi ratios are supplied in adjacent audit CSV files.
-- Image-integrity operations: not applicable — vector quantitative chart with
-  no raster source image, cropping or contrast manipulation.
+- Data contract: PASS — 12/36 rows selected by `Depth == "30x"`; the 24 other
+  depth rows are outside this panel, and the complete 3 × 2 × 2 key matrix is
+  present exactly once.
+- Numeric and geometry guards: PASS — all values are finite and within
+  0–115 GiB; all bar endpoints lie within their tracks; eight long-bar labels
+  are inside and four HiFi short-bar labels are outside.
+- Platform-order audit: PASS — all four reference × aligner columns read
+  BGI > ONT > HiFi. BGI spans 90.51–109.30 GiB, ONT 81.35–102.88 GiB and
+  HiFi 34.45–41.01 GiB.
+- Matched-aligner audit: PASS — all six winnowmap BAMs are smaller than their
+  minimap2 counterparts by 6.639–11.480%.
+- Matched-reference audit: PASS — all six T2T-CHM13 BAMs are smaller than the
+  matched GRCh38 BAMs by 2.97–14.70 GiB (7.017–15.305%).
+- Matched-platform audit: PASS — the eight BGI/ONT-to-HiFi ratios are
+  2.361×–2.719×.
+- R syntax/runtime: PASS — the final source parses and renders all four formats
+  without runtime warnings.
+- Static source preflight: READY FOR VISUAL QA — 13 PASS, one reviewed R parse
+  reminder and zero FAIL; the independent R parse check passed.
+- Raster dimensions: PASS — PNG is 1121 × 680 px at 320 dpi; TIFF is
+  2102 × 1275 px at 600 dpi with LZW compression, matching 89 × 54 mm after
+  integer-pixel rounding.
+- Vector dimensions: PASS — PDF is 252 × 153 pt and SVG is
+  252.28 × 153.07 pt, both matching 89 × 54 mm.
+- Editable text/font: PASS — SVG contains 25 text elements; PDF embeds subsetted
+  Nimbus Sans Regular and Bold fonts with Unicode mapping.
+- Visual inspection at final size: PASS — all 12 bars and values are legible;
+  long-bar labels remain inside their fills, short-bar labels remain on the
+  pale track, and no header, row label, aligner label or scale label is clipped.
+- Cross-panel consistency inspection: PASS — reference headings, header rules,
+  platform/column order, font hierarchy, margins and final dimensions align
+  with Panel d; platform colours align with Panel c.
+- Statistics: descriptive only. `n = 12` technical mapping conditions derived
+  from one HG002 30× subset per platform. No centre/spread estimate,
+  uncertainty interval, hypothesis test, correction or p value is defined.
+- Source data: `source_data_plotted.csv`; all derived comparisons and plotting
+  coordinates are in the adjacent audit CSV files.
+- Image-integrity operations: not applicable — this is a vector quantitative
+  chart with no raster source image or image adjustment.

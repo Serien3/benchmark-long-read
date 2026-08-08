@@ -1,5 +1,5 @@
-file,format,width_mm,height_mm,dpi,editable_text,base_family,selected_rows,matched_pairs,bytes,md5
-bam_output_footprint_30x.svg,SVG,183,38,,TRUE,Nimbus Sans,12,6,11696,33ab204eb425b4c7972dec3878f27258
-bam_output_footprint_30x.pdf,PDF,183,38,,TRUE,Nimbus Sans,12,6,22436,10164351ba0e631b15274a3225344b34
-bam_output_footprint_30x.tiff,TIFF,183,38,600,FALSE,Nimbus Sans,12,6,106304,e002831186ed9653a0cdf25488bbe590
-bam_output_footprint_30x.png,PNG,183,38,320,FALSE,Nimbus Sans,12,6,39401,38c25acbba0a06b5c9d77289870de6f6
+file,format,width_mm,height_mm,dpi,editable_text,base_family,selected_rows,plotted_cells,plotted_references,geometry,row_encoding,column_encoding,point_geometries,connector_geometries,bytes,md5
+bam_output_footprint_30x.svg,SVG,89,54,,TRUE,Nimbus Sans,12,12,2,3 x 4 in-cell horizontal-bar matrix; exact values; one common zero-based 0-115 GiB scale,"platform: BGI, ONT, HiFi; fixed platform-coloured bars","GRCh38 minimap2, GRCh38 winnowmap, T2T-CHM13 minimap2, T2T-CHM13 winnowmap",0,0,9212,4d442679795e916225c4901eb973bf3c
+bam_output_footprint_30x.pdf,PDF,89,54,,TRUE,Nimbus Sans,12,12,2,3 x 4 in-cell horizontal-bar matrix; exact values; one common zero-based 0-115 GiB scale,"platform: BGI, ONT, HiFi; fixed platform-coloured bars","GRCh38 minimap2, GRCh38 winnowmap, T2T-CHM13 minimap2, T2T-CHM13 winnowmap",0,0,22246,1ec70d2f81b81d5ca16f4cf97deb374f
+bam_output_footprint_30x.tiff,TIFF,89,54,600,FALSE,Nimbus Sans,12,12,2,3 x 4 in-cell horizontal-bar matrix; exact values; one common zero-based 0-115 GiB scale,"platform: BGI, ONT, HiFi; fixed platform-coloured bars","GRCh38 minimap2, GRCh38 winnowmap, T2T-CHM13 minimap2, T2T-CHM13 winnowmap",0,0,115842,7dc384594b10f73f97a63544d253c252
+bam_output_footprint_30x.png,PNG,89,54,320,FALSE,Nimbus Sans,12,12,2,3 x 4 in-cell horizontal-bar matrix; exact values; one common zero-based 0-115 GiB scale,"platform: BGI, ONT, HiFi; fixed platform-coloured bars","GRCh38 minimap2, GRCh38 winnowmap, T2T-CHM13 minimap2, T2T-CHM13 winnowmap",0,0,33324,bc92731193757e9beb9b312942ea6c27

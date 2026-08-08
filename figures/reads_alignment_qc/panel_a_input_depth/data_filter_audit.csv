@@ -1,2 +1,2 @@
-source_file,source_rows,plotted_rows,excluded_rows,expected_unique_keys,observed_unique_keys,transform_platform,transform_depth,transform_delta,filter_rule,replicate_statement
-reads_qc_nanoplot_q20.csv,9,9,0,9,9,remove terminal _latest suffix,remove terminal x suffix and parse numeric,approximate_input_depth_x - target_input_depth_x,none; all nine reads-QC observations plotted,nested technical depth subsets; not independent replicates
+source_file,source_rows,plotted_rows,excluded_rows,expected_unique_keys,observed_unique_keys,transform_platform,transform_depth,transform_delta,filter_rule,archetype,plotted_segments,platform_rows,replicate_statement
+reads_qc_nanoplot_q20.csv,9,9,0,9,9,remove terminal _latest suffix,remove terminal x suffix and parse numeric,approximate_input_depth_x - target_input_depth_x,none; all nine reads-QC observations plotted,three-row nested-depth ruler,9,3,nested technical depth subsets; not independent replicates

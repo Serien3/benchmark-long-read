@@ -1,5 +1,5 @@
-file,format,width_mm,height_mm,dpi,editable_text,base_family,plotted_rows,bytes,md5
-approximate_input_depth.svg,SVG,60,52,,TRUE,Nimbus Sans,9,7533,9421b467ccc3a73cdf925a2a08e9e38e
-approximate_input_depth.pdf,PDF,60,52,,TRUE,Nimbus Sans,9,12798,338f864f7f7a7651c32d129301e4713e
-approximate_input_depth.tiff,TIFF,60,52,600,FALSE,Nimbus Sans,9,62684,bffa2613ca76f6df618390539200e4fb
-approximate_input_depth.png,PNG,60,52,320,FALSE,Nimbus Sans,9,34073,078825eee027040c4c31d71d4efe8428
+file,format,width_mm,height_mm,dpi,editable_text,base_family,plotted_rows,plotted_segments,platform_rulers,direct_value_labels,geometry,overlap,bytes,md5
+approximate_input_depth.svg,SVG,60,34,,TRUE,Nimbus Sans,9,9,3,9,"nested-depth rulers; internal 10x and 30x achieved boundaries; highest-depth achieved endpoint; target guides at 10x, 30x and 50x",none; one spatially independent ruler per platform,6385,e1cde856edee7eeca42dbf72909129c0
+approximate_input_depth.pdf,PDF,60,34,,TRUE,Nimbus Sans,9,9,3,9,"nested-depth rulers; internal 10x and 30x achieved boundaries; highest-depth achieved endpoint; target guides at 10x, 30x and 50x",none; one spatially independent ruler per platform,14578,fa223f0e20c3f5eb0f0588cf72a86ab3
+approximate_input_depth.tiff,TIFF,60,34,600,FALSE,Nimbus Sans,9,9,3,9,"nested-depth rulers; internal 10x and 30x achieved boundaries; highest-depth achieved endpoint; target guides at 10x, 30x and 50x",none; one spatially independent ruler per platform,64910,31e0a5c6896e73e6c5471bf327b97e30
+approximate_input_depth.png,PNG,60,34,320,FALSE,Nimbus Sans,9,9,3,9,"nested-depth rulers; internal 10x and 30x achieved boundaries; highest-depth achieved endpoint; target guides at 10x, 30x and 50x",none; one spatially independent ruler per platform,19752,836822537c14a5fb54a8e1e578a15279

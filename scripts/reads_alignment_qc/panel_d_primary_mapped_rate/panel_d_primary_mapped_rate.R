@@ -9,13 +9,13 @@
 #   Role       : add a read-level mapping outcome after Panel c reports the
 #                position-level coverage-breadth response.
 #   Evidence   : all 12 strict-30x platform x reference x aligner conditions.
-#   Archetype  : two-panel categorical condition dot plot.
-#   Encoding   : x = aligner; y = primary mapped-read rate; colour = platform;
-#                panel = reference genome.
-#   Integrity  : no coverage-breadth reuse, aggregation, connector, jitter,
-#                smoothing, fitted trend, uncertainty interval, test or p-value.
-#   Reuse      : inherit the Panel c palette, typography, centred titles,
-#                categorical boundary guides, mark scale and export contract.
+#   Archetype  : compact 3 x 4 annotated heatmap.
+#   Encoding   : rows = platform; columns = reference x aligner; sequential
+#                fill and exact cell labels = primary mapped-read rate.
+#   Integrity  : no coverage-breadth reuse, aggregation, connector, ranking
+#                badge, uncertainty interval, test or p-value.
+#   Reuse      : inherit the Panel c palette accents, typography, title weight,
+#                white background and export contract.
 # =============================================================================
 
 suppressPackageStartupMessages({
@@ -58,12 +58,10 @@ PLATFORM_COLOURS <- c(
   HiFi = "#9400D3"
 )
 
-ALIGNER_CENTRES <- seq_along(ALIGNERS)
-ALIGNER_BOUNDARIES <- seq(0.5, length(ALIGNERS) + 0.5, by = 1)
-Y_LIMITS <- c(97.5, 100.10)
+FILL_LIMITS <- c(97.9, 100.0)
 
-WIDTH_MM = 183
-HEIGHT_MM = 52
+WIDTH_MM = 89
+HEIGHT_MM = 54
 PNG_DPI = 320
 TIFF_DPI = 600
 OUTPUT_STEM <- "primary_mapped_read_rate_30x"
@@ -156,9 +154,9 @@ if (any(!is.finite(plot_data$primary_mapped_fraction)) ||
         plot_data$primary_mapped_fraction > 1)) {
   stop("Primary mapped-read fractions must be finite and lie in [0, 1]")
 }
-if (any(plot_data$primary_mapped_pct < Y_LIMITS[1] |
-        plot_data$primary_mapped_pct > Y_LIMITS[2])) {
-  stop("At least one primary mapped-read value lies outside the y window")
+if (any(plot_data$primary_mapped_pct < FILL_LIMITS[1] |
+        plot_data$primary_mapped_pct > FILL_LIMITS[2])) {
+  stop("At least one primary mapped-read value lies outside the fill scale")
 }
 
 duplicate_keys <- plot_data %>%
@@ -372,13 +370,13 @@ data_audit <- data.frame(
   observed_unique_keys = nrow(distinct(
     plot_data, reference, aligner, platform
   )),
-  plotted_points = nrow(plot_data),
+  plotted_cells = nrow(plot_data),
   transform_platform = "remove terminal _latest suffix",
   transform_primary_mapped = "100 x Primary mapped rate fraction",
   filter_rule = "Depth == 30x; one row per reference x aligner x platform",
   geometry = paste(
-    "exact categorical points; reference panels and aligner x positions;",
-    "no coverage reuse, connectors, jitter, aggregation or fitted trends"
+    "3 x 4 annotated heatmap; exact cell values;",
+    "no coverage reuse, connectors, aggregation or fitted trends"
   ),
   exclusion_reason = paste(
     "Panel d is the prespecified matched-30x primary-retention view;",
@@ -398,163 +396,135 @@ write_csv(
 
 # ---- Figure ----------------------------------------------------------------
 
-percent_labels <- function(values) {
-  paste0(formatC(values, format = "f", digits = 1), "%")
-}
-
-theme_condition_subpanel <- function(
-    show_legend = FALSE,
-    base_size = 6.7,
-    base_family = BASE_FAMILY
-) {
-  theme_classic(base_size = base_size, base_family = base_family) +
-    theme(
-      axis.line = element_blank(),
-      axis.ticks = element_blank(),
-      axis.title.x = element_text(
-        colour = "#171717", size = 6.8, face = "bold",
-        margin = margin(t = 2.0)
-      ),
-      axis.title.y = element_text(
-        colour = "#171717", size = 6.8, face = "bold",
-        margin = margin(r = 2.0)
-      ),
-      axis.text.x = element_text(
-        colour = "#292929", size = 6.2, margin = margin(t = 1.2)
-      ),
-      axis.text.y = element_text(
-        colour = "#292929", size = 6.0, margin = margin(r = 1.0)
-      ),
-      plot.title = element_text(
-        colour = "#111111", size = 7.2, face = "bold",
-        hjust = 0.5, margin = margin(b = 2.2)
-      ),
-      panel.grid = element_blank(),
-      legend.position = if (show_legend) "top" else "none",
-      legend.direction = "horizontal",
-      legend.title = element_text(
-        colour = "#222222", size = 6.0, face = "bold"
-      ),
-      legend.text = element_text(colour = "#292929", size = 6.0),
-      legend.key = element_blank(),
-      legend.key.width = unit(4.6, "mm"),
-      legend.key.height = unit(2.5, "mm"),
-      legend.spacing.x = unit(2.2, "mm"),
-      legend.spacing.y = unit(0, "mm"),
-      legend.box.spacing = unit(0, "mm"),
-      legend.margin = margin(0, 0, 0, 0, unit = "mm"),
-      plot.margin = margin(1.4, 2.0, 1.2, 2.0, unit = "mm")
+heatmap_data <- plot_data %>%
+  mutate(
+    condition_x = case_when(
+      reference == "GRCh38" & aligner == "minimap2" ~ 1.00,
+      reference == "GRCh38" & aligner == "winnowmap" ~ 2.00,
+      reference == "T2T-CHM13" & aligner == "minimap2" ~ 3.25,
+      reference == "T2T-CHM13" & aligner == "winnowmap" ~ 4.25,
+      TRUE ~ NA_real_
+    ),
+    platform_y = case_when(
+      platform == "BGI" ~ 3,
+      platform == "ONT" ~ 2,
+      platform == "HiFi" ~ 1,
+      TRUE ~ NA_real_
+    ),
+    value_label = sprintf("%.2f%%", primary_mapped_pct),
+    label_colour = if_else(
+      primary_mapped_pct >= 99.15, "#FFFFFF", "#182126"
     )
+  )
+
+if (any(!is.finite(heatmap_data$condition_x)) ||
+    any(!is.finite(heatmap_data$platform_y))) {
+  stop("Failed to map at least one heatmap row or column position")
 }
 
-make_condition_subpanel <- function(panel_index, show_legend = FALSE) {
-  reference_name <- REFERENCES[panel_index]
-  panel_data <- plot_data %>% filter(reference == reference_name)
+platform_markers <- heatmap_data %>%
+  distinct(platform, platform_y) %>%
+  mutate(marker_colour = unname(PLATFORM_COLOURS[as.character(platform)]))
 
-  if (nrow(panel_data) != 6L) {
-    stop("Each reference subpanel must contain exactly six primary-rate points")
-  }
-
-  y_title <- if (panel_index == 1L) {
-    "Primary mapped-read rate"
-  } else {
-    "\u00A0"
-  }
-
-  ggplot(
-    panel_data,
-    aes(
-      x = aligner_index,
-      y = primary_mapped_pct,
-      colour = platform
+panel_d_plot <- ggplot(
+  heatmap_data,
+  aes(x = condition_x, y = platform_y)
+) +
+  geom_tile(
+    aes(fill = primary_mapped_pct),
+    width = 0.88,
+    height = 0.82,
+    colour = "#FFFFFF",
+    linewidth = 0.48
+  ) +
+  geom_text(
+    aes(label = value_label, colour = label_colour),
+    family = BASE_FAMILY,
+    fontface = "bold",
+    size = 2.02,
+    show.legend = FALSE
+  ) +
+  geom_point(
+    data = platform_markers,
+    aes(x = 0.28, y = platform_y, colour = marker_colour),
+    inherit.aes = FALSE,
+    size = 1.70,
+    shape = 16,
+    show.legend = FALSE
+  ) +
+  annotate(
+    "text", x = 1.50, y = 3.78, label = "GRCh38 30×",
+    family = BASE_FAMILY, fontface = "bold", size = 2.54,
+    colour = "#111111"
+  ) +
+  annotate(
+    "text", x = 3.75, y = 3.78, label = "T2T-CHM13 30×",
+    family = BASE_FAMILY, fontface = "bold", size = 2.54,
+    colour = "#111111"
+  ) +
+  annotate(
+    "segment", x = 0.56, xend = 2.44, y = 3.49, yend = 3.49,
+    colour = "#D7D7D7", linewidth = 0.34
+  ) +
+  annotate(
+    "segment", x = 2.81, xend = 4.69, y = 3.49, yend = 3.49,
+    colour = "#D7D7D7", linewidth = 0.34
+  ) +
+  scale_x_continuous(
+    breaks = c(1.00, 2.00, 3.25, 4.25),
+    labels = c("minimap2", "winnowmap", "minimap2", "winnowmap"),
+    limits = c(0.08, 4.72),
+    expand = expansion(mult = 0)
+  ) +
+  scale_y_continuous(
+    breaks = c(3, 2, 1),
+    labels = PLATFORMS,
+    limits = c(0.52, 3.94),
+    expand = expansion(mult = 0)
+  ) +
+  scale_fill_gradientn(
+    name = "Primary mapped-read rate",
+    colours = c("#F0F3F4", "#C4D2D7", "#7596A1", "#294F5B"),
+    values = scales::rescale(c(97.9, 98.5, 99.3, 100.0)),
+    limits = FILL_LIMITS,
+    breaks = c(98, 99, 100),
+    labels = c("98%", "99%", "100%"),
+    oob = scales::squish,
+    guide = guide_colourbar(
+      title.position = "top",
+      title.hjust = 0.5,
+      barwidth = unit(34, "mm"),
+      barheight = unit(2.2, "mm"),
+      ticks = FALSE,
+      frame.colour = NA
     )
   ) +
-    geom_vline(
-      data = data.frame(x_boundary = ALIGNER_BOUNDARIES),
-      aes(xintercept = x_boundary),
-      inherit.aes = FALSE,
-      colour = "#D7D7D7",
-      linewidth = 0.34
-    ) +
-    geom_point(size = 2.05, shape = 16) +
-    scale_colour_manual(
-      name = "Platform",
-      values = PLATFORM_COLOURS,
-      breaks = PLATFORMS,
-      limits = PLATFORMS,
-      drop = FALSE
-    ) +
-    scale_x_continuous(
-      name = "Aligner",
-      limits = range(ALIGNER_BOUNDARIES),
-      breaks = ALIGNER_CENTRES,
-      labels = ALIGNERS,
-      expand = expansion(mult = 0)
-    ) +
-    scale_y_continuous(
-      name = y_title,
-      limits = Y_LIMITS,
-      breaks = seq(97.5, 100.0, by = 0.5),
-      labels = percent_labels,
-      expand = expansion(mult = 0)
-    ) +
-    guides(
-      colour = guide_legend(
-        order = 1,
-        nrow = 1,
-        byrow = TRUE,
-        override.aes = list(shape = 16, size = 2.0)
-      )
-    ) +
-    labs(title = unname(PANEL_TITLES[reference_name])) +
-    theme_condition_subpanel(show_legend = show_legend)
-}
-
-extract_legend <- function(plot_object) {
-  plot_gtable <- ggplotGrob(plot_object)
-  candidates <- which(grepl("^guide-box", plot_gtable$layout$name))
-  for (candidate in candidates) {
-    candidate_grob <- plot_gtable$grobs[[candidate]]
-    if (!inherits(candidate_grob, "zeroGrob")) {
-      return(candidate_grob)
-    }
-  }
-  stop("Unable to extract the shared platform legend")
-}
-
-panel_plots <- lapply(
-  seq_along(REFERENCES),
-  function(panel_index) make_condition_subpanel(panel_index, FALSE)
-)
-
-# Build the shared legend on an explicit null device so non-interactive runs do
-# not create an unintended Rplots.pdf before the publication devices open.
-grDevices::pdf(NULL)
-legend_grob <- extract_legend(make_condition_subpanel(1L, TRUE))
-grDevices::dev.off()
+  scale_colour_identity() +
+  coord_cartesian(clip = "off") +
+  labs(x = NULL, y = NULL) +
+  theme_void(base_size = 6.7, base_family = BASE_FAMILY) +
+  theme(
+    axis.text.x = element_text(
+      colour = "#292929", size = 6.0, margin = margin(t = 1.5)
+    ),
+    axis.text.y = element_text(
+      colour = "#171717", size = 6.4, face = "bold",
+      margin = margin(r = 4.0)
+    ),
+    legend.position = "bottom",
+    legend.direction = "horizontal",
+    legend.title = element_text(
+      colour = "#222222", size = 6.4, face = "bold",
+      margin = margin(b = 1.0)
+    ),
+    legend.text = element_text(colour = "#292929", size = 5.8),
+    legend.margin = margin(1.0, 0, 0, 0, unit = "mm"),
+    legend.box.spacing = unit(0.5, "mm"),
+    plot.margin = margin(1.5, 2.0, 1.0, 2.0, unit = "mm")
+  )
 
 draw_panel_d <- function() {
-  grid.newpage()
-  panel_layout <- grid.layout(
-    nrow = 2,
-    ncol = 2,
-    heights = unit.c(unit(7.0, "mm"), unit(1, "null")),
-    widths = unit(rep(1, 2), "null")
-  )
-  pushViewport(viewport(layout = panel_layout))
-
-  pushViewport(viewport(layout.pos.row = 1, layout.pos.col = 1:2))
-  grid.draw(legend_grob)
-  popViewport()
-
-  for (panel_index in seq_along(panel_plots)) {
-    print(
-      panel_plots[[panel_index]],
-      newpage = FALSE,
-      vp = viewport(layout.pos.row = 2, layout.pos.col = panel_index)
-    )
-  }
-  popViewport()
+  print(panel_d_plot)
 }
 
 # ---- Export ----------------------------------------------------------------
@@ -621,14 +591,15 @@ render_manifest <- data.frame(
   editable_text = c(TRUE, TRUE, FALSE, FALSE),
   base_family = BASE_FAMILY,
   selected_rows = nrow(plot_data),
-  plotted_points = nrow(plot_data),
+  plotted_cells = nrow(plot_data),
   plotted_references = length(REFERENCES),
-  geometry = "reference-faceted categorical points; no connectors or fits",
-  x_encoding = paste(
-    "aligner categories at centres 1 and 2; pale guides at boundaries",
-    "0.5, 1.5 and 2.5"
+  geometry = "3 x 4 annotated heatmap; exact values in every cell",
+  row_encoding = "platform: BGI, ONT, HiFi with fixed colour markers",
+  column_encoding = paste(
+    "GRCh38 minimap2, GRCh38 winnowmap, T2T-CHM13 minimap2,",
+    "T2T-CHM13 winnowmap"
   ),
-  y_window = "97.5-100.10%",
+  fill_scale = "primary mapped-read rate; 97.9-100.0%; sequential blue-grey",
   bytes = as.numeric(file.info(rendered_paths)$size),
   md5 = unname(tools::md5sum(rendered_paths)),
   stringsAsFactors = FALSE
@@ -640,7 +611,7 @@ write_csv(
 )
 
 message("Rendered revised Panel d to: ", OUTPUT_DIR)
-message("Plotted primary-rate points: ", nrow(plot_data), " / 12")
+message("Plotted primary-rate cells: ", nrow(plot_data), " / 12")
 message("Coverage-breadth values reused: 0")
 message("Connector segments: 0")
 message("Font family: ", BASE_FAMILY)

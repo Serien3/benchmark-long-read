@@ -1,0 +1,7 @@
+aligner,platform,grch38_bam_size_gib,t2t_chm13_bam_size_gib,t2t_minus_grch38_gib,t2t_relative_change_pct
+minimap2,BGI,109.3,101.55,-7.75,-7.090576
+minimap2,ONT,102.88,91.9,-10.98,-10.672628
+minimap2,HiFi,41.01,37.35,-3.66,-8.924653
+winnowmap,BGI,97.34,90.51,-6.83,-7.016643
+winnowmap,ONT,96.05,81.35,-14.7,-15.304529
+winnowmap,HiFi,37.42,34.45,-2.97,-7.936932
