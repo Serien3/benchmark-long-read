@@ -1,5 +1,0 @@
-file,format,width_mm,height_mm,dpi,bytes,md5,font_family,editable_text,plotted_points,raw_trajectories,panel_layout,depth_coordinate_grammar,generated_utc
-phasing_ed_f_whatshap_haplotag_yield.svg,svg,88,48,,10426,3d66544a4cdde4dd37c159d97c636f8d,Nimbus Sans,TRUE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",2026-08-08 10:45:33 UTC
-phasing_ed_f_whatshap_haplotag_yield.pdf,pdf,88,48,,16420,6970397d948a6079eccc06f4deafefae,Nimbus Sans,TRUE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",2026-08-08 10:45:33 UTC
-phasing_ed_f_whatshap_haplotag_yield.tiff,tiff,88,48,600,7063326,9bfa8af2b06aefe0708a5a033bf77237,Nimbus Sans,FALSE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",2026-08-08 10:45:33 UTC
-phasing_ed_f_whatshap_haplotag_yield.png,png,88,48,600,82059,f4435327a9ff3f31d0d7516c8e375ba2,Nimbus Sans,FALSE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",2026-08-08 10:45:33 UTC

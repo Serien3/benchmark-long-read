@@ -21,7 +21,7 @@ Status: **complete — 12/12 panels delivered**
 | ED e | `phasing_ed_e_whatshap_caller_sensitivity` | 183 × 60 | WhatsHap input-caller sensitivity at 30× | PASS |
 | ED f | `phasing_ed_f_whatshap_haplotag_yield` | 88 × 48 | WhatsHap haplotag assignment yield across depth | PASS |
 
-Each panel has a dedicated R script under `scripts/<figure_id>/` and a matching delivery directory under `figures/<figure_id>/`. No composite manuscript figure was generated.
+Each panel has a dedicated R script under `scripts/phasing/<figure_id>/` and a matching delivery directory under `figures/phasing/<figure_id>/`. No composite manuscript figure was generated.
 
 ## Reproducibility and export audit
 
@@ -50,6 +50,6 @@ Each panel has a dedicated R script under `scripts/<figure_id>/` and a matching 
 
 ## Delivery locations
 
-- Figure sources: `scripts/phasing_*`
-- Final exports and audit artifacts: `figures/phasing_*`
+- Figure sources: `scripts/phasing/phasing_*`
+- Final exports and audit artifacts: `figures/phasing/phasing_*`
 - Visualization specification: `docs/phasing_results_visualization_plan.md`

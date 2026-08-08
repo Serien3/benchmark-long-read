@@ -1,5 +1,0 @@
-file,format,width_mm,height_mm,dpi,bytes,md5,font_family,editable_text,plotted_points,raw_trajectories,paired_comparisons_exported,panel_layout,depth_coordinate_grammar,generated_utc
-phasing_ed_d_whatshap_phased_snv_depth.svg,svg,88,48,,9750,1dd3a0dc4b7f1d7953b518fee693f611,Nimbus Sans,TRUE,18,6,9,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",2026-08-08 10:45:32 UTC
-phasing_ed_d_whatshap_phased_snv_depth.pdf,pdf,88,48,,16824,e7aba452b09bc2d72e18efe6e8fd832d,Nimbus Sans,TRUE,18,6,9,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",2026-08-08 10:45:32 UTC
-phasing_ed_d_whatshap_phased_snv_depth.tiff,tiff,88,48,600,7063326,96aceeeef16f32b8eb51ec95403ae3f0,Nimbus Sans,FALSE,18,6,9,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",2026-08-08 10:45:32 UTC
-phasing_ed_d_whatshap_phased_snv_depth.png,png,88,48,600,104924,6e9afc394e882b4a48d36d31f80f32b0,Nimbus Sans,FALSE,18,6,9,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",2026-08-08 10:45:32 UTC

@@ -1,0 +1,5 @@
+file,format,width_mm,height_mm,dpi,bytes,md5,font_family,editable_text,plotted_points,raw_trajectories,panel_layout,depth_coordinate_grammar,y_scale,generated_utc
+phasing_main_e_longphase_sv_phased_depth.svg,svg,88,48,,10077,d0c041928d5a0f799e33622a86b26c0c,Nimbus Sans,TRUE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",linear,2026-08-08 11:09:52 UTC
+phasing_main_e_longphase_sv_phased_depth.pdf,pdf,88,48,,16550,3c74487f6a1673c23f671a7cf004f8a4,Nimbus Sans,TRUE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",linear,2026-08-08 11:09:52 UTC
+phasing_main_e_longphase_sv_phased_depth.tiff,tiff,88,48,600,7063326,55809fc16a92da58fb6814cde48d11ca,Nimbus Sans,FALSE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",linear,2026-08-08 11:09:52 UTC
+phasing_main_e_longphase_sv_phased_depth.png,png,88,48,600,100242,ce54efadc7f43ef39c1d3093dd922183,Nimbus Sans,FALSE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",linear,2026-08-08 11:09:52 UTC

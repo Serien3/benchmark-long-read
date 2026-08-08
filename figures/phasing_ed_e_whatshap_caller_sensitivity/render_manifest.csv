@@ -1,5 +1,0 @@
-file,format,width_mm,height_mm,dpi,bytes,md5,font_family,editable_text,plotted_endpoints,paired_connectors,workflow_pairs,generated_utc
-phasing_ed_e_whatshap_caller_sensitivity.svg,svg,183,60,,20357,15a6c34a1383531a9b699d57ebe1e935,Nimbus Sans,TRUE,36,18,6,2026-08-08 10:00:59 UTC
-phasing_ed_e_whatshap_caller_sensitivity.pdf,pdf,183,60,,27225,38dd30d467876737884f76ce83e8de30,Nimbus Sans,TRUE,36,18,6,2026-08-08 10:00:59 UTC
-phasing_ed_e_whatshap_caller_sensitivity.tiff,tiff,183,60,600,18373026,867f0c75ff12dbaeceff504fbfa39633,Nimbus Sans,FALSE,36,18,6,2026-08-08 10:00:59 UTC
-phasing_ed_e_whatshap_caller_sensitivity.png,png,183,60,600,212777,a1d506f0659b03c1be4cd781f998d046,Nimbus Sans,FALSE,36,18,6,2026-08-08 10:00:59 UTC

@@ -1,5 +1,0 @@
-file,format,width_mm,height_mm,dpi,bytes,md5,font_family,editable_text,plotted_points,raw_trajectories,panel_layout,depth_coordinate_grammar,y_scale,generated_utc
-phasing_main_d_longphase_hamming_depth.svg,svg,88,48,,10085,6d59b3a0a7a9a5df4fc511f25d51ce22,Nimbus Sans,TRUE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",log10,2026-08-08 10:19:31 UTC
-phasing_main_d_longphase_hamming_depth.pdf,pdf,88,48,,16379,f01596bc22d25723c193164d83092ec6,Nimbus Sans,TRUE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",log10,2026-08-08 10:19:31 UTC
-phasing_main_d_longphase_hamming_depth.tiff,tiff,88,48,600,7063326,cf89afd01dc54f41995acd99edd37b2f,Nimbus Sans,FALSE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",log10,2026-08-08 10:19:31 UTC
-phasing_main_d_longphase_hamming_depth.png,png,88,48,600,102227,e6bb0a21f01ed8cbb85883d6e3644c63,Nimbus Sans,FALSE,18,6,1 x 2 independent axes: mapper,"centres 1,2,3; boundaries 0.5,1.5,2.5,3.5",log10,2026-08-08 10:19:31 UTC
